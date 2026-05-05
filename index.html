@@ -5,29 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Forever Matrimony</title>
     <style>
-        /* --- GLOBAL & BASE STYLES --- */
+        /* --- GLOBAL CONFIGURATION --- */
         body {
             margin: 0;
             padding: 0;
-            background-color: #c39b4b; /* Premium English Mustard Colour */
+            background-color: #0b0914; /* Sleek Dark Navy-Violet Base */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
+            user-select: none;
         }
 
-        /* --- STAGE 1: OPENING SPLASH SCREEN --- */
+        /* --- SPLASH SCREEN SYSTEM --- */
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: #c39b4b;
+            background-color: #0b0914;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.4s ease;
         }
 
         .splash-container {
@@ -42,7 +43,7 @@
             letter-spacing: 1px;
             margin: 0;
             padding: 0;
-            text-shadow: 0 0 15px rgba(186, 12, 47, 0.9), 0 0 30px rgba(186, 12, 47, 0.5);
+            text-shadow: 0 0 15px rgba(255, 65, 108, 0.9), 0 0 30px rgba(255, 65, 108, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -56,7 +57,7 @@
             letter-spacing: 5px;
             text-transform: uppercase;
             margin-top: 5px;
-            text-shadow: 0 0 8px rgba(186, 12, 47, 0.4);
+            text-shadow: 0 0 8px rgba(255, 65, 108, 0.4);
         }
 
         .symbol-svg {
@@ -81,59 +82,91 @@
             100% { transform: scale(0.8); opacity: 0.6; }
         }
 
-        /* --- STAGE 2: INSIDE APP (HOME PROFILE PAGE) --- */
+        /* --- CORE APPLICATION SHELL --- */
         #main-app {
-            display: none; /* Hidden initially, shown via JavaScript */
+            display: none;
             opacity: 0;
-            transition: opacity 0.5s ease-in;
-            padding-bottom: 80px; /* Space for bottom navigation */
+            transition: opacity 0.4s ease-in;
+            padding-bottom: 90px;
+            background-color: #0b0914; /* Kept continuous dark theme inside */
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
-        /* App Header Layout */
         .app-header {
-            background-color: #ffffff;
+            background-color: #131021;
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .app-logo-text {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
-            color: #c39b4b;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 65, 108, 0.6);
         }
 
-        .header-actions {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* Main Container for Discovery Profiles */
-        .feed-container {
+        /* --- VIEW ROUTER (PAGES) --- */
+        .app-view {
+            display: none; 
             max-width: 480px;
-            margin: 20px auto;
-            padding: 0 15px;
+            margin: 0 auto;
+            padding: 20px 15px;
+            animation: fadeInView 0.3s ease-out forwards;
         }
 
-        /* Profile Card Styling */
-        .profile-card {
-            background-color: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
+        .app-view.active-view {
+            display: block;
+        }
+
+        @keyframes fadeInView {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- HOME VIEW: INTERACTIVE CARDS --- */
+        .card-stack {
             position: relative;
+            height: 480px;
+            width: 100%;
+            margin-top: 10px;
         }
 
-        .profile-image-placeholder {
+        .profile-card {
+            position: absolute;
             width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #e0d0b0, #c39b4b);
+            height: 100%;
+            background-color: #131021;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .card-swipe-left {
+            transform: translateX(-150%) rotate(-15deg) !important;
+            opacity: 0;
+        }
+
+        .card-swipe-right {
+            transform: translateX(150%) rotate(15deg) !important;
+            opacity: 0;
+        }
+
+        .profile-media-box {
+            width: 100%;
+            flex-grow: 1;
+            background: linear-gradient(135deg, #251f3b, #0b0914);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -142,86 +175,105 @@
             position: relative;
         }
 
-        .profile-image-placeholder svg {
-            width: 80px;
-            height: 80px;
-            opacity: 0.8;
+        .profile-media-box svg {
+            width: 70px;
+            height: 70px;
+            opacity: 0.4;
             fill: currentColor;
         }
 
-        /* Quick Profile Info Overlay */
-        .profile-info-overlay {
+        .profile-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 25px 20px;
-            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            padding: 30px 20px 20px 20px;
+            background: linear-gradient(to top, rgba(11,9,20,1) 30%, transparent);
             box-sizing: border-box;
             color: #ffffff;
         }
 
-        .profile-details-main {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
+        .prof-title { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+        .prof-meta { font-size: 14px; opacity: 0.8; line-height: 1.5; }
 
-        .profile-details-sub {
-            font-size: 14px;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
-
-        /* Action Buttons on Profile (Connect / Skip) */
-        .profile-actions {
+        .action-tray {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 15px;
-            background-color: #ffffff;
-            border-top: 1px solid #f0f0f0;
+            gap: 25px;
+            padding: 20px 0;
         }
 
-        .btn-action {
-            width: 55px;
-            height: 55px;
+        .btn-round {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             border: none;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: transform 0.1s ease;
         }
 
-        .btn-action:active {
-            transform: scale(0.9);
+        .btn-round:active { transform: scale(0.9); }
+        .btn-dislike { background-color: #251f3b; color: #ffffff; font-size: 20px; opacity: 0.8; }
+        .btn-like { background-color: #ba0c2f; color: #ffffff; font-size: 22px; }
+
+        .no-profiles-message {
+            text-align: center;
+            padding: 60px 20px;
+            color: #b3b3b3;
+            display: none;
         }
 
-        .btn-skip {
-            background-color: #fcf8f2;
-            color: #a0a0a0;
-        }
-
-        .btn-connect {
-            background-color: #ba0c2f; /* Premium Crimson Red */
+        /* --- SUB-PAGES SYSTEM (MATCHES, CHATS, USER PROFILE) --- */
+        .view-title {
+            font-size: 22px;
+            font-weight: 700;
             color: #ffffff;
+            margin-bottom: 20px;
         }
 
-        /* --- BOTTOM NAVIGATION BAR --- */
+        .list-item {
+            background: #131021;
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .avatar-placeholder {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #251f3b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .item-details h4 { margin: 0 0 4px 0; color: #ffffff; }
+        .item-details p { margin: 0; font-size: 13px; color: #a0a0a0; }
+
+        /* --- FIXED BOTTOM BAR NAVIGATION --- */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #ffffff;
+            background-color: #131021;
             display: flex;
             justify-content: space-around;
-            padding: 12px 0;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            padding: 12px 0 16px 0;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
             z-index: 100;
+            border-top: 1px solid rgba(255,255,255,0.03);
         }
 
         .nav-item {
@@ -230,13 +282,17 @@
             align-items: center;
             font-size: 11px;
             font-weight: 600;
-            color: #8e8e93;
+            color: #726e8d;
             text-decoration: none;
+            background: none;
+            border: none;
             cursor: pointer;
+            width: 25%;
         }
 
-        .nav-item.active {
-            color: #c39b4b; /* Mustard Accent for active tab */
+        .nav-item.active-tab {
+            color: #ffffff;
+            filter: drop-shadow(0 0 5px rgba(255, 65, 108, 0.6));
         }
 
         .nav-icon {
@@ -264,97 +320,194 @@
         </div>
     </div>
 
-
     <div id="main-app">
         
         <header class="app-header">
             <div class="app-logo-text">Love Forever</div>
-            <div class="header-actions">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c39b4b" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+            <div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
             </div>
         </header>
 
-        <main class="feed-container">
-            
-            <div class="profile-card">
-                <div class="profile-image-placeholder">
-                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                    <span style="font-size: 12px; margin-top: 10px; opacity: 0.7;">[ Profile Photo Area ]</span>
-                    
-                    <div class="profile-info-overlay">
-                        <div class="profile-details-main">Aarav Sharma, 29</div>
-                        <div class="profile-details-sub">Software Engineer • Mumbai, MH<br>MTech Graduate • Loves Traveling & Tech</div>
+        <section id="view-home" class="app-view active-view">
+            <div class="card-stack" id="card-stack-container">
+                </div>
+            <div class="no-profiles-message" id="end-feed-msg">
+                <h3>No More Profiles Found</h3>
+                <p>Try adjusting your match settings to see more people nearby.</p>
+            </div>
+            <div class="action-tray" id="action-buttons-tray">
+                <button class="btn-round btn-dislike" onclick="handleSwipeAction('left')">✕</button>
+                <button class="btn-round btn-like" onclick="handleSwipeAction('right')">❤</button>
+            </div>
+        </section>
+
+        <section id="view-matches" class="app-view">
+            <div class="view-title">Connected Matches</div>
+            <div id="matches-target-list">
+                <div class="list-item">
+                    <div class="avatar-placeholder" style="background-color:#ba0c2f;">❤</div>
+                    <div class="item-details">
+                        <h4>Preeti Desai, 26</h4>
+                        <p>Matched 2 hours ago • Say hello!</p>
                     </div>
                 </div>
-                <div class="profile-actions">
-                    <button class="btn-action btn-skip" title="Pass">✕</button>
-                    <button class="btn-action btn-connect" title="Connect">❤</button>
+            </div>
+        </section>
+
+        <section id="view-chat" class="app-view">
+            <div class="view-title">Conversations</div>
+            <div class="list-item" style="cursor:pointer;">
+                <div class="avatar-placeholder">💬</div>
+                <div class="item-details">
+                    <h4>Support Team</h4>
+                    <p>Welcome to Love Forever Matrimony! Complete your setup...</p>
                 </div>
             </div>
+        </section>
 
-            <div class="profile-card">
-                <div class="profile-image-placeholder">
-                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                    <span style="font-size: 12px; margin-top: 10px; opacity: 0.7;">[ Profile Photo Area ]</span>
-                    
-                    <div class="profile-info-overlay">
-                        <div class="profile-details-main">Riya Patel, 27</div>
-                        <div class="profile-details-sub">Business Consultant • Bangalore, KA<br>MBA • Enthusiast of Classical Dance & Architecture</div>
-                    </div>
-                </div>
-                <div class="profile-actions">
-                    <button class="btn-action btn-skip" title="Pass">✕</button>
-                    <button class="btn-action btn-connect" title="Connect">❤</button>
+        <section id="view-profile" class="app-view">
+            <div class="view-title">My Account Profile</div>
+            <div class="list-item">
+                <div class="avatar-placeholder" style="background-color:#251f3b;">U</div>
+                <div class="item-details">
+                    <h4>Set Up Profile</h4>
+                    <p>Click here to add photos, education, and career details.</p>
                 </div>
             </div>
-
-        </main>
+            <div style="margin-top: 30px; font-size: 13px; text-align: center; color: #726e8d;">
+                <p>App Version 1.0.0 (Production Build)</p>
+                <a href="#" style="color: #ffffff; text-decoration: none; opacity: 0.7;">Play Store Privacy Policy</a>
+            </div>
+        </section>
 
         <nav class="bottom-nav">
-            <a class="nav-item active">
+            <button class="nav-item active-tab" onclick="switchActiveView('home', this)">
                 <svg class="nav-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
                 Home
-            </a>
-            <a class="nav-item">
+            </button>
+            <button class="nav-item" onclick="switchActiveView('matches', this)">
                 <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                 Matches
-            </a>
-            <a class="nav-item">
+            </button>
+            <button class="nav-item" onclick="switchActiveView('chat', this)">
                 <svg class="nav-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
                 Chat
-            </a>
-            <a class="nav-item">
+            </button>
+            <button class="nav-item" onclick="switchActiveView('profile', this)">
                 <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                 Profile
-            </a>
+            </button>
         </nav>
 
     </div>
 
     <script>
+        const databaseProfiles = [
+            { id: 1, name: "Vikram Malhotra", age: 31, field: "Operations Lead", location: "Bangalore, KA", detail: "MBA Graduate • Enthusiast of Classical Music & Trekking" },
+            { id: 2, name: "Ananya Iyer", age: 28, field: "Product Designer", location: "Mumbai, MH", detail: "B.Arch Graduate • Passionate about Urban Art & Design Trends" },
+            { id: 3, name: "Kunal Deshmukh", age: 30, field: "Business Analytics Manager", location: "Pune, MH", detail: "Tech Professional • Enjoys Weekend Road Trips & Reading" }
+        ];
+
+        let profilePointer = 0;
+
         window.addEventListener('DOMContentLoaded', () => {
-            // Wait for 4 seconds (matching splash loop sweet spot), then switch views
+            renderDiscoveryDeck();
+
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 const app = document.getElementById('main-app');
                 
-                // Lift splash screen away smoothly
                 splash.style.transform = 'translateY(-100%)';
                 splash.style.opacity = '0';
                 
-                // Show home profile system
                 app.style.display = 'block';
-                setTimeout(() => {
-                    app.style.opacity = '1';
-                }, 50);
-                
-                // Remove splash completely after sliding out of view
-                setTimeout(() => {
-                    splash.remove();
-                }, 800);
-            }, 4000); 
+                setTimeout(() => { app.style.opacity = '1'; }, 50);
+                setTimeout(() => { splash.remove(); }, 600);
+            }, 4000);
         });
-    </script>
 
+        function renderDiscoveryDeck() {
+            const container = document.getElementById('card-stack-container');
+            container.innerHTML = ''; 
+
+            if (profilePointer >= databaseProfiles.length) {
+                document.getElementById('end-feed-msg').style.display = 'block';
+                document.getElementById('action-buttons-tray').style.opacity = '0.3';
+                document.getElementById('action-buttons-tray').style.pointerEvents = 'none';
+                return;
+            }
+
+            for (let i = databaseProfiles.length - 1; i >= profilePointer; i--) {
+                const data = databaseProfiles[i];
+                const card = document.createElement('div');
+                card.className = 'profile-card';
+                card.id = `prof-card-${data.id}`;
+                card.style.zIndex = databaseProfiles.length - i;
+                
+                if(i !== profilePointer) {
+                    card.style.transform = 'scale(0.95) translateY(10px)';
+                    card.style.opacity = '0.5';
+                }
+
+                card.innerHTML = `
+                    <div class="profile-media-box">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <div class="profile-overlay">
+                            <div class="prof-title">${data.name}, ${data.age}</div>
+                            <div class="prof-meta">${data.field} • ${data.location}<br>${data.detail}</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        function handleSwipeAction(direction) {
+            if (profilePointer >= databaseProfiles.length) return;
+
+            const activeCard = document.getElementById(`prof-card-${databaseProfiles[profilePointer].id}`);
+            if (!activeCard) return;
+
+            if (direction === 'left') {
+                activeCard.classList.add('card-swipe-left');
+            } else {
+                activeCard.classList.add('card-swipe-right');
+                appendMatchedRecord(databaseProfiles[profilePointer]);
+            }
+
+            profilePointer++;
+            
+            setTimeout(() => {
+                renderDiscoveryDeck();
+            }, 300);
+        }
+
+        function appendMatchedRecord(profile) {
+            const matchesList = document.getElementById('matches-target-list');
+            const matchRow = document.createElement('div');
+            matchRow.className = 'list-item';
+            matchRow.innerHTML = `
+                <div class="avatar-placeholder" style="background-color:#ba0c2f;">❤</div>
+                <div class="item-details">
+                    <h4>${profile.name}, ${profile.age}</h4>
+                    <p>${profile.field} • Just connected! Tap to message.</p>
+                </div>
+            `;
+            matchesList.insertBefore(matchRow, matchesList.firstChild);
+        }
+
+        function switchActiveView(targetId, navButton) {
+            const views = document.querySelectorAll('.app-view');
+            views.forEach(view => view.classList.remove('active-view'));
+
+            const targetView = document.getElementById(`view-${targetId}`);
+            if (targetView) targetView.classList.add('active-view');
+
+            const tabs = document.querySelectorAll('.nav-item');
+            tabs.forEach(tab => tab.classList.remove('active-tab'));
+            navButton.classList.add('active-tab');
+        }
+    </script>
 </body>
 </html>
