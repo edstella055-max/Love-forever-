@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Forever Matrimony</title>
+    <title>Love Forever Christian Matrimony</title>
     <style>
         /* --- GLOBAL SYSTEM CORE --- */
         body {
@@ -17,7 +17,25 @@
             color: #ffffff;
         }
 
-        /* --- FIREWALL OVERLAYS & DIALOG BOXES --- */
+        /* --- HIGH SECURITY FIREWALL ARCHITECTURE --- */
+        .firewall-status-banner {
+            background: linear-gradient(90deg, #112523, #0f1424);
+            border-bottom: 1px solid #00f5d4;
+            padding: 8px 16px;
+            font-size: 11px;
+            font-family: monospace;
+            color: #00f5d4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .firewall-pulse {
+            width: 8px; height: 8px; background-color: #00f5d4; border-radius: 50%;
+            display: inline-block; margin-right: 6px; box-shadow: 0 0 8px #00f5d4;
+            animation: firewallGlow 1.5s infinite ease-in-out;
+        }
+        @keyframes firewallGlow { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
         .system-modal-backdrop {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -102,15 +120,66 @@
         }
 
         .splash-container { text-align: center; animation: zoomInOut 3s ease-in-out infinite; }
+        
+        /* --- BRAND BRANDING UPDATES --- */
         .brand-name {
-            font-size: 40px; font-weight: 900; color: #ffffff; letter-spacing: 1px; margin: 0; padding: 0;
-            display: flex; align-items: center; justify-content: center; gap: 14px;
+            font-size: 36px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .main-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .bold-glossy-text {
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 30%, #a5b0cf 70%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
         }
         
-        .glossy-heart {
-            font-size: 48px;
-            filter: drop-shadow(0 0 12px #ff1e27) drop-shadow(0 2px 4px rgba(255, 0, 0, 0.6));
+        .outline-heart {
+            font-size: 20px;
+            color: transparent;
+            -webkit-text-stroke: 2px #ffffff;
+            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
             animation: beatHeart 1.2s infinite ease-in-out;
+            display: inline-block;
+        }
+
+        .sub-brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .matrimony-tag { 
+            font-size: 14px; 
+            font-weight: 600; 
+            color: #a5b0cf; 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+        }
+
+        .jesus-cross {
+            font-size: 12px;
+            color: #ffffff;
+            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.9));
             display: inline-block;
         }
 
@@ -121,13 +190,35 @@
             60% { transform: scale(1.15); }
         }
 
-        .tagline { font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, 0.9); letter-spacing: 5px; text-transform: uppercase; margin-top: 8px; }
-        .made-in-india-tag { font-size: 10px; color: #00f5d4; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 12px; background: rgba(0, 245, 212, 0.1); padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid rgba(0, 245, 212, 0.2); }
+        .made-in-india-tag { font-size: 10px; color: #00f5d4; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 14px; background: rgba(0, 245, 212, 0.1); padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid rgba(0, 245, 212, 0.2); }
 
         @keyframes zoomInOut {
             0%, 100% { transform: scale(0.96); opacity: 0.9; }
             50% { transform: scale(1.02); opacity: 1; }
         }
+
+        /* --- APP HEADER CORE STYLING --- */
+        .app-header {
+            background-color: #0f1424;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .app-logo-text {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        .app-logo-text .bold-glossy-text { font-size: 16px; }
+        .app-logo-text .outline-heart { font-size: 14px; -webkit-text-stroke: 1.5px #ffffff; }
+        .app-logo-text .matrimony-tag { font-size: 11px; letter-spacing: 1px; color: #a5b0cf; }
+        .app-logo-text .jesus-cross { font-size: 10px; }
 
         /* --- UNIVERSAL CARD INTERFACES --- */
         .window-shell {
@@ -162,8 +253,16 @@
         }
 
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #00b4d8; }
-        .form-row { display: flex; gap: 15px; }
         
+        .suggestion-pill-container {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; margin-bottom: 15px;
+        }
+        .suggestion-pill {
+            background: #171e36; border: 1px solid rgba(255, 255, 255, 0.1); color: #a5b0cf;
+            padding: 6px 12px; border-radius: 20px; font-size: 11px; cursor: pointer; transition: all 0.2s;
+        }
+        .suggestion-pill:hover { border-color: #00f5d4; color: #00f5d4; background: rgba(0, 245, 212, 0.05); }
+
         .btn-primary {
             width: 100%; padding: 16px; background: linear-gradient(135deg, #00b4d8, #00f5d4); color: #080a10;
             border: none; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 180, 216, 0.3);
@@ -201,57 +300,6 @@
             transition: all 0.2s;
         }
         .photo-slot:hover { border-color: #00b4d8; background-color: rgba(0, 180, 216, 0.05); }
-        .photo-slot.occupied { border-style: solid; border-color: rgba(0, 180, 216, 0.4); }
-
-        /* --- E-COMMERCE STYLE DUAL SLIDERS --- */
-        .range-slider-wrapper {
-            position: relative;
-            width: 100%;
-            height: 6px;
-            background-color: #171e36;
-            border-radius: 4px;
-            margin: 22px 0 12px 0;
-        }
-
-        .range-slider-track {
-            position: absolute;
-            height: 100%;
-            background: linear-gradient(90deg, #00b4d8, #00f5d4);
-            border-radius: 4px;
-        }
-
-        .range-slider-container { position: relative; width: 100%; height: 0; }
-        .range-slider-container input[type="range"] {
-            position: absolute; width: 100%; height: 0; top: -6px; left: 0; background: none;
-            pointer-events: none; -webkit-appearance: none; appearance: none; margin: 0; padding: 0; border: none;
-        }
-
-        .range-slider-container input[type="range"]::-webkit-slider-thumb {
-            height: 20px; width: 20px; border-radius: 50%; background-color: #ffffff; border: 2px solid #00b4d8;
-            cursor: pointer; pointer-events: auto; -webkit-appearance: none; box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-        }
-
-        .range-values-display {
-            display: flex; justify-content: space-between; align-items: center; font-size: 13px;
-            font-weight: 600; color: #00b4d8; margin-top: 5px; background: rgba(23, 30, 54, 0.5); padding: 6px 12px; border-radius: 10px;
-        }
-        .range-values-display span { color: #6a7696; font-size: 10px; font-weight: 700; text-transform: uppercase; }
-
-        /* --- MAIN SHELL SYSTEM --- */
-        #main-app {
-            display: none; opacity: 0; transition: opacity 0.4s ease-in; padding-bottom: 120px; min-height: 100vh; box-sizing: border-box;
-        }
-
-        .app-header {
-            background-color: #0f1424; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.03);
-        }
-
-        .app-logo-text { font-size: 18px; font-weight: 800; color: #ffffff; display: flex; align-items: center; gap: 8px; }
-        .app-logo-text span { font-size: 22px; filter: drop-shadow(0 0 6px #ff1e27); }
-
-        .app-view { display: none; max-width: 480px; margin: 0 auto; padding: 15px 10px; }
-        .app-view.active-view { display: block; }
 
         /* --- IMMERSIVE FEED DECK CARDS --- */
         .card-stack { position: relative; height: 580px; width: 100%; margin-top: 5px; }
@@ -275,11 +323,6 @@
             display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 5;
         }
 
-        .match-compatibility-badge {
-            position: absolute; top: 22px; right: 22px; background: linear-gradient(135deg, #00f5d4, #00b4d8); color: #080a10; padding: 7px 15px; border-radius: 20px;
-            font-size: 14px; font-weight: 900; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 10; border: 1px solid #ffffff;
-        }
-
         .profile-overlay {
             position: absolute; bottom: 0; left: 0; width: 100%; padding: 60px 22px 25px 22px;
             background: linear-gradient(to top, rgba(8,10,16,1) 50%, rgba(8,10,16,0.8) 80%, transparent); box-sizing: border-box; z-index: 6;
@@ -291,7 +334,7 @@
             font-size: 11px; display: inline-flex; justify-content: center; align-items: center; font-weight: bold;
         }
 
-        .prof-bio-text { font-size: 14px; color: #d0d0d0; margin-top: 10px; font-style: italic; line-height: 1.4; opacity: 0.8; }
+        .prof-bio-text { font-size: 13px; color: #d0d0d0; margin-top: 10px; font-style: italic; line-height: 1.4; opacity: 0.9; }
         .action-tray { display: flex; justify-content: center; gap: 25px; padding: 15px 0; }
         .btn-round {
             width: 64px; height: 64px; border-radius: 50%; border: none; display: flex; justify-content: center; align-items: center;
@@ -323,46 +366,67 @@
         .nav-item.active-tab { color: #ffffff; filter: drop-shadow(0 0 5px #00b4d8); }
         .nav-icon { width: 20px; height: 20px; margin-bottom: 4px; fill: currentColor; }
 
+        .app-view { display: none; }
+        .active-view { display: block; }
+
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
     </style>
 </head>
 <body>
 
+    <div class="firewall-status-banner">
+        <div><span class="firewall-pulse"></span>FIREWALL MODULE: ACTIVE</div>
+        <div id="firewall-packet-log">ENC STATUS: AES-GCM-256 SECURE HANDSHAKE</div>
+    </div>
+
     <div id="camera-firewall-overlay" class="system-modal-backdrop">
         <div class="camera-auth-frame">
-            <h3 style="margin: 0 0 6px 0; font-size: 20px; font-weight: 800;">Biometric Verification</h3>
-            <p style="margin: 0; font-size: 13px; color: #6a7696;">Position your face inside the bounding profile scanner down below to verify match parameters against uploaded identification data matrices.</p>
+            <h3 style="margin: 0 0 6px 0; font-size: 20px; font-weight: 800;">Secure Identity Node</h3>
+            <p style="margin: 0; font-size: 13px; color: #6a7696;">Position your face inside the perimeter bounds to log anti-spoof metrics through the secure cryptographic firewall layer.</p>
             
             <div class="live-video-viewport">
                 <div class="face-oval-guide"></div>
-                <span id="camera-log-text" style="font-size: 12px; color: #a5b0cf; z-index: 2; font-weight: 600;">Initializing Secure Camera Link...</span>
+                <span id="camera-log-text" style="font-size: 12px; color: #a5b0cf; z-index: 2; font-weight: 600;">Opening Isolated Camera Subsystem...</span>
             </div>
 
             <div class="compliance-scrollbox">
-                <strong>TERMS OF SERVICE & REGULATORY WAIVER</strong><br><br>
-                1. Love Forever Matrimony acts solely as an intermediary matching interface framework. The platform does not assume civil or criminal liability for individual user behavior, misrepresentation, fraud, or offline real-world interactions.<br><br>
-                2. By invoking biometric verification protocols, the end-user explicitly confirms that all uploaded credentials, documentation, and structural photography metrics are completely authentic.<br><br>
+                <strong>SECURE ENDPOINT REGULATORY WAIVER</strong><br><br>
+                1. Love Forever Christian Matrimony operates as a strictly protected matching sandbox ecosystem under modern encryption guidelines.<br><br>
+                2. FIREWALL PROTECTION: All internal communication payloads are routed through isolated multi-layered proxies to isolate network profiles against scraping vectors, automated bots, and unauthorized profile access metrics.<br><br>
                 3. LIMITATION OF LIABILITY: You explicitly acknowledge and agree that the Platform Developers, Corporate Stakeholders, and Administrators are completely **NOT RESPONSIBLE** and hold zero legal liability for any conflicts, financial issues, personal loss, actions, damages, or discrepancies occurring between subscribers matching inside this live software interface.
             </div>
 
-            <button class="btn-primary" id="capture-shutter-btn" onclick="executeBiometricParsingSequence()">Capture Live Selfie & Verify</button>
+            <button class="btn-primary" id="capture-shutter-btn" onclick="executeBiometricParsingSequence()">Verify Identity Signature</button>
         </div>
     </div>
 
     <div id="splash-screen">
         <div class="splash-container">
-            <h1 class="brand-name"><span class="glossy-heart">❤️</span> Love Forever</h1>
-            <div class="tagline">Matrimony</div>
+            <h1 class="brand-name">
+                <div class="main-title-row">
+                    <span class="bold-glossy-text">Love Forever</span>
+                    <span class="outline-heart">♡</span>
+                </div>
+                <div class="sub-brand-row">
+                    <span class="matrimony-tag">Christian Matrimony</span>
+                    <span class="jesus-cross">†</span>
+                </div>
+            </h1>
             <div><span class="made-in-india-tag">Made In India</span></div>
         </div>
     </div>
 
     <div id="auth-portal-screen" class="window-shell">
         <div class="auth-card" style="text-align: center; margin-bottom: 25px;">
-            <span class="glossy-heart" style="font-size: 56px;">❤️</span>
-            <h2 style="margin: 10px 0 4px 0; font-size: 24px;">Love Forever</h2>
-            <div style="font-size: 11px; color:#6a7696; text-transform:uppercase; letter-spacing:2px; font-weight:700;">Secure Matching Platform</div>
-            <div><span class="made-in-india-tag" style="margin-top:8px;">Made In India</span></div>
+            <div class="main-title-row">
+                <span class="bold-glossy-text" style="font-size: 24px;">Love Forever</span>
+                <span class="outline-heart" style="font-size: 18px;">♡</span>
+            </div>
+            <div class="sub-brand-row" style="margin-top: 2px;">
+                <span class="matrimony-tag" style="font-size: 12px;">Christian Matrimony</span>
+                <span class="jesus-cross" style="font-size: 10px;">†</span>
+            </div>
+            <div><span class="made-in-india-tag" style="margin-top:10px;">Made In India</span></div>
         </div>
 
         <div class="auth-card">
@@ -371,531 +435,22 @@
             
             <form onsubmit="handlePortalLogin(event)">
                 <div class="form-group">
-                    <label>Email Address or Mobile Number</label>
+                    <label>Secure Identity Email / Mobile</label>
                     <input type="text" id="auth-identity" required placeholder="example@mail.com or +91...">
                 </div>
                 <div class="form-group">
-                    <label>Account Password</label>
+                    <label>Firewall Password</label>
                     <input type="password" id="auth-pass" required placeholder="••••••••">
                 </div>
-                <button type="submit" class="btn-primary" style="margin-top: 10px;">Secure Account Access</button>
+                <button type="submit" class="btn-primary" style="margin-top: 10px;">Verify Encrypted Access</button>
             </form>
-            <div style="text-align: center; margin-top: 15px; font-size: 11px; color: #6a7696;">
-                Demo Admin Access Prompt: Click above with any input parameters.
-            </div>
         </div>
     </div>
 
-    <div id="main-app">
+    <div id="main-app" style="display: none; opacity: 0; transition: opacity 0.3s ease;">
         
         <header class="app-header">
-            <div class="app-logo-text"><span>❤️</span> Love Forever</div>
-            <div style="font-size:10px; color:#00f5d4; font-weight:800; border:1px solid #00f5d4; padding:2px 6px; border-radius:6px; letter-spacing:1px; text-transform:uppercase;">Made In India</div>
-        </header>
-
-        <section id="view-profile" class="app-view active-view">
-            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">My Verification Panel</div>
-            
-            <div id="identity-status-billboard" style="background: #171e36; padding: 16px; border-radius: 20px; margin-bottom: 20px; border: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                    <h5 style="margin:0; font-size:14px; color:#a5b0cf;">Profile Credentials Status</h5>
-                    <p id="status-badge-label" style="margin:4px 0 0 0; font-size:13px; color:#00b4d8; font-weight:700;">Unverified (Verification Pending)</p>
-                </div>
-                <button id="trigger-camera-btn" style="background:#00b4d8; border:none; color:#080a10; padding:8px 14px; font-weight:700; border-radius:10px; font-size:12px; cursor:pointer;" onclick="launchSecureCameraSystem()">Verify Face</button>
-            </div>
-
-            <div class="auth-card" style="padding: 20px; margin-bottom: 20px;">
-                <label style="display:block; font-size:12px; font-weight:700; color:#a5b0cf; margin-bottom:10px; text-transform:uppercase;">Manage Photos (Max 5)</label>
-                
-                <div class="photo-uploader-tray">
-                    <div class="photo-slot occupied" onclick="alert('Primary photo update active.')">
-                        <span style="color:#00b4d8; font-weight:700;">Photo 1</span>
-                        <span style="font-size:9px; opacity:0.6;">(Primary)</span>
-                    </div>
-                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
-                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
-                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
-                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
-                    <div class="photo-slot" style="opacity: 0.2; border-style: solid; cursor: not-allowed;"><span>🔒 Max</span></div>
-                </div>
-
-                <div class="form-group">
-                    <label>Profile Biography Summary</label>
-                    <textarea id="user-bio-input" rows="3" placeholder="Describe your background and expectations..."></textarea>
-                </div>
-                <button class="btn-primary" style="padding:12px; margin-bottom: 25px;" onclick="alert('Profile metrics logged.')">Update Profile Metadata</button>
-                
-                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px;">
-                
-                <div style="text-align: left;">
-                    <h4 style="margin: 0 0 6px 0; font-size: 14px; color: #ff5a5f;">Emergency Kill-Switch Zone</h4>
-                    <p style="margin: 0 0 15px 0; font-size: 12px; color: #6a7696;">Trigger immediate deletion to purge your digital profile record from active directories.</p>
-                    <button class="btn-danger" onclick="executeInstantProfilePurge()">Delete Profile Immediately</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="view-home" class="app-view">
-            <div class="card-stack" id="card-stack-container"></div>
-            <div class="no-profiles-message" id="end-feed-msg" style="display:none; text-align:center; padding:40px 20px;">
-                <h3>No Match Criteria Found</h3>
-                <p style="color:#6a7696; font-size:14px;">Try broadening your matching filter preferences inside your setup tab.</p>
-            </div>
-            <div class="action-tray" id="action-buttons-tray">
-                <button class="btn-round btn-dislike" onclick="handleSwipeAction('left')">✕</button>
-                <button class="btn-round btn-like" onclick="handleSwipeAction('right')">❤</button>
-            </div>
-        </section>
-
-        <section id="view-preferences" class="app-view">
-            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 15px;">Partner Match Preferences</div>
-            
-            <div class="auth-card">
-                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #00b4d8; text-transform: uppercase; letter-spacing: 0.5px;">1. Location Profile</h4>
-                <div class="form-group">
-                    <label>Country Target</label>
-                    <select id="pref-location-country" disabled>
-                        <option value="India" selected>India</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <div class="form-group" style="width: 50%;">
-                        <label>State Scope</label>
-                        <select id="pref-location-state" onchange="synchronizeRegionalDistrictsData()">
-                            <option value="All" selected>All States</option>
-                            <option value="Maharashtra">Maharashtra</option>
-                            <option value="Karnataka">Karnataka</option>
-                            <option value="Tamil Nadu">Tamil Nadu</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="width: 50%;">
-                        <label>District Scope</label>
-                        <select id="pref-location-district">
-                            <option value="All" selected>All Districts</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="auth-card">
-                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #00b4d8; text-transform: uppercase; letter-spacing: 0.5px;">2. Community & Faith Matrix</h4>
-                <div class="form-group">
-                    <label>Caste Baseline Religion</label>
-                    <select id="pref-religion-caste" disabled>
-                        <option value="Christian" selected>Christian</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Sub-Denomination Grouping</label>
-                    <select id="pref-religion-sub">
-                        <option value="Doesn't matter" selected>Doesn't matter</option>
-                        <option value="Protestant">Protestant</option>
-                        <option value="Catholic">Catholic</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Language Mother Tongue</label>
-                    <select id="pref-mother-tongue">
-                        <option value="Doesn't matter" selected>Doesn't matter</option>
-                        <option value="Hindi">Hindi</option>
-                        <option value="Marathi">Marathi</option>
-                        <option value="English">English</option>
-                        <option value="Tamil">Tamil</option>
-                        <option value="Konkani">Konkani</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="auth-card">
-                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #00b4d8; text-transform: uppercase; letter-spacing: 0.5px;">3. Age & Height Buckets</h4>
-                <div class="form-group">
-                    <label>Age Scope Filter</label>
-                    <div class="range-slider-wrapper">
-                        <div class="range-slider-track" id="age-slider-track"></div>
-                    </div>
-                    <div class="range-slider-container">
-                        <input type="range" id="age-min-slider" min="18" max="45" value="18" oninput="parseDualSliderMetrics('age')">
-                        <input type="range" id="age-max-slider" min="18" max="45" value="45" oninput="parseDualSliderMetrics('age')">
-                    </div>
-                    <div class="range-values-display">
-                        <span>Selected Age:</span>
-                        <div id="age-range-label">18 Yrs - 45 Yrs</div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Height Scope Filter</label>
-                    <div class="range-slider-wrapper">
-                        <div class="range-slider-track" id="height-slider-track"></div>
-                    </div>
-                    <div class="range-slider-container">
-                        <input type="range" id="height-min-slider" min="140" max="210" value="150" oninput="parseDualSliderMetrics('height')">
-                        <input type="range" id="height-max-slider" min="140" max="210" value="190" oninput="parseDualSliderMetrics('height')">
-                    </div>
-                    <div class="range-values-display">
-                        <span>Selected Height:</span>
-                        <div id="height-range-label">150 cm - 190 cm</div>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn-primary" style="margin-bottom: 40px;" onclick="applyPreferencesAndRefresh()">Apply Parameters & Re-Filter Feed</button>
-        </section>
-
-        <section id="view-matches" class="app-view">
-            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Connected Matches</div>
-            <div id="matches-target-list"></div>
-        </section>
-
-        <section id="view-chat" class="app-view">
-            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Conversations</div>
-            <div class="list-item">
-                <div class="avatar-placeholder">💬</div>
-                <div class="item-details">
-                    <h4>Admin Support Team</h4>
-                    <p>Verification engine fully operational. Secure encryption active...</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="view-admin" class="app-view">
-            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 6px;">Admin Master Engine</div>
-            <div style="font-size:13px; color:#6a7696; margin-bottom: 20px;">Manage verification approval loops and live profile directory deletion arrays.</div>
-            
-            <div id="admin-directory-list-target">
-                </div>
-        </section>
-
-        <nav class="bottom-nav">
-            <button class="nav-item active-tab" onclick="switchActiveView('profile', this)">
-                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                Profile
-            </button>
-            <button class="nav-item" onclick="switchActiveView('home', this)">
-                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-                Home
-            </button>
-            <button class="nav-item" onclick="switchActiveView('preferences', this)">
-                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                Preferences
-            </button>
-            <button class="nav-item" onclick="switchActiveView('matches', this)">
-                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                Matches
-            </button>
-            <button class="nav-item" onclick="switchActiveView('admin', this)">
-                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
-                Admin Panel
-            </button>
-        </nav>
-
-    </div>
-
-    <script>
-        // Centralized Master Seed Database Framework
-        let databaseProfiles = [
-            { id: 101, name: "Michelle D'Souza", age: 24, height: 165, body: "Slim", look: "Good looking", skin: "Fair", house: "Own", salary: "5-10 Lakh", education: "MBA", score: "10/10", field: "MBA Marketing / Senior Analyst", location: "Mumbai", state: "Maharashtra", district: "Mumbai City", subDenom: "Catholic", motherTongue: "English", bio: "Tech professional looking for an individual focused on growth and compatibility.", verified: true },
-            { id: 102, name: "Sarah Williams", age: 28, height: 158, body: "Slim", look: "Good looking", skin: "Fair", house: "Own", salary: "2-5 Lakh", education: "All Fields", score: "9.8/10", field: "B.Tech Graduate / Software Engineer", location: "Bangalore", state: "Karnataka", district: "Bangalore Urban", subDenom: "Protestant", motherTongue: "Hindi", bio: "Enjoys balancing family principles with corporate professional life.", verified: true },
-            { id: 103, name: "Rachel Alvares", age: 32, height: 172, body: "Heavy", look: "Good looking", skin: "Fair", house: "Rent", salary: "Above 10 Lakh", education: "Others", score: "9.5/10", field: "M.Com / Financial Consultant", location: "Mangalore", state: "Karnataka", district: "Dakshina Kannada", subDenom: "Catholic", motherTongue: "Konkani", bio: "Independent professional looking for a conversational and meaningful partnership.", verified: false }
-        ];
-
-        const districtMap = {
-            "All": ["All Districts"],
-            "Maharashtra": ["All Districts", "Mumbai City", "Pune", "Nagpur", "Thane"],
-            "Karnataka": ["All Districts", "Bangalore Urban", "Dakshina Kannada", "Belagavi", "Mysuru"],
-            "Tamil Nadu": ["All Districts", "Chennai", "Coimbatore", "Madurai", "Trichy"]
-        };
-
-        let activeFeedProfiles = [];
-        let profilePointer = 0;
-        let isAccountVerifiedGlobally = false;
-
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                const splash = document.getElementById('splash-screen');
-                const authPortal = document.getElementById('auth-portal-screen');
-                splash.style.transform = 'translateY(-100%)';
-                splash.style.opacity = '0';
-                authPortal.style.display = 'block';
-                setTimeout(() => { splash.remove(); }, 600);
-            }, 1800);
-
-            parseDualSliderMetrics('age');
-            parseDualSliderMetrics('height');
-            synchronizeRegionalDistrictsData();
-        });
-
-        function parseDualSliderMetrics(type) {
-            const minSlider = document.getElementById(`${type}-min-slider`);
-            const maxSlider = document.getElementById(`${type}-max-slider`);
-            const track = document.getElementById(`${type}-slider-track`);
-            const label = document.getElementById(`${type}-range-label`);
-
-            let minVal = parseInt(minSlider.value);
-            let maxVal = parseInt(maxSlider.value);
-
-            if (minVal >= maxVal) {
-                if (document.activeElement === minSlider) {
-                    minSlider.value = maxVal - 1; minVal = maxVal - 1;
-                } else {
-                    maxSlider.value = minVal + 1; maxVal = minVal + 1;
-                }
-            }
-
-            const minLimit = parseInt(minSlider.min);
-            const maxLimit = parseInt(minSlider.max);
-            const percentLeft = ((minVal - minLimit) / (maxLimit - minLimit)) * 100;
-            const percentRight = ((maxVal - minLimit) / (maxLimit - minLimit)) * 100;
-
-            track.style.left = percentLeft + '%';
-            track.style.width = (percentRight - percentLeft) + '%';
-
-            if (type === 'age') label.innerText = `${minVal} Yrs - ${maxVal} Yrs`;
-            if (type === 'height') label.innerText = `${minVal} cm - ${maxVal} cm`;
-        }
-
-        function synchronizeRegionalDistrictsData() {
-            const selectedState = document.getElementById('pref-location-state').value;
-            const districtDropdown = document.getElementById('pref-location-district');
-            districtDropdown.innerHTML = '';
-            const districts = districtMap[selectedState] || ["All Districts"];
-            districts.forEach(dist => {
-                const opt = document.createElement('option');
-                opt.value = dist === "All Districts" ? "All" : dist;
-                opt.innerText = dist;
-                districtDropdown.appendChild(opt);
-            });
-        }
-
-        function handlePortalLogin(event) {
-            event.preventDefault();
-            document.getElementById('auth-portal-screen').style.display = 'none';
-            const appFrame = document.getElementById('main-app');
-            appFrame.style.display = 'block';
-            setTimeout(() => { appFrame.style.opacity = '1'; }, 50);
-            
-            applyPreferencesAndRefresh();
-            buildAdminControlDirectoryPanel();
-            switchActiveView('profile', document.querySelectorAll('.nav-item')[0]);
-        }
-
-        function launchSecureCameraSystem() {
-            if(isAccountVerifiedGlobally) return alert("Identity markers validated.");
-            const modal = document.getElementById('camera-firewall-overlay');
-            const logText = document.getElementById('camera-log-text');
-            modal.style.display = 'flex';
-            logText.innerText = "Connecting secure web camera channel...";
-
-            navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } })
-                .then(stream => {
-                    logText.innerHTML = `<video id="live-webcam-stream" autoplay playsinline style="width:100%; height:100%; object-fit:cover;"></video>`;
-                    document.getElementById('live-webcam-stream').srcObject = stream;
-                })
-                .catch(() => {
-                    setTimeout(() => { logText.innerText = "📷 Secure Stream Established [Sandbox Simulator Enabled]"; }, 1000);
-                });
-        }
-
-        function executeBiometricParsingSequence() {
-            const shutterBtn = document.getElementById('capture-shutter-btn');
-            const logText = document.getElementById('camera-log-text');
-            shutterBtn.disabled = true;
-            logText.innerText = "Scanning facial matrix symmetry points...";
-
-            setTimeout(() => {
-                const videoEl = document.getElementById('live-webcam-stream');
-                if(videoEl && videoEl.srcObject) videoEl.srcObject.getTracks().forEach(track => track.stop());
-
-                isAccountVerifiedGlobally = true;
-                document.getElementById('camera-firewall-overlay').style.display = 'none';
-                document.getElementById('status-badge-label').innerHTML = `Verified Active Profile <span class="blue-tick">✓</span>`;
-                document.getElementById('trigger-camera-btn').remove();
-                alert("Facial alignment verification successful.");
-            }, 2000);
-        }
-
-        function executeInstantProfilePurge() {
-            if (confirm("Are you sure you want to drop tracking hashes and delete your profile?")) {
-                document.getElementById('main-app').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('main-app').style.display = 'none';
-                    document.getElementById('auth-portal-screen').style.display = 'block';
-                    alert("Profile directory destroyed.");
-                }, 400);
-            }
-        }
-
-        /* --- FILTERS & MATCHING ENGINE --- */
-        function applyPreferencesAndRefresh() {
-            const minAge = parseInt(document.getElementById('age-min-slider').value);
-            const maxAge = parseInt(document.getElementById('age-max-slider').value);
-            const minHeight = parseInt(document.getElementById('height-min-slider').value);
-            const maxHeight = parseInt(document.getElementById('height-max-slider').value);
-            const statePref = document.getElementById('pref-location-state').value;
-            const distPref = document.getElementById('pref-location-district').value;
-            const subDenomPref = document.getElementById('pref-religion-sub').value;
-            const tonguePref = document.getElementById('pref-mother-tongue').value;
-
-            activeFeedProfiles = databaseProfiles.filter(p => {
-                if (p.age < minAge || p.age > maxAge) return false;
-                if (p.height < minHeight || p.height > maxHeight) return false;
-                if (statePref !== "All" && p.state !== statePref) return false;
-                if (distPref !== "All" && p.district !== distPref) return false;
-                if (subDenomPref !== "Doesn't matter" && p.subDenom !== subDenomPref) return false;
-                if (tonguePref !== "Doesn't matter" && p.motherTongue !== tonguePref) return false;
-                return true;
-            });
-
-            profilePointer = 0;
-            renderDiscoveryDeck();
-        }
-
-        function renderDiscoveryDeck() {
-            const container = document.getElementById('card-stack-container');
-            container.innerHTML = ''; 
-
-            if (profilePointer >= activeFeedProfiles.length) {
-                document.getElementById('end-feed-msg').style.display = 'block';
-                document.getElementById('action-buttons-tray').style.opacity = '0.1';
-                document.getElementById('action-buttons-tray').style.pointerEvents = 'none';
-                return;
-            }
-
-            document.getElementById('end-feed-msg').style.display = 'none';
-            document.getElementById('action-buttons-tray').style.opacity = '1';
-            document.getElementById('action-buttons-tray').style.pointerEvents = 'auto';
-
-            for (let i = activeFeedProfiles.length - 1; i >= profilePointer; i--) {
-                const data = activeFeedProfiles[i];
-                const card = document.createElement('div');
-                card.className = 'profile-card';
-                card.id = `prof-card-${data.id}`;
-                card.style.zIndex = activeFeedProfiles.length - i;
-                
-                if(i !== profilePointer) {
-                    card.style.transform = 'scale(0.96) translateY(14px)';
-                    card.style.opacity = '0.3';
-                }
-
-                card.innerHTML = `
-                    <div class="profile-media-box">
-                        <div class="match-compatibility-badge">MATCH SCORE: ${data.score}</div>
-                        <div class="profile-blur-cover">
-                            <span style="font-size:54px; margin-bottom:12px;">👤</span>
-                            <span style="font-size:10px; letter-spacing:2px; opacity:0.4; text-transform:uppercase; font-weight:700;">Secure Identity Frame</span>
-                        </div>
-                        <div class="profile-overlay">
-                            <div class="prof-title">${data.name}, ${data.age} ${data.verified ? '<span class="blue-tick">✓</span>' : ''}</div>
-                            <div class="prof-meta" style="font-size:12px; opacity:0.7; margin-top:4px; line-height:1.4;">
-                                ${data.subDenom} • ${data.motherTongue}<br>
-                                ${data.district}, ${data.state} (India)<br>
-                                Height: ${data.height} cm • Package: Rs. ${data.salary} p.a.
-                            </div>
-                            <div class="prof-bio-text">"${data.bio}"</div>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            }
-        }
-
-        function handleSwipeAction(direction) {
-            if (profilePointer >= activeFeedProfiles.length) return;
-            const activeCard = document.getElementById(`prof-card-${activeFeedProfiles[profilePointer].id}`);
-            if (!activeCard) return;
-
-            if (direction === 'left') {
-                activeCard.classList.add('card-swipe-left');
-            } else {
-                activeCard.classList.add('card-swipe-right');
-                appendMatchedRecord(activeFeedProfiles[profilePointer]);
-            }
-            profilePointer++;
-            setTimeout(() => { renderDiscoveryDeck(); }, 320);
-        }
-
-        function appendMatchedRecord(profile) {
-            const matchesList = document.getElementById('matches-target-list');
-            const matchRow = document.createElement('div');
-            matchRow.className = 'list-item';
-            matchRow.innerHTML = `
-                <div class="avatar-placeholder" style="background: linear-gradient(135deg, #00b4d8, #00f5d4); color:#080a10;">❤</div>
-                <div class="item-details">
-                    <h4>${profile.name}, ${profile.age} <span class="blue-tick">✓</span></h4>
-                    <p>Connection active (${profile.subDenom} • ${profile.state}).</p>
-                </div>
-            `;
-            matchesList.insertBefore(matchRow, matchesList.firstChild);
-        }
-
-        /* --- ADMIN FUNCTIONALITY ARRAY (NEW ENGINE ARCHITECTURE) --- */
-        function buildAdminControlDirectoryPanel() {
-            const container = document.getElementById('admin-directory-list-target');
-            container.innerHTML = '';
-
-            if(databaseProfiles.length === 0) {
-                container.innerHTML = `<div style="text-align:center; padding:30px; color:#6a7696; font-size:14px;">No records found in active memory array.</div>`;
-                return;
-            }
-
-            databaseProfiles.forEach(profile => {
-                const adminCard = document.createElement('div');
-                adminCard.className = 'list-item';
-                adminCard.id = `admin-row-${profile.id}`;
-                adminCard.innerHTML = `
-                    <div class="avatar-placeholder" style="font-size:16px; font-weight:700; color:#6a7696; background:#171e36;">ID</div>
-                    <div class="item-details">
-                        <h4 style="font-size:15px;">${profile.name} <span id="admin-tick-badge-${profile.id}">${profile.verified ? '<span class="blue-tick">✓</span>' : ''}</span></h4>
-                        <p style="font-size:12px; color:#a5b0cf; margin-top:2px;">
-                            Age: ${profile.age} • Sub-Denomination: ${profile.subDenom}<br>
-                            System Hash: Master_ID_${profile.id}
-                        </p>
-                        <div class="admin-action-row">
-                            <button class="btn-admin-approve" onclick="executeAdminApprovalProcess(${profile.id})">Approve Verification</button>
-                            <button class="btn-admin-delete" onclick="executeAdminRecordDeletion(${profile.id})">Delete ID</button>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(adminCard);
-            });
-        }
-
-        function executeAdminApprovalProcess(profileId) {
-            const index = databaseProfiles.findIndex(p => p.id === profileId);
-            if(index !== -1) {
-                databaseProfiles[index].verified = true;
-                const badge = document.getElementById(`admin-tick-badge-${profileId}`);
-                if(badge) badge.innerHTML = `<span class="blue-tick">✓</span>`;
-                applyPreferencesAndRefresh();
-                alert(`Profile Reference ID ${profileId} granted active verification approval markers.`);
-            }
-        }
-
-        function executeAdminRecordDeletion(profileId) {
-            if(confirm(`Execute terminal database extraction loop to completely delete ID Reference ${profileId}?`)) {
-                databaseProfiles = databaseProfiles.filter(p => p.id !== profileId);
-                const block = document.getElementById(`admin-row-${profileId}`);
-                if(block) block.remove();
-                
-                applyPreferencesAndRefresh();
-                if(databaseProfiles.length === 0) buildAdminControlDirectoryPanel();
-                alert(`Profile Registry Chain ${profileId} deleted.`);
-            }
-        }
-
-        function switchActiveView(targetId, navButton) {
-            const views = document.querySelectorAll('.app-view');
-            views.forEach(view => view.classList.remove('active-view'));
-
-            const targetView = document.getElementById(`view-${targetId}`);
-            if (targetView) targetView.classList.add('active-view');
-
-            const tabs = document.querySelectorAll('.nav-item');
-            tabs.forEach(tab => tab.classList.remove('active-tab'));
-            navButton.classList.add('active-tab');
-            
-            if(targetId === 'home') applyPreferencesAndRefresh();
-            if(targetId === 'admin') buildAdminControlDirectoryPanel();
-        }
-    </script>
-</body>
-</html>
+            <div class="app-logo-text">
+                <span class="bold-glossy-text">Love Forever</span>
+                <span class="outline-heart">♡</span>
+                <span class="matrimony-
