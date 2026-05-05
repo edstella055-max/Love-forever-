@@ -14,6 +14,7 @@
             min-height: 100vh;
             overflow-x: hidden;
             user-select: none;
+            color: #ffffff;
         }
 
         /* --- SPLASH SCREEN SYSTEM --- */
@@ -82,13 +83,125 @@
             100% { transform: scale(0.8); opacity: 0.6; }
         }
 
+        /* --- REGISTRATION PROFILE CREATION SYSTEM --- */
+        #registration-screen {
+            display: none;
+            max-width: 440px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            animation: fadeInView 0.4s ease;
+        }
+
+        .reg-card {
+            background-color: #131021;
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .reg-title { font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #ffffff; }
+        .reg-subtitle { font-size: 14px; color: #726e8d; margin-bottom: 25px; }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #b3b3b3;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 13px 15px;
+            background-color: #1c1830;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: rgba(255, 65, 108, 0.6);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Camera Box For Live Selfie */
+        .selfie-box {
+            width: 100%;
+            height: 180px;
+            background-color: #1c1830;
+            border: 2px dashed rgba(255,255,255,0.15);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .selfie-box span { font-size: 13px; color: #726e8d; margin-top: 8px; }
+        .selfie-preview {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #ba0c2f, #a00624);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(186, 12, 47, 0.4);
+            margin-top: 10px;
+        }
+
+        /* Verification Info Notice */
+        .verif-badge-info {
+            background-color: rgba(0, 122, 255, 0.1);
+            border: 1px solid rgba(0, 122, 255, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            font-size: 12px;
+            color: #4da3ff;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
         /* --- CORE APPLICATION SHELL --- */
         #main-app {
             display: none;
             opacity: 0;
             transition: opacity 0.4s ease-in;
             padding-bottom: 90px;
-            background-color: #0b0914; /* Kept continuous dark theme inside */
+            background-color: #0b0914; 
             min-height: 100vh;
             box-sizing: border-box;
         }
@@ -121,16 +234,14 @@
             animation: fadeInView 0.3s ease-out forwards;
         }
 
-        .app-view.active-view {
-            display: block;
-        }
+        .app-view.active-view { display: block; }
 
         @keyframes fadeInView {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- HOME VIEW: INTERACTIVE CARDS --- */
+        /* --- HOME VIEW: CARDS SYSTEM --- */
         .card-stack {
             position: relative;
             height: 480px;
@@ -153,15 +264,8 @@
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .card-swipe-left {
-            transform: translateX(-150%) rotate(-15deg) !important;
-            opacity: 0;
-        }
-
-        .card-swipe-right {
-            transform: translateX(150%) rotate(15deg) !important;
-            opacity: 0;
-        }
+        .card-swipe-left { transform: translateX(-150%) rotate(-15deg) !important; opacity: 0; }
+        .card-swipe-right { transform: translateX(150%) rotate(15deg) !important; opacity: 0; }
 
         .profile-media-box {
             width: 100%;
@@ -175,12 +279,7 @@
             position: relative;
         }
 
-        .profile-media-box svg {
-            width: 70px;
-            height: 70px;
-            opacity: 0.4;
-            fill: currentColor;
-        }
+        .profile-media-box svg { width: 70px; height: 70px; opacity: 0.3; fill: currentColor; }
 
         .profile-overlay {
             position: absolute;
@@ -193,15 +292,24 @@
             color: #ffffff;
         }
 
-        .prof-title { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+        .prof-title { font-size: 24px; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
         .prof-meta { font-size: 14px; opacity: 0.8; line-height: 1.5; }
 
-        .action-tray {
-            display: flex;
+        /* Blue Verification Tick Mark */
+        .blue-tick {
+            display: inline-flex;
+            background-color: #007aff;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 11px;
             justify-content: center;
-            gap: 25px;
-            padding: 20px 0;
+            align-items: center;
+            font-weight: bold;
         }
+
+        .action-tray { display: flex; justify-content: center; gap: 25px; padding: 20px 0; }
 
         .btn-round {
             width: 60px;
@@ -220,20 +328,10 @@
         .btn-dislike { background-color: #251f3b; color: #ffffff; font-size: 20px; opacity: 0.8; }
         .btn-like { background-color: #ba0c2f; color: #ffffff; font-size: 22px; }
 
-        .no-profiles-message {
-            text-align: center;
-            padding: 60px 20px;
-            color: #b3b3b3;
-            display: none;
-        }
+        .no-profiles-message { text-align: center; padding: 60px 20px; color: #b3b3b3; display: none; }
 
-        /* --- SUB-PAGES SYSTEM (MATCHES, CHATS, USER PROFILE) --- */
-        .view-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
+        /* --- SUB-PAGES SYSTEM --- */
+        .view-title { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 20px; }
 
         .list-item {
             background: #131021;
@@ -258,7 +356,7 @@
             color: white;
         }
 
-        .item-details h4 { margin: 0 0 4px 0; color: #ffffff; }
+        .item-details h4 { margin: 0 0 4px 0; color: #ffffff; display: flex; align-items: center; gap: 5px; }
         .item-details p { margin: 0; font-size: 13px; color: #a0a0a0; }
 
         /* --- FIXED BOTTOM BAR NAVIGATION --- */
@@ -295,12 +393,7 @@
             filter: drop-shadow(0 0 5px rgba(255, 65, 108, 0.6));
         }
 
-        .nav-icon {
-            width: 24px;
-            height: 24px;
-            margin-bottom: 4px;
-            fill: currentColor;
-        }
+        .nav-icon { width: 24px; height: 24px; margin-bottom: 4px; fill: currentColor; }
     </style>
 </head>
 <body>
@@ -317,6 +410,113 @@
                 </svg>
             </h1>
             <div class="tagline">Matrimony</div>
+        </div>
+    </div>
+
+    <div id="registration-screen">
+        <div class="reg-card">
+            <div class="reg-title">Create Profile</div>
+            <div class="reg-subtitle">Enter your matching credentials to continue</div>
+            
+            <form id="profileCreationForm" onsubmit="executeRegistration(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="Enter full name">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group" style="width: 35%;">
+                        <label>Age</label>
+                        <input type="number" min="18" max="70" required placeholder="Age">
+                    </div>
+                    <div class="form-group" style="width: 65%;">
+                        <label>Social Class</label>
+                        <select required>
+                            <option value="Middle Class" selected>Middle Class</option>
+                            <option value="Upper Middle Class">Upper Middle Class</option>
+                            <option value="Lower Middle Class">Lower Middle Class</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required placeholder="name@domain.com">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group" style="width: 50%;">
+                        <label>Country</label>
+                        <select disabled>
+                            <option value="India">India</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <label>State</label>
+                        <select id="reg-state-select" onchange="populateDistrictDropdown()" required>
+                            <option value="">Select State</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Delhi">Delhi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>District</label>
+                    <select id="reg-district-select" required>
+                        <option value="">Select State First</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group" style="width: 50%;">
+                        <label>Education Degree</label>
+                        <select required>
+                            <option value="B.Com">B.Com</option>
+                            <option value="BCA">BCA</option>
+                            <option value="B.Tech / BE">B.Tech / BE</option>
+                            <option value="BSc">BSc</option>
+                            <option value="BA">BA</option>
+                            <option value="BBA">BBA</option>
+                            <option value="MBA">MBA</option>
+                            <option value="M.Tech">M.Tech</option>
+                            <option value="MCA">MCA</option>
+                            <option value="M.Com">M.Com</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <label>Professional Field</label>
+                        <select required>
+                            <option value="Commerce & Accounts">Commerce</option>
+                            <option value="IT / Software Development">IT / Tech</option>
+                            <option value="Lawyer / Legal Specialist">Lawyer</option>
+                            <option value="Doctor / Medical Practitioner">Doctor</option>
+                            <option value="Engineering Services">Engineer</option>
+                            <option value="Civil Services / Government">Government</option>
+                            <option value="Management & HR">Management</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Mandatory Live Verification</label>
+                    <div class="verif-badge-info">
+                        <span style="font-size:16px;">🛡</span>
+                        <div>Live photo required. Subject to manual admin approval before blue verification badge activation.</div>
+                    </div>
+                    <div class="selfie-box" onclick="triggerMockSelfieCapture()">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#726e8d" stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
+                        <span id="selfie-status-text">Click to Capture Live Selfie</span>
+                        <div id="mock-camera-feed" class="selfie-preview" style="background: linear-gradient(to bottom, #ba0c2f, #1c1830); opacity: 0.3;"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit Profile & Verify</button>
+            </form>
         </div>
     </div>
 
@@ -348,7 +548,7 @@
                 <div class="list-item">
                     <div class="avatar-placeholder" style="background-color:#ba0c2f;">❤</div>
                     <div class="item-details">
-                        <h4>Preeti Desai, 26</h4>
+                        <h4>Preeti Desai, 26 <span class="blue-tick">✓</span></h4>
                         <p>Matched 2 hours ago • Say hello!</p>
                     </div>
                 </div>
@@ -360,8 +560,8 @@
             <div class="list-item" style="cursor:pointer;">
                 <div class="avatar-placeholder">💬</div>
                 <div class="item-details">
-                    <h4>Support Team</h4>
-                    <p>Welcome to Love Forever Matrimony! Complete your setup...</p>
+                    <h4>Support Verification Desk</h4>
+                    <p>Your snapshot is under verification review by administration...</p>
                 </div>
             </div>
         </section>
@@ -369,10 +569,10 @@
         <section id="view-profile" class="app-view">
             <div class="view-title">My Account Profile</div>
             <div class="list-item">
-                <div class="avatar-placeholder" style="background-color:#251f3b;">U</div>
+                <div class="avatar-placeholder" style="background-color:#251f3b;" id="user-avatar-initial">U</div>
                 <div class="item-details">
-                    <h4>Set Up Profile</h4>
-                    <p>Click here to add photos, education, and career details.</p>
+                    <h4 id="user-profile-display-name">User Account</h4>
+                    <p id="user-profile-meta-sub">Middle Class Account Profile</p>
                 </div>
             </div>
             <div style="margin-top: 30px; font-size: 13px; text-align: center; color: #726e8d;">
@@ -403,30 +603,102 @@
     </div>
 
     <script>
+        // Tiered Regional Mapping Data
+        const regionalDistricts = {
+            "Karnataka": ["Bangalore Urban", "Bangalore Rural", "Belagavi", "Mysuru", "Dharwad", "Mangaluru"],
+            "Maharashtra": ["Mumbai City", "Mumbai Suburban", "Pune", "Nagpur", "Thane", "Nashik"],
+            "Delhi": ["New Delhi", "North Delhi", "South Delhi", "West Delhi", "Central Delhi"]
+        };
+
+        // Simulated Matches Feed Database
         const databaseProfiles = [
-            { id: 1, name: "Vikram Malhotra", age: 31, field: "Operations Lead", location: "Bangalore, KA", detail: "MBA Graduate • Enthusiast of Classical Music & Trekking" },
-            { id: 2, name: "Ananya Iyer", age: 28, field: "Product Designer", location: "Mumbai, MH", detail: "B.Arch Graduate • Passionate about Urban Art & Design Trends" },
-            { id: 3, name: "Kunal Deshmukh", age: 30, field: "Business Analytics Manager", location: "Pune, MH", detail: "Tech Professional • Enjoys Weekend Road Trips & Reading" }
+            { id: 1, name: "Vikram Malhotra", age: 31, field: "Doctor (MD)", location: "Mumbai, MH", class: "Middle Class", detail: "Professional Consultant • Enjoys Trekking & Architecture", verified: true },
+            { id: 2, name: "Ananya Iyer", age: 28, field: "Lawyer (Corporate Law)", location: "Bangalore, KA", class: "Middle Class", detail: "B.A. LL.B Graduate • Passionate about Classical Arts & Design", verified: true },
+            { id: 3, name: "Kunal Deshmukh", age: 30, field: "Software Engineer (BCA/MCA)", location: "Pune, MH", class: "Middle Class", detail: "Tech Professional • Enjoys Weekend Fitness Coding & Road Trips", verified: false }
         ];
 
         let profilePointer = 0;
+        let isSelfieCaptured = false;
 
         window.addEventListener('DOMContentLoaded', () => {
             renderDiscoveryDeck();
 
+            // Intercept and load views sequence after splash timeout loop
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
-                const app = document.getElementById('main-app');
+                const regScreen = document.getElementById('registration-screen');
                 
                 splash.style.transform = 'translateY(-100%)';
                 splash.style.opacity = '0';
                 
-                app.style.display = 'block';
-                setTimeout(() => { app.style.opacity = '1'; }, 50);
+                regScreen.style.display = 'block';
                 setTimeout(() => { splash.remove(); }, 600);
             }, 4000);
         });
 
+        // Cascading Dependent State to District Dropdown Populator
+        function populateDistrictDropdown() {
+            const stateSelect = document.getElementById('reg-state-select');
+            const districtSelect = document.getElementById('reg-district-select');
+            const selectedState = stateSelect.value;
+
+            districtSelect.innerHTML = '<option value="">Select District</option>';
+
+            if (selectedState && regionalDistricts[selectedState]) {
+                regionalDistricts[selectedState].forEach(dist => {
+                    const opt = document.createElement('option');
+                    opt.value = dist;
+                    opt.textContent = dist;
+                    districtSelect.appendChild(opt);
+                });
+            } else {
+                districtSelect.innerHTML = '<option value="">Select State First</option>';
+            }
+        }
+
+        // Live Camera Capture Simulation Module
+        function triggerMockSelfieCapture() {
+            const preview = document.getElementById('mock-camera-feed');
+            const statusText = document.getElementById('selfie-status-text');
+            
+            statusText.textContent = "Connecting Secure Native Camera App Interface...";
+            
+            setTimeout(() => {
+                preview.style.display = 'block';
+                statusText.textContent = "✓ Snapshot Securely Captured Live";
+                statusText.style.color = "#4da3ff";
+                isSelfieCaptured = true;
+            }, 1200);
+        }
+
+        // Execution router to move from registration page into actual app cards view
+        function executeRegistration(event) {
+            event.preventDefault();
+
+            if (!isSelfieCaptured) {
+                alert("Mandatory Verification Alert: You must execute your live camera selfie before submitting profile metrics.");
+                return;
+            }
+
+            const inputs = event.target.querySelectorAll('input');
+            const selects = event.target.querySelectorAll('select');
+            const profileName = inputs[0].value;
+            const profileAge = inputs[1].value;
+            const classTier = selects[0].value;
+
+            // Dynamically assign variable context fields to inside profile panel
+            document.getElementById('user-profile-display-name').textContent = `${profileName}, ${profileAge}`;
+            document.getElementById('user-profile-meta-sub').textContent = `${classTier} Profile • Awaiting Verification`;
+            document.getElementById('user-avatar-initial').textContent = profileName.charAt(0).toUpperCase();
+
+            // Transition from wizard container to actual operational App base
+            document.getElementById('registration-screen').style.display = 'none';
+            const app = document.getElementById('main-app');
+            app.style.display = 'block';
+            setTimeout(() => { app.style.opacity = '1'; }, 50);
+        }
+
+        // Active Deck Display Manager
         function renderDiscoveryDeck() {
             const container = document.getElementById('card-stack-container');
             container.innerHTML = ''; 
@@ -454,8 +726,11 @@
                     <div class="profile-media-box">
                         <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                         <div class="profile-overlay">
-                            <div class="prof-title">${data.name}, ${data.age}</div>
-                            <div class="prof-meta">${data.field} • ${data.location}<br>${data.detail}</div>
+                            <div class="prof-title">
+                                ${data.name}, ${data.age} 
+                                ${data.verified ? '<span class="blue-tick" title="Admin Verified User">✓</span>' : ''}
+                            </div>
+                            <div class="prof-meta">${data.field} • ${data.class}<br>${data.location} • ${data.detail}</div>
                         </div>
                     </div>
                 `;
@@ -477,10 +752,7 @@
             }
 
             profilePointer++;
-            
-            setTimeout(() => {
-                renderDiscoveryDeck();
-            }, 300);
+            setTimeout(() => { renderDiscoveryDeck(); }, 300);
         }
 
         function appendMatchedRecord(profile) {
@@ -490,7 +762,7 @@
             matchRow.innerHTML = `
                 <div class="avatar-placeholder" style="background-color:#ba0c2f;">❤</div>
                 <div class="item-details">
-                    <h4>${profile.name}, ${profile.age}</h4>
+                    <h4>${profile.name}, ${profile.age} ${profile.verified ? '<span class="blue-tick">✓</span>' : ''}</h4>
                     <p>${profile.field} • Just connected! Tap to message.</p>
                 </div>
             `;
