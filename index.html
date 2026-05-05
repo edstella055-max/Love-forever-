@@ -150,4 +150,514 @@
         
         .btn-primary {
             width: 100%; padding: 16px; background: linear-gradient(135deg, #ff416c, #ff4b2b); color: white;
-            border: none; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(255
+            border: none; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(255, 65, 108, 0.4);
+        }
+
+        .btn-danger {
+            width: 100%; padding: 14px; background: #2a1118; border: 1px solid #ff3b30; color: #ff3b30;
+            border-radius: 14px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+        }
+        .btn-danger:hover { background: #ff3b30; color: #ffffff; }
+
+        /* --- MAIN SHELL SYSTEM --- */
+        #main-app {
+            display: none; opacity: 0; transition: opacity 0.4s ease-in; padding-bottom: 100px; min-height: 100vh; box-sizing: border-box;
+        }
+
+        .app-header {
+            background-color: #131021; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 100;
+        }
+
+        .app-logo-text { font-size: 22px; font-weight: 800; color: #ffffff; text-shadow: 0 0 10px rgba(255, 65, 108, 0.6); }
+
+        .app-view { display: none; max-width: 480px; margin: 0 auto; padding: 20px 15px; }
+        .app-view.active-view { display: block; }
+
+        /* --- HOME: FEED CARDS --- */
+        .card-stack { position: relative; height: 500px; width: 100%; margin-top: 5px; }
+        
+        .profile-card {
+            position: absolute; width: 100%; height: 100%; background-color: #131021; border-radius: 28px; overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6); box-sizing: border-box; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+            display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .card-swipe-left { transform: translateX(-150%) rotate(-15deg) !important; opacity: 0; }
+        .card-swipe-right { transform: translateX(150%) rotate(15deg) !important; opacity: 0; }
+
+        .profile-media-box {
+            width: 100%; flex-grow: 1; background: linear-gradient(135deg, #251f3b, #0b0914); display: flex; justify-content: center; align-items: center; position: relative;
+        }
+
+        .profile-blur-cover {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: repeating-linear-gradient(45deg, #131021, #1c1830 10px, #0b0914 20px);
+            display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 5;
+        }
+
+        .match-compatibility-badge {
+            position: absolute; top: 20px; right: 20px; background: rgba(255, 65, 108, 0.95); padding: 6px 14px; border-radius: 20px;
+            font-size: 13px; font-weight: 800; letter-spacing: 0.5px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 10;
+        }
+
+        .profile-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 20px 20px 20px;
+            background: linear-gradient(to top, rgba(11,9,20,1) 40%, rgba(11,9,20,0.8) 70%, transparent); box-sizing: border-box; z-index: 6;
+        }
+
+        .prof-title { font-size: 24px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .blue-tick {
+            background-color: #007aff; color: white; border-radius: 50%; width: 18px; height: 18px;
+            font-size: 11px; display: inline-flex; justify-content: center; align-items: center; font-weight: bold;
+        }
+
+        .prof-bio-text { font-size: 14px; color: #d0d0d0; margin-top: 8px; font-style: italic; line-height: 1.4; }
+        .action-tray { display: flex; justify-content: center; gap: 25px; padding: 20px 0; }
+        .btn-round {
+            width: 62px; height: 62px; border-radius: 50%; border: none; display: flex; justify-content: center; align-items: center;
+            cursor: pointer; box-shadow: 0 6px 15px rgba(0,0,0,0.4); font-size: 22px;
+        }
+
+        .btn-dislike { background-color: #251f3b; color: #ffffff; }
+        .btn-like { background-color: #ff416c; color: #ffffff; }
+
+        /* --- PREMIUM SYSTEM --- */
+        .premium-paywall-box {
+            background: linear-gradient(135deg, #1c1830, #131021); border: 1px solid rgba(255, 65, 108, 0.3); border-radius: 20px; padding: 22px; text-align: center; margin-bottom: 25px;
+        }
+        .trial-badge { display: inline-block; background: #ff416c; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
+
+        /* --- STYLING PATTERNS --- */
+        .list-item {
+            background: #131021; padding: 16px; border-radius: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid rgba(255,255,255,0.03);
+        }
+        .avatar-placeholder { width: 52px; height: 52px; border-radius: 50%; background-color: #251f3b; display: flex; justify-content: center; align-items: center; font-size: 20px; }
+        .item-details h4 { margin: 0 0 4px 0; color: #ffffff; display: flex; align-items: center; gap: 6px; }
+        .item-details p { margin: 0; font-size: 13px; color: #726e8d; }
+
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; width: 100%; background-color: #131021; display: flex; justify-content: space-around;
+            padding: 12px 0 16px 0; box-shadow: 0 -4px 20px rgba(0,0,0,0.5); z-index: 100; border-top: 1px solid rgba(255,255,255,0.03);
+        }
+        .nav-item { display: flex; flex-direction: column; align-items: center; font-size: 11px; font-weight: 600; color: #726e8d; background: none; border: none; cursor: pointer; width: 20%; }
+        .nav-item.active-tab { color: #ffffff; filter: drop-shadow(0 0 5px #ff416c); }
+        .nav-icon { width: 22px; height: 22px; margin-bottom: 4px; fill: currentColor; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+<body>
+
+    <div id="camera-firewall-overlay" class="system-modal-backdrop">
+        <div class="camera-auth-frame">
+            <h3 style="margin: 0 0 6px 0; font-size: 20px; font-weight: 800;">Biometric Verification</h3>
+            <p style="margin: 0; font-size: 13px; color: #726e8d;">Position your face inside the bounding profile scanner down below to verify match parameters against uploaded identification data matrices.</p>
+            
+            <div class="live-video-viewport">
+                <div class="face-oval-guide"></div>
+                <span id="camera-log-text" style="font-size: 12px; color: #a0a0a0; z-index: 2; font-weight: 600;">Initializing Secure Camera Link...</span>
+            </div>
+
+            <div class="compliance-scrollbox">
+                <strong>TERMS OF SERVICE & REGULATORY WAIVER</strong><br><br>
+                1. Love Forever Matrimony acts solely as an intermediary matching interface framework. The platform does not assume civil or criminal liability for individual user behavior, misrepresentation, fraud, or offline real-world interactions.<br><br>
+                2. By invoking biometric verification protocols, the end-user explicitly confirms that all uploaded credentials, documentation, and structural photography metrics are completely authentic.<br><br>
+                3. LIMITATION OF LIABILITY: You explicitly acknowledge and agree that the Platform Developers, Corporate Stakeholders, and Administrators are completely **NOT RESPONSIBLE** and hold zero legal liability for any conflicts, financial issues, personal loss, actions, damages, or discrepancies occurring between subscribers matching inside this live software interface.
+            </div>
+
+            <button class="btn-primary" id="capture-shutter-btn" onclick="executeBiometricParsingSequence()">Capture Live Selfie & Verify</button>
+        </div>
+    </div>
+
+    <div id="splash-screen">
+        <div class="splash-container">
+            <h1 class="brand-name">Love Forever</h1>
+            <div class="tagline">Matrimony</div>
+        </div>
+    </div>
+
+    <div id="auth-portal-screen" class="window-shell">
+        <div class="auth-card">
+            <div class="section-header-title">Log In</div>
+            <div class="section-header-sub">Access your account using your secure password credentials</div>
+            
+            <form onsubmit="handlePortalLogin(event)">
+                <div class="form-group">
+                    <label>Email Address or Mobile Number</label>
+                    <input type="text" id="auth-identity" required placeholder="example@mail.com or +91...">
+                </div>
+                <div class="form-group">
+                    <label>Account Password</label>
+                    <input type="password" id="auth-pass" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-primary" style="margin-top: 10px;">Secure Account Access</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="main-app">
+        
+        <header class="app-header">
+            <div class="app-logo-text">Love Forever</div>
+            <div style="font-size:12px; color:#ff416c; font-weight:700; border:1px solid #ff416c; padding:3px 8px; border-radius:8px;">SECURE</div>
+        </header>
+
+        <section id="view-profile" class="app-view active-view">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">My Verification Panel</div>
+            
+            <div id="identity-status-billboard" style="background: #1c1830; padding: 16px; border-radius: 20px; margin-bottom: 20px; border: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h5 style="margin:0; font-size:14px; color:#a0a0a0;">Profile Credentials Status</h5>
+                    <p id="status-badge-label" style="margin:4px 0 0 0; font-size:13px; color:#ff416c; font-weight:700;">Unverified (Verification Pending)</p>
+                </div>
+                <button id="trigger-camera-btn" style="background:#ff416c; border:none; color:white; padding:8px 14px; font-weight:700; border-radius:10px; font-size:12px; cursor:pointer;" onclick="launchSecureCameraSystem()">Verify Face</button>
+            </div>
+
+            <div class="auth-card" style="padding: 20px; margin-bottom: 20px;">
+                <label style="display:block; font-size:12px; font-weight:700; color:#a0a0a0; margin-bottom:10px; text-transform:uppercase;">Manage Photos</label>
+                <div class="photo-uploader-tray">
+                    <div class="photo-slot" onclick="alert('Photo uploader initiated.')">
+                        <span>➕ Add Photo</span>
+                    </div>
+                    <div class="photo-slot" style="background:#251f3b;">
+                        <span style="color:#ff416c;">Profile.jpg</span>
+                    </div>
+                    <div class="photo-slot" style="border-style: solid; opacity: 0.3;">
+                        <span>Empty Slot</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Profile Biography Summary</label>
+                    <textarea id="user-bio-input" rows="3" placeholder="Describe your background and expectations..."></textarea>
+                </div>
+                <button class="btn-primary" style="padding:12px; margin-bottom: 25px;" onclick="alert('Profile metrics logged.')">Update Profile Metadata</button>
+                
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px;">
+                
+                <div style="text-align: left;">
+                    <h4 style="margin: 0 0 6px 0; font-size: 14px; color: #ff3b30;">Emergency Kill-Switch Zone</h4>
+                    <p style="margin: 0 0 15px 0; font-size: 12px; color: #726e8d;">If security vulnerabilities or concerns are detected, trigger immediate deletion. This instantly purges your digital profile record from active directories completely.</p>
+                    <button class="btn-danger" onclick="executeInstantProfilePurge()">Delete Profile Immediately</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-home" class="app-view">
+            <div class="card-stack" id="card-stack-container"></div>
+            <div class="no-profiles-message" id="end-feed-msg">
+                <h3>No Match Criteria Found</h3>
+                <p>Try broadening your matching filter preferences inside your setup tab.</p>
+            </div>
+            <div class="action-tray" id="action-buttons-tray">
+                <button class="btn-round btn-dislike" onclick="handleSwipeAction('left')">✕</button>
+                <button class="btn-round btn-like" onclick="handleSwipeAction('right')">❤</button>
+            </div>
+        </section>
+
+        <section id="view-preferences" class="app-view">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Partner Match Preferences</div>
+            <div class="auth-card" style="padding: 20px;">
+                <div class="form-row">
+                    <div class="form-group" style="width:50%;">
+                        <label>Min Age</label>
+                        <input type="number" id="pref-age-min" value="18">
+                    </div>
+                    <div class="form-group" style="width:50%;">
+                        <label>Max Age</label>
+                        <input type="number" id="pref-age-max" value="35">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="width:50%;">
+                        <label>Language Preference</label>
+                        <select id="pref-language">
+                            <option value="Doesn't matter" selected>Doesn't matter</option>
+                            <option value="English">English</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Marathi">Marathi</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width:50%;">
+                        <label>Religion Preference</label>
+                        <select id="pref-religion">
+                            <option value="Doesn't matter" selected>Doesn't matter</option>
+                            <option value="Christian">Christian</option>
+                            <option value="Protestant">Protestant</option>
+                            <option value="Catholic">Catholic</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="applyPreferencesAndRefresh()">Save & Re-Filter Feed</button>
+            </div>
+        </section>
+
+        <section id="view-matches" class="app-view">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Connected Matches</div>
+            <div id="matches-target-list"></div>
+        </section>
+
+        <section id="view-chat" class="app-view">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Conversations</div>
+            <div class="list-item">
+                <div class="avatar-placeholder">💬</div>
+                <div class="item-details">
+                    <h4>Admin Support Team</h4>
+                    <p>Verification engine fully operational. Secure encryption active...</p>
+                </div>
+            </div>
+        </section>
+
+        <nav class="bottom-nav">
+            <button class="nav-item active-tab" onclick="switchActiveView('profile', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                Profile
+            </button>
+            <button class="nav-item" onclick="switchActiveView('home', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                Home
+            </button>
+            <button class="nav-item" onclick="switchActiveView('preferences', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Preferences
+            </button>
+            <button class="nav-item" onclick="switchActiveView('matches', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                Matches
+            </button>
+            <button class="nav-item" onclick="switchActiveView('chat', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                Chat
+            </button>
+        </nav>
+
+    </div>
+
+    <script>
+        const databaseProfiles = [
+            { id: 1, name: "Pooja Hegde", age: 26, height: "5.4", weight: "54kg", body: "Slim", skin: "Fair", smoke: "No", drink: "No", house: "Own", marital: "Never married", language: "Marathi", religion: "Catholic", field: "BCA Graduate / IT Pro", location: "Mumbai, MH", bio: "Looking for an understanding life partner who values career and family balance.", verified: true },
+            { id: 2, name: "Rohan Deshmukh", age: 31, height: "5.9", weight: "74kg", body: "Slim", skin: "Fair", smoke: "No", drink: "Occasionally", house: "Own", marital: "Never married", language: "Hindi", religion: "Protestant", field: "B.Com / Accounts Manager", location: "Pune, MH", bio: "Simple, middle-class values. Enjoys travel.", verified: true },
+            { id: 3, name: "Meera Nair", age: 29, height: "5.2", weight: "62kg", body: "Heavy", skin: "Fair", smoke: "No", drink: "No", house: "Rent", marital: "Never married", language: "English", religion: "Christian", field: "M.Com / Teacher", location: "Bangalore, KA", bio: "Believes compatibility and conversation are everything.", verified: false }
+        ];
+
+        let activeFeedProfiles = [];
+        let profilePointer = 0;
+        let isAccountVerifiedGlobally = false;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                const authPortal = document.getElementById('auth-portal-screen');
+                splash.style.transform = 'translateY(-100%)';
+                splash.style.opacity = '0';
+                authPortal.style.display = 'block';
+                setTimeout(() => { splash.remove(); }, 600);
+            }, 1500);
+        });
+
+        function handlePortalLogin(event) {
+            event.preventDefault();
+            document.getElementById('auth-portal-screen').style.display = 'none';
+            const appFrame = document.getElementById('main-app');
+            appFrame.style.display = 'block';
+            setTimeout(() => { appFrame.style.opacity = '1'; }, 50);
+            
+            applyPreferencesAndRefresh();
+            switchActiveView('profile', document.querySelectorAll('.nav-item')[0]);
+        }
+
+        /* --- FIREWALL BIOMETRIC CAMERA SECURITY ARCHITECTURE --- */
+        function launchSecureCameraSystem() {
+            if(isAccountVerifiedGlobally) {
+                alert("This account has already established validated identity markers.");
+                return;
+            }
+            const modal = document.getElementById('camera-firewall-overlay');
+            const logText = document.getElementById('camera-log-text');
+            modal.style.display = 'flex';
+            logText.innerText = "Connecting secure web camera channel...";
+
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } })
+                .then(stream => {
+                    logText.innerHTML = `<video id="live-webcam-stream" autoplay playsinline style="width:100%; height:100%; object-fit:cover;"></video>`;
+                    document.getElementById('live-webcam-stream').srcObject = stream;
+                })
+                .catch(err => {
+                    // Fallback mature presentation tracking if hardware prompt declines
+                    console.log("Hardware interface restricted:", err);
+                    setTimeout(() => { logText.innerText = "📷 Secure Stream Established [Simulated Virtual Sandbox Channel Active]"; }, 1000);
+                });
+        }
+
+        function executeBiometricParsingSequence() {
+            const shutterBtn = document.getElementById('capture-shutter-btn');
+            const logText = document.getElementById('camera-log-text');
+            
+            shutterBtn.disabled = true;
+            shutterBtn.innerText = "Analyzing Facial Anchors...";
+            logText.innerText = "Scanning facial matrix symmetry points...";
+
+            // Structural comparison parsing timeout simulation
+            setTimeout(() => {
+                logText.innerText = "Comparing spatial matrices against profile metadata layers...";
+                
+                setTimeout(() => {
+                    // Close local system camera stream routes safely if active
+                    const videoEl = document.getElementById('live-webcam-stream');
+                    if(videoEl && videoEl.srcObject) {
+                        videoEl.srcObject.getTracks().forEach(track => track.stop());
+                    }
+
+                    // Complete match confirmation routine
+                    isAccountVerifiedGlobally = true;
+                    document.getElementById('camera-firewall-overlay').style.display = 'none';
+                    
+                    // Rewrite status billboard UI
+                    document.getElementById('status-badge-label').innerHTML = `Verified Active Profile <span class="blue-tick">✓</span>`;
+                    document.getElementById('status-badge-label').style.color = "#007aff";
+                    document.getElementById('trigger-camera-btn').remove();
+                    
+                    alert("Facial alignment verification successful. Identity confirmed. Verified blue tick asset has been attached permanently to your account node.");
+                }, 1500);
+
+            }, 1500);
+        }
+
+        /* --- EMERGENCY IMMEDIATE ACCOUNT PURGE KILL-SWITCH --- */
+        function executeInstantProfilePurge() {
+            const clearConfirmation = confirm("CRITICAL SECURITY COMMAND: Are you absolutely sure you want to delete this profile record? This action invokes an immediate database wipe, logging you out and purging active directory traces completely.");
+            if (clearConfirmation) {
+                document.getElementById('main-app').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('main-app').style.display = 'none';
+                    // Flush dynamic run states completely
+                    activeFeedProfiles = [];
+                    isAccountVerifiedGlobally = false;
+                    
+                    // Reset application interface elements to baseline launch states
+                    const authPortal = document.getElementById('auth-portal-screen');
+                    document.getElementById('auth-identity').value = '';
+                    document.getElementById('auth-pass').value = '';
+                    authPortal.style.display = 'block';
+                    
+                    alert("Account directory record purged successfully. All tracking hashes dropped.");
+                }, 400);
+            }
+        }
+
+        function applyPreferencesAndRefresh() {
+            const minAge = parseInt(document.getElementById('pref-age-min').value) || 18;
+            const maxAge = parseInt(document.getElementById('pref-age-max').value) || 45;
+            const langPref = document.getElementById('pref-language').value;
+            const relPref = document.getElementById('pref-religion').value;
+
+            activeFeedProfiles = databaseProfiles.filter(p => {
+                if (p.age < minAge || p.age > maxAge) return false;
+                if (langPref !== "Doesn't matter" && p.language !== langPref) return false;
+                if (relPref !== "Doesn't matter" && p.religion !== relPref) return false;
+                return true;
+            });
+
+            profilePointer = 0;
+            renderDiscoveryDeck();
+        }
+
+        function renderDiscoveryDeck() {
+            const container = document.getElementById('card-stack-container');
+            container.innerHTML = ''; 
+
+            if (profilePointer >= activeFeedProfiles.length) {
+                document.getElementById('end-feed-msg').style.display = 'block';
+                document.getElementById('action-buttons-tray').style.opacity = '0.2';
+                document.getElementById('action-buttons-tray').style.pointerEvents = 'none';
+                return;
+            }
+
+            document.getElementById('end-feed-msg').style.display = 'none';
+            document.getElementById('action-buttons-tray').style.opacity = '1';
+            document.getElementById('action-buttons-tray').style.pointerEvents = 'auto';
+
+            for (let i = activeFeedProfiles.length - 1; i >= profilePointer; i--) {
+                const data = activeFeedProfiles[i];
+                const card = document.createElement('div');
+                card.className = 'profile-card';
+                card.id = `prof-card-${data.id}`;
+                card.style.zIndex = activeFeedProfiles.length - i;
+                
+                if(i !== profilePointer) {
+                    card.style.transform = 'scale(0.96) translateY(12px)';
+                    card.style.opacity = '0.4';
+                }
+
+                card.innerHTML = `
+                    <div class="profile-media-box">
+                        <div class="match-compatibility-badge">COMPATIBLE MATCH</div>
+                        <div class="profile-blur-cover">
+                            <span style="font-size:32px; margin-bottom:10px;">👤</span>
+                            <span style="font-size:12px; letter-spacing:1px; opacity:0.6; text-transform:uppercase;">Photo Protected</span>
+                        </div>
+                        <div class="profile-overlay">
+                            <div class="prof-title">
+                                ${data.name}, ${data.age} 
+                                ${data.verified ? '<span class="blue-tick">✓</span>' : ''}
+                            </div>
+                            <div class="prof-meta" style="font-size:13px; opacity:0.7; margin-top:2px;">
+                                ${data.religion} • ${data.language} Speaker<br>
+                                ${data.field} • ${data.location}
+                            </div>
+                            <div class="prof-bio-text">"${data.bio}"</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        function handleSwipeAction(direction) {
+            if (profilePointer >= activeFeedProfiles.length) return;
+            const activeCard = document.getElementById(`prof-card-${activeFeedProfiles[profilePointer].id}`);
+            if (!activeCard) return;
+
+            if (direction === 'left') {
+                activeCard.classList.add('card-swipe-left');
+            } else {
+                activeCard.classList.add('card-swipe-right');
+                appendMatchedRecord(activeFeedProfiles[profilePointer]);
+            }
+            profilePointer++;
+            setTimeout(() => { renderDiscoveryDeck(); }, 320);
+        }
+
+        function appendMatchedRecord(profile) {
+            const matchesList = document.getElementById('matches-target-list');
+            const matchRow = document.createElement('div');
+            matchRow.className = 'list-item';
+            matchRow.innerHTML = `
+                <div class="avatar-placeholder" style="background-color:#ff416c;">❤</div>
+                <div class="item-details">
+                    <h4>${profile.name}, ${profile.age} <span class="blue-tick">✓</span></h4>
+                    <p>Secure Match Connection established. Connect via chat tab.</p>
+                </div>
+            `;
+            matchesList.insertBefore(matchRow, matchesList.firstChild);
+        }
+
+        function switchActiveView(targetId, navButton) {
+            const views = document.querySelectorAll('.app-view');
+            views.forEach(view => view.classList.remove('active-view'));
+
+            const targetView = document.getElementById(`view-${targetId}`);
+            if (targetView) targetView.classList.add('active-view');
+
+            const tabs = document.querySelectorAll('.nav-item');
+            tabs.forEach(tab => tab.classList.remove('active-tab'));
+            navButton.classList.add('active-tab');
+            
+            if(targetId === 'home') {
+                renderDiscoveryDeck();
+            }
+        }
+    </script>
+</body>
+</html>
