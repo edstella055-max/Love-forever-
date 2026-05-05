@@ -20,18 +20,18 @@
         /* --- HIGH SECURITY FIREWALL ARCHITECTURE --- */
         .firewall-status-banner {
             background: linear-gradient(90deg, #112523, #0f1424);
-            border-bottom: 1px solid #00f5d4;
+            border-bottom: 1px solid #ff3344;
             padding: 8px 16px;
             font-size: 11px;
             font-family: monospace;
-            color: #00f5d4;
+            color: #ff3344;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .firewall-pulse {
-            width: 8px; height: 8px; background-color: #00f5d4; border-radius: 50%;
-            display: inline-block; margin-right: 6px; box-shadow: 0 0 8px #00f5d4;
+            width: 8px; height: 8px; background-color: #ff3344; border-radius: 50%;
+            display: inline-block; margin-right: 6px; box-shadow: 0 0 8px #ff3344;
             animation: firewallGlow 1.5s infinite ease-in-out;
         }
         @keyframes firewallGlow { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
@@ -56,7 +56,7 @@
             max-width: 440px;
             padding: 24px;
             box-sizing: border-box;
-            border: 1px solid rgba(0, 180, 216, 0.2);
+            border: 1px solid rgba(255, 51, 68, 0.2);
             text-align: center;
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
@@ -79,7 +79,7 @@
             position: absolute;
             width: 180px;
             height: 230px;
-            border: 2px dashed #00b4d8;
+            border: 2px dashed #ff3344;
             border-radius: 50%;
             pointer-events: none;
             box-shadow: 0 0 0 9999px rgba(23, 30, 54, 0.75);
@@ -87,8 +87,8 @@
         }
 
         @keyframes pulseScanner {
-            0%, 100% { border-color: #00b4d8; opacity: 0.6; }
-            50% { border-color: #00f5d4; opacity: 1; filter: drop-shadow(0 0 8px #00f5d4); }
+            0%, 100% { border-color: #ff3344; opacity: 0.6; }
+            50% { border-color: #ff6677; opacity: 1; filter: drop-shadow(0 0 8px #ff3344); }
         }
 
         .compliance-scrollbox {
@@ -142,20 +142,24 @@
             gap: 10px;
         }
 
+        /* Love Forever text: bold, glossy with a fine red-tinted outline shine */
         .bold-glossy-text {
             font-weight: 900;
             text-transform: uppercase;
-            background: linear-gradient(135deg, #ffffff 30%, #a5b0cf 70%, #ffffff 100%);
+            background: linear-gradient(135deg, #ffffff 25%, #f5ccd0 50%, #ffffff 75%, #ffffff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
+            -webkit-text-stroke: 0.5px rgba(255, 51, 68, 0.9);
+            filter: drop-shadow(0 2px 10px rgba(255, 51, 68, 0.4)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
         }
         
+        /* Heart icon: small white glossy, no color inside, clean white outline */
         .outline-heart {
             font-size: 20px;
             color: transparent;
+            -webkit-text-fill-color: transparent;
             -webkit-text-stroke: 2px #ffffff;
-            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.95));
             animation: beatHeart 1.2s infinite ease-in-out;
             display: inline-block;
         }
@@ -190,7 +194,7 @@
             60% { transform: scale(1.15); }
         }
 
-        .made-in-india-tag { font-size: 10px; color: #00f5d4; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 14px; background: rgba(0, 245, 212, 0.1); padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid rgba(0, 245, 212, 0.2); }
+        .made-in-india-tag { font-size: 10px; color: #ff3344; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 14px; background: rgba(255, 51, 68, 0.1); padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid rgba(255, 51, 68, 0.2); }
 
         @keyframes zoomInOut {
             0%, 100% { transform: scale(0.96); opacity: 0.9; }
@@ -215,7 +219,7 @@
             text-transform: uppercase;
             color: #ffffff;
         }
-        .app-logo-text .bold-glossy-text { font-size: 16px; }
+        .app-logo-text .bold-glossy-text { font-size: 16px; -webkit-text-stroke: 0.5px rgba(255, 51, 68, 0.7); }
         .app-logo-text .outline-heart { font-size: 14px; -webkit-text-stroke: 1.5px #ffffff; }
         .app-logo-text .matrimony-tag { font-size: 11px; letter-spacing: 1px; color: #a5b0cf; }
         .app-logo-text .jesus-cross { font-size: 10px; }
@@ -252,7 +256,7 @@
             color: #ffffff; font-size: 15px; box-sizing: border-box; transition: border-color 0.2s;
         }
 
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #00b4d8; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #ff3344; }
         
         .suggestion-pill-container {
             display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; margin-bottom: 15px;
@@ -261,11 +265,11 @@
             background: #171e36; border: 1px solid rgba(255, 255, 255, 0.1); color: #a5b0cf;
             padding: 6px 12px; border-radius: 20px; font-size: 11px; cursor: pointer; transition: all 0.2s;
         }
-        .suggestion-pill:hover { border-color: #00f5d4; color: #00f5d4; background: rgba(0, 245, 212, 0.05); }
+        .suggestion-pill:hover { border-color: #ff3344; color: #ff3344; background: rgba(255, 51, 68, 0.05); }
 
         .btn-primary {
-            width: 100%; padding: 16px; background: linear-gradient(135deg, #00b4d8, #00f5d4); color: #080a10;
-            border: none; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 180, 216, 0.3);
+            width: 100%; padding: 16px; background: linear-gradient(135deg, #ff3344, #ff6677); color: #080a10;
+            border: none; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(255, 51, 68, 0.3);
         }
 
         .btn-danger {
@@ -299,7 +303,7 @@
             box-sizing: border-box;
             transition: all 0.2s;
         }
-        .photo-slot:hover { border-color: #00b4d8; background-color: rgba(0, 180, 216, 0.05); }
+        .photo-slot:hover { border-color: #ff3344; background-color: rgba(255, 51, 68, 0.05); }
 
         /* --- IMMERSIVE FEED DECK CARDS --- */
         .card-stack { position: relative; height: 580px; width: 100%; margin-top: 5px; }
@@ -330,7 +334,7 @@
 
         .prof-title { font-size: 26px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
         .blue-tick {
-            background-color: #00b4d8; color: #080a10; border-radius: 50%; width: 18px; height: 18px;
+            background-color: #ff3344; color: #ffffff; border-radius: 50%; width: 18px; height: 18px;
             font-size: 11px; display: inline-flex; justify-content: center; align-items: center; font-weight: bold;
         }
 
@@ -342,7 +346,7 @@
         }
 
         .btn-dislike { background-color: #171e36; color: #ffffff; border: 1px solid rgba(255,255,255,0.05); }
-        .btn-like { background: linear-gradient(135deg, #00b4d8, #00f5d4); color: #080a10; }
+        .btn-like { background: linear-gradient(135deg, #ff3344, #ff6677); color: #080a10; }
 
         /* --- STYLING PATTERNS --- */
         .list-item {
@@ -355,7 +359,7 @@
 
         /* --- ADMIN PANEL CARD SYSTEM --- */
         .admin-action-row { display: flex; gap: 10px; margin-top: 12px; }
-        .btn-admin-approve { background: #142a22; border: 1px solid #00f5d4; color: #00f5d4; padding: 8px 12px; font-weight: 700; border-radius: 8px; font-size: 12px; cursor: pointer; flex: 1; }
+        .btn-admin-approve { background: #2a1418; border: 1px solid #ff3344; color: #ff3344; padding: 8px 12px; font-weight: 700; border-radius: 8px; font-size: 12px; cursor: pointer; flex: 1; }
         .btn-admin-delete { background: #2b1418; border: 1px solid #ff5a5f; color: #ff5a5f; padding: 8px 12px; font-weight: 700; border-radius: 8px; font-size: 12px; cursor: pointer; flex: 1; }
 
         .bottom-nav {
@@ -363,7 +367,7 @@
             padding: 12px 0 16px 0; box-shadow: 0 -4px 20px rgba(0,0,0,0.5); z-index: 100; border-top: 1px solid rgba(255,255,255,0.03);
         }
         .nav-item { display: flex; flex-direction: column; align-items: center; font-size: 10px; font-weight: 600; color: #6a7696; background: none; border: none; cursor: pointer; width: 18%; }
-        .nav-item.active-tab { color: #ffffff; filter: drop-shadow(0 0 5px #00b4d8); }
+        .nav-item.active-tab { color: #ffffff; filter: drop-shadow(0 0 5px #ff3344); }
         .nav-icon { width: 20px; height: 20px; margin-bottom: 4px; fill: currentColor; }
 
         .app-view { display: none; }
@@ -453,4 +457,469 @@
             <div class="app-logo-text">
                 <span class="bold-glossy-text">Love Forever</span>
                 <span class="outline-heart">♡</span>
-                <span class="matrimony-
+                <span class="matrimony-tag">Christian Matrimony</span>
+                <span class="jesus-cross">†</span>
+            </div>
+            <div style="font-size:10px; color:#ff3344; font-weight:800; border:1px solid #ff3344; padding:2px 6px; border-radius:6px; letter-spacing:1px; text-transform:uppercase;">Made In India</div>
+        </header>
+
+        <section id="view-profile" class="app-view active-view" style="max-width: 460px; margin: 0 auto; padding: 25px 15px; box-sizing: border-box;">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">My Verification Panel</div>
+            
+            <div id="identity-status-billboard" style="background: #171e36; padding: 16px; border-radius: 20px; margin-bottom: 20px; border: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h5 style="margin:0; font-size:14px; color:#a5b0cf;">Profile Firewall Status</h5>
+                    <p id="status-badge-label" style="margin:4px 0 0 0; font-size:13px; color:#ff3344; font-weight:700;">Verification Required</p>
+                </div>
+                <button id="trigger-camera-btn" style="background:#ff3344; border:none; color:#080a10; padding:8px 14px; font-weight:700; border-radius:10px; font-size:12px; cursor:pointer;" onclick="launchSecureCameraSystem()">Verify Token</button>
+            </div>
+
+            <div class="auth-card" style="padding: 20px; margin-bottom: 20px;">
+                <label style="display:block; font-size:12px; font-weight:700; color:#a5b0cf; margin-bottom:10px; text-transform:uppercase;">Manage Photos (Max 5)</label>
+                
+                <div class="photo-uploader-tray">
+                    <div class="photo-slot" style="border-style:solid; border-color: rgba(255, 51, 68, 0.4);">
+                        <span style="color:#ff3344; font-weight:700;">Photo 1</span>
+                        <span style="font-size:9px; opacity:0.6;">(Primary)</span>
+                    </div>
+                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
+                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Profile Biography Summary</label>
+                    <textarea id="user-bio-input" rows="5" placeholder="Describe your background, values, and family expectations here..."></textarea>
+                    
+                    <div style="font-size: 11px; color: #a5b0cf; margin-top: 12px; font-weight: 700; text-transform: uppercase;">Suggest Bio Words & Scriptures:</div>
+                    <div class="suggestion-pill-container">
+                        <button class="suggestion-pill" onclick="injectBioSuggestion('faith')">✨ Faith-focused Bio</button>
+                        <button class="suggestion-pill" onclick="injectBioSuggestion('family')">✨ Family & Values Bio</button>
+                        <button class="suggestion-pill" onclick="injectBioSuggestion('prov')">📖 Proverbs 18:22</button>
+                        <button class="suggestion-pill" onclick="injectBioSuggestion('cor')">📖 1 Corinthians 13:4-7</button>
+                        <button class="suggestion-pill" onclick="injectBioSuggestion('ecc')">📖 Ecclesiastes 4:9-12</button>
+                    </div>
+                </div>
+                
+                <button class="btn-primary" style="padding:12px; margin-bottom: 25px;" onclick="alert('Profile secure hash tables synchronized.')">Update Profile Metadata</button>
+                
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px;">
+                
+                <div style="text-align: left;">
+                    <h4 style="margin: 0 0 6px 0; font-size: 14px; color: #ff5a5f;">Emergency Kill-Switch Zone</h4>
+                    <p style="margin: 0 0 15px 0; font-size: 12px; color: #6a7696;">Purge and scrub your profile data parameters entirely from all directory nodes instantly.</p>
+                    <button class="btn-danger" onclick="executeInstantProfilePurge()">Delete Profile Immediately</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-home" class="app-view" style="max-width: 460px; margin: 0 auto; padding: 25px 15px; box-sizing: border-box;">
+            <div class="card-stack" id="card-stack-container"></div>
+            <div class="no-profiles-message" id="end-feed-msg" style="display:none; text-align:center; padding:40px 20px;">
+                <h3>No Match Criteria Found</h3>
+                <p style="color:#6a7696; font-size:14px;">Try broadening your matching filter preferences inside your setup tab.</p>
+            </div>
+            <div class="action-tray" id="action-buttons-tray">
+                <button class="btn-round btn-dislike" onclick="handleSwipeAction('left')">✕</button>
+                <button class="btn-round btn-like" onclick="handleSwipeAction('right')">❤</button>
+            </div>
+        </section>
+
+        <section id="view-preferences" class="app-view" style="max-width: 460px; margin: 0 auto; padding: 25px 15px; box-sizing: border-box;">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 15px;">Partner Match Preferences</div>
+            
+            <div class="auth-card">
+                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #ff3344; text-transform: uppercase; letter-spacing: 0.5px;">1. Location Profile</h4>
+                <div style="display: flex; gap: 10px;">
+                    <div class="form-group" style="width: 50%;">
+                        <label>State Scope</label>
+                        <select id="pref-location-state" onchange="synchronizeRegionalDistrictsData()">
+                            <option value="All" selected>All States</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Karnataka">Karnataka</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <label>District Scope</label>
+                        <select id="pref-location-district">
+                            <option value="All" selected>All Districts</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-card">
+                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #ff3344; text-transform: uppercase; letter-spacing: 0.5px;">2. Community Setup</h4>
+                <div class="form-group">
+                    <label>Sub-Denomination Grouping</label>
+                    <select id="pref-religion-sub">
+                        <option value="Doesn't matter" selected>All Denominations</option>
+                        <option value="Protestant">Protestant</option>
+                        <option value="Catholic">Catholic</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Language Profile</label>
+                    <select id="pref-mother-tongue">
+                        <option value="Doesn't matter" selected>All Languages</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Konkani">Konkani</option>
+                        <option value="Marathi">Marathi</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn-primary" style="margin-bottom: 40px;" onclick="applyPreferencesAndRefresh()">Apply Parameters & Re-Filter Feed</button>
+        </section>
+
+        <section id="view-matches" class="app-view" style="max-width: 460px; margin: 0 auto; padding: 25px 15px; box-sizing: border-box;">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Connected Matches</div>
+            <div id="matches-target-list"></div>
+        </section>
+
+        <section id="view-chat" class="app-view" style="max-width: 460px; margin: 0 auto; padding: 25px 15px; box-sizing: border-box;">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Conversations</div>
+            <div class="list-item">
+                <div class="avatar-placeholder">🛡️</div>
+                <div class="item-details">
+                    <h4>Firewall Security Agent</h4>
+                    <p>All communication sessions are completely end-to-end encrypted.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-admin" class="app-view" style="max-width: 460px; margin: 0 auto; padding: 25px 15px; box-sizing: border-box;">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 6px;">Admin Master Engine</div>
+            <div style="font-size:13px; color:#6a7696; margin-bottom: 20px;">Manage verification approval loops and profile directory deletion arrays.</div>
+            <div id="admin-directory-list-target"></div>
+        </section>
+
+        <nav class="bottom-nav">
+            <button class="nav-item active-tab" onclick="switchActiveView('profile', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                Profile
+            </button>
+            <button class="nav-item" onclick="switchActiveView('home', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                Home
+            </button>
+            <button class="nav-item" onclick="switchActiveView('preferences', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Preferences
+            </button>
+            <button class="nav-item" onclick="switchActiveView('matches', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                Matches
+            </button>
+            <button class="nav-item" onclick="switchActiveView('admin', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                Admin
+            </button>
+        </nav>
+
+    </div>
+
+    <script>
+        let databaseProfiles = [
+            { id: 101, name: "Michelle D'Souza", age: 24, height: 165, body: "Slim", look: "Good looking", skin: "Fair", house: "Own", salary: "5-10 Lakh", education: "MBA", score: "10/10", field: "MBA Marketing / Senior Analyst", location: "Mumbai", state: "Maharashtra", district: "Mumbai City", subDenom: "Catholic", motherTongue: "English", bio: "Looking for someone anchored in Christian faith who appreciates simple family values, personal growth, and meaningful connection.", verified: true },
+            { id: 102, name: "Sarah Williams", age: 28, height: 158, body: "Slim", look: "Good looking", skin: "Fair", house: "Own", salary: "2-5 Lakh", education: "All Fields", score: "9.8/10", field: "B.Tech Graduate / Software Engineer", location: "Bangalore", state: "Karnataka", district: "Bangalore Urban", subDenom: "Protestant", motherTongue: "Hindi", bio: "Balancing traditional faith boundaries with modern aspirations. Family-oriented and kind-hearted.", verified: true },
+            { id: 103, name: "Rachel Alvares", age: 32, height: 172, body: "Heavy", look: "Good looking", skin: "Fair", house: "Rent", salary: "Above 10 Lakh", education: "Others", score: "9.5/10", field: "M.Com / Financial Consultant", location: "Mangalore", state: "Karnataka", district: "Dakshina Kannada", subDenom: "Catholic", motherTongue: "Konkani", bio: "Rooted in strong spiritual frameworks, seeking an open-minded companion for life's journey.", verified: false }
+        ];
+
+        const districtMap = {
+            "All": ["All Districts"],
+            "Maharashtra": ["All Districts", "Mumbai City", "Pune", "Nagpur", "Thane"],
+            "Karnataka": ["All Districts", "Bangalore Urban", "Dakshina Kannada", "Belagavi", "Mysuru"]
+        };
+
+        let activeFeedProfiles = [];
+        let profilePointer = 0;
+        let isAccountVerifiedGlobally = false;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                const authPortal = document.getElementById('auth-portal-screen');
+                splash.style.transform = 'translateY(-100%)';
+                splash.style.opacity = '0';
+                authPortal.style.display = 'block';
+                setTimeout(() => { splash.remove(); }, 600);
+            }, 1500);
+
+            synchronizeRegionalDistrictsData();
+            startFirewallSimulation();
+        });
+
+        function startFirewallSimulation() {
+            const hexChars = "0123456789ABCDEF";
+            const logEl = document.getElementById('firewall-packet-log');
+            setInterval(() => {
+                let packetId = "";
+                for(let i=0; i<8; i++) packetId += hexChars[Math.floor(Math.random()*16)];
+                logEl.innerText = `SECURE FLOW STATUS: PACKET_ID_[0x${packetId}] VALIDATED VIA FIREWALL ARR`;
+            }, 4000);
+        }
+
+        function injectBioSuggestion(type) {
+            const bioArea = document.getElementById('user-bio-input');
+            const currentText = bioArea.value.trim();
+            let appendText = "";
+
+            switch(type) {
+                case 'faith':
+                    appendText = "Guided by Christian values and faith, I am seeking a God-fearing, transparent, and supportive partner who prioritizes family compatibility, mutual respect, and a shared spiritual foundation for our future life journey together.";
+                    break;
+                case 'family':
+                    appendText = "Family-oriented, responsible, and grounded. I value honesty, commitment, and simplicity. Looking for a mature partner who balances traditional values with a progressive mindset and respect for clean relationships.";
+                    break;
+                case 'prov':
+                    appendText = ' "He who finds a wife finds what is good and receives favor from the Lord." — Proverbs 18:22 ';
+                    break;
+                case 'cor':
+                    appendText = ' "Love is patient, love is kind. It does not envy, it does not boast... It always protects, always trusts, always hopes, always perseveres." — 1 Corinthians 13:4-7 ';
+                    break;
+                case 'ecc':
+                    appendText = ' "Two are better than one, because they have a good return for their labor: If either of them falls down, one can help the other up." — Ecclesiastes 4:9-10 ';
+                    break;
+            }
+
+            bioArea.value = currentText ? currentText + "\n\n" + appendText : appendText;
+        }
+
+        function synchronizeRegionalDistrictsData() {
+            const selectedState = document.getElementById('pref-location-state').value;
+            const districtDropdown = document.getElementById('pref-location-district');
+            districtDropdown.innerHTML = '';
+            const districts = districtMap[selectedState] || ["All Districts"];
+            districts.forEach(dist => {
+                const opt = document.createElement('option');
+                opt.value = dist === "All Districts" ? "All" : dist;
+                opt.innerText = dist;
+                districtDropdown.appendChild(opt);
+            });
+        }
+
+        function handlePortalLogin(event) {
+            event.preventDefault();
+            document.getElementById('auth-portal-screen').style.display = 'none';
+            const appFrame = document.getElementById('main-app');
+            appFrame.style.display = 'block';
+            setTimeout(() => { appFrame.style.opacity = '1'; }, 50);
+            
+            applyPreferencesAndRefresh();
+            buildAdminControlDirectoryPanel();
+            switchActiveView('profile', document.querySelectorAll('.nav-item')[0]);
+        }
+
+        function launchSecureCameraSystem() {
+            if(isAccountVerifiedGlobally) return alert("Identity parameters validated.");
+            const modal = document.getElementById('camera-firewall-overlay');
+            const logText = document.getElementById('camera-log-text');
+            modal.style.display = 'flex';
+            logText.innerText = "Connecting firewall token stream...";
+
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } })
+                .then(stream => {
+                    logText.innerHTML = `<video id="live-webcam-stream" autoplay playsinline style="width:100%; height:100%; object-fit:cover;"></video>`;
+                    document.getElementById('live-webcam-stream').srcObject = stream;
+                })
+                .catch(() => {
+                    setTimeout(() => { logText.innerText = "📷 Security Sandbox Simulator Stream Established"; }, 1000);
+                });
+        }
+
+        function executeBiometricParsingSequence() {
+            const shutterBtn = document.getElementById('capture-shutter-btn');
+            const logText = document.getElementById('camera-log-text');
+            shutterBtn.disabled = true;
+            logText.innerText = "Verifying biometric frame tokens through firewall...";
+
+            setTimeout(() => {
+                const videoEl = document.getElementById('live-webcam-stream');
+                if(videoEl && videoEl.srcObject) videoEl.srcObject.getTracks().forEach(track => track.stop());
+
+                isAccountVerifiedGlobally = true;
+                document.getElementById('camera-firewall-overlay').style.display = 'none';
+                document.getElementById('status-badge-label').innerHTML = `Verified via Firewall <span class="blue-tick">✓</span>`;
+                document.getElementById('trigger-camera-btn').remove();
+                alert("Security handshake token signed and matched successfully.");
+            }, 1500);
+        }
+
+        function executeInstantProfilePurge() {
+            if (confirm("Terminally purge all database instances? This operation cannot be undone by structural firewalls.")) {
+                document.getElementById('main-app').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('main-app').style.display = 'none';
+                    document.getElementById('auth-portal-screen').style.display = 'block';
+                    alert("Account scrubbing complete.");
+                }, 400);
+            }
+        }
+
+        function applyPreferencesAndRefresh() {
+            const statePref = document.getElementById('pref-location-state').value;
+            const distPref = document.getElementById('pref-location-district').value;
+            const subDenomPref = document.getElementById('pref-religion-sub').value;
+            const tonguePref = document.getElementById('pref-mother-tongue').value;
+
+            activeFeedProfiles = databaseProfiles.filter(p => {
+                if (statePref !== "All" && p.state !== statePref) return false;
+                if (distPref !== "All" && p.district !== distPref) return false;
+                if (subDenomPref !== "Doesn't matter" && p.subDenom !== subDenomPref) return false;
+                if (tonguePref !== "Doesn't matter" && p.motherTongue !== tonguePref) return false;
+                return true;
+            });
+
+            profilePointer = 0;
+            renderDiscoveryDeck();
+        }
+
+        function renderDiscoveryDeck() {
+            const container = document.getElementById('card-stack-container');
+            container.innerHTML = ''; 
+
+            if (profilePointer >= activeFeedProfiles.length) {
+                document.getElementById('end-feed-msg').style.display = 'block';
+                document.getElementById('action-buttons-tray').style.opacity = '0.1';
+                document.getElementById('action-buttons-tray').style.pointerEvents = 'none';
+                return;
+            }
+
+            document.getElementById('end-feed-msg').style.display = 'none';
+            document.getElementById('action-buttons-tray').style.opacity = '1';
+            document.getElementById('action-buttons-tray').style.pointerEvents = 'auto';
+
+            for (let i = activeFeedProfiles.length - 1; i >= profilePointer; i--) {
+                const data = activeFeedProfiles[i];
+                const card = document.createElement('div');
+                card.className = 'profile-card';
+                card.id = `prof-card-${data.id}`;
+                card.style.zIndex = activeFeedProfiles.length - i;
+                
+                if(i !== profilePointer) {
+                    card.style.transform = 'scale(0.96) translateY(14px)';
+                    card.style.opacity = '0.3';
+                }
+
+                card.innerHTML = `
+                    <div class="profile-media-box">
+                        <div class="profile-blur-cover">
+                            <span style="font-size:54px; margin-bottom:12px;">👤</span>
+                            <span style="font-size:10px; letter-spacing:2px; opacity:0.4; text-transform:uppercase; font-weight:700;">Secure Identity Frame</span>
+                        </div>
+                        <div class="profile-overlay">
+                            <div class="prof-title">${data.name}, ${data.age} ${data.verified ? '<span class="blue-tick">✓</span>' : ''}</div>
+                            <div class="prof-meta" style="font-size:12px; opacity:0.7; margin-top:4px; line-height:1.4;">
+                                ${data.subDenom} • ${data.motherTongue}<br>
+                                ${data.district}, ${data.state} (India)<br>
+                                Height: ${data.height} cm • Package: Rs. ${data.salary} p.a.
+                            </div>
+                            <div class="prof-bio-text">"${data.bio}"</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        function handleSwipeAction(direction) {
+            if (profilePointer >= activeFeedProfiles.length) return;
+            const activeCard = document.getElementById(`prof-card-${activeFeedProfiles[profilePointer].id}`);
+            if (!activeCard) return;
+
+            if (direction === 'left') {
+                activeCard.classList.add('card-swipe-left');
+            } else {
+                activeCard.classList.add('card-swipe-right');
+                appendMatchedRecord(activeFeedProfiles[profilePointer]);
+            }
+            profilePointer++;
+            setTimeout(() => { renderDiscoveryDeck(); }, 320);
+        }
+
+        function appendMatchedRecord(profile) {
+            const matchesList = document.getElementById('matches-target-list');
+            const matchRow = document.createElement('div');
+            matchRow.className = 'list-item';
+            matchRow.innerHTML = `
+                <div class="avatar-placeholder" style="background: linear-gradient(135deg, #ff3344, #ff6677); color:#ffffff;">❤</div>
+                <div class="item-details">
+                    <h4>${profile.name}, ${profile.age} <span class="blue-tick">✓</span></h4>
+                    <p>Connection active (${profile.subDenom} • ${profile.state}).</p>
+                </div>
+            `;
+            matchesList.insertBefore(matchRow, matchesList.firstChild);
+        }
+
+        function buildAdminControlDirectoryPanel() {
+            const container = document.getElementById('admin-directory-list-target');
+            container.innerHTML = '';
+
+            if(databaseProfiles.length === 0) {
+                container.innerHTML = `<div style="text-align:center; padding:30px; color:#6a7696; font-size:14px;">No records found in current system matrix.</div>`;
+                return;
+            }
+
+            databaseProfiles.forEach(profile => {
+                const adminCard = document.createElement('div');
+                adminCard.className = 'list-item';
+                adminCard.id = `admin-row-${profile.id}`;
+                adminCard.innerHTML = `
+                    <div class="avatar-placeholder" style="font-size:14px; font-weight:700; color:#6a7696; background:#171e36;">ID</div>
+                    <div class="item-details">
+                        <h4 style="font-size:15px;">${profile.name} <span id="admin-tick-badge-${profile.id}">${profile.verified ? '<span class="blue-tick">✓</span>' : ''}</span></h4>
+                        <p style="font-size:12px; color:#a5b0cf; margin-top:2px;">
+                            Age: ${profile.age} • ${profile.subDenom}<br>
+                            Ref Hash: Token_ID_${profile.id}
+                        </p>
+                        <div class="admin-action-row">
+                            <button class="btn-admin-approve" onclick="executeAdminApprovalProcess(${profile.id})">Approve ID</button>
+                            <button class="btn-admin-delete" onclick="executeAdminRecordDeletion(${profile.id})">Delete ID</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(adminCard);
+            });
+        }
+
+        function executeAdminApprovalProcess(profileId) {
+            const index = databaseProfiles.findIndex(p => p.id === profileId);
+            if(index !== -1) {
+                databaseProfiles[index].verified = true;
+                const badge = document.getElementById(`admin-tick-badge-${profileId}`);
+                if(badge) badge.innerHTML = `<span class="blue-tick">✓</span>`;
+                applyPreferencesAndRefresh();
+                alert(`Profile ID ${profileId} authorized.`);
+            }
+        }
+
+        function executeAdminRecordDeletion(profileId) {
+            if(confirm(`Completely delete ID Record ${profileId} across live channels?`)) {
+                databaseProfiles = databaseProfiles.filter(p => p.id !== profileId);
+                const block = document.getElementById(`admin-row-${profileId}`);
+                if(block) block.remove();
+                
+                applyPreferencesAndRefresh();
+                if(databaseProfiles.length === 0) buildAdminControlDirectoryPanel();
+                alert(`Record Chain ${profileId} scrubbed.`);
+            }
+        }
+
+        function switchActiveView(targetId, navButton) {
+            const views = document.querySelectorAll('.app-view');
+            views.forEach(view => view.classList.remove('active-view'));
+
+            const targetView = document.getElementById(`view-${targetId}`);
+            if (targetView) targetView.classList.add('active-view');
+
+            const tabs = document.querySelectorAll('.nav-item');
+            tabs.forEach(tab => tab.classList.remove('active-tab'));
+            navButton.classList.add('active-tab');
+            
+            if(targetId === 'home') applyPreferencesAndRefresh();
+            if(targetId === 'admin') buildAdminControlDirectoryPanel();
+        }
+    </script>
+</body>
+</html>
