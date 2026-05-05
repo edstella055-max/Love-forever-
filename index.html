@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0b0914; 
+            background-color: #080a10; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
@@ -21,7 +21,7 @@
         .system-modal-backdrop {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 9, 20, 0.95);
+            background: rgba(8, 10, 16, 0.96);
             backdrop-filter: blur(12px);
             z-index: 10000;
             display: none;
@@ -32,13 +32,13 @@
         }
 
         .camera-auth-frame {
-            background-color: #131021;
+            background-color: #0f1424;
             border-radius: 28px;
             width: 100%;
             max-width: 440px;
             padding: 24px;
             box-sizing: border-box;
-            border: 1px solid rgba(255, 65, 108, 0.2);
+            border: 1px solid rgba(0, 180, 216, 0.2);
             text-align: center;
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
@@ -46,7 +46,7 @@
         .live-video-viewport {
             width: 100%;
             height: 280px;
-            background: #1c1830;
+            background: #171e36;
             border-radius: 20px;
             margin: 18px 0;
             overflow: hidden;
@@ -61,28 +61,28 @@
             position: absolute;
             width: 180px;
             height: 230px;
-            border: 2px dashed #ff416c;
+            border: 2px dashed #00b4d8;
             border-radius: 50%;
             pointer-events: none;
-            box-shadow: 0 0 0 9999px rgba(28, 24, 48, 0.75);
+            box-shadow: 0 0 0 9999px rgba(23, 30, 54, 0.75);
             animation: pulseScanner 2s ease-in-out infinite;
         }
 
         @keyframes pulseScanner {
-            0%, 100% { border-color: #ff416c; opacity: 0.6; }
-            50% { border-color: #007aff; opacity: 1; filter: drop-shadow(0 0 8px #007aff); }
+            0%, 100% { border-color: #00b4d8; opacity: 0.6; }
+            50% { border-color: #00f5d4; opacity: 1; filter: drop-shadow(0 0 8px #00f5d4); }
         }
 
         .compliance-scrollbox {
             width: 100%;
             height: 140px;
-            background-color: #0b0914;
+            background-color: #080a10;
             border-radius: 12px;
             padding: 12px;
             box-sizing: border-box;
             overflow-y: scroll;
             font-size: 11px;
-            color: #726e8d;
+            color: #6a7696;
             text-align: left;
             line-height: 1.5;
             border: 1px solid rgba(255,255,255,0.05);
@@ -93,7 +93,7 @@
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
-            background-color: #0b0914;
+            background-color: #080a10;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -104,7 +104,7 @@
         .splash-container { text-align: center; animation: zoomInOut 3s ease-in-out infinite; }
         .brand-name {
             font-size: 42px; font-weight: 900; color: #ffffff; letter-spacing: 1px; margin: 0; padding: 0;
-            text-shadow: 0 0 15px rgba(255, 65, 108, 0.9), 0 0 30px rgba(255, 65, 108, 0.5);
+            text-shadow: 0 0 15px rgba(0, 180, 216, 0.8), 0 0 30px rgba(0, 245, 212, 0.4);
             display: flex; align-items: center; justify-content: center; gap: 12px;
         }
         .tagline { font-size: 16px; font-weight: 500; color: rgba(255, 255, 255, 0.9); letter-spacing: 5px; text-transform: uppercase; margin-top: 5px; }
@@ -125,39 +125,133 @@
         }
 
         .auth-card {
-            background-color: #131021;
+            background-color: #0f1424;
             border-radius: 28px;
-            padding: 30px 24px;
+            padding: 24px 20px;
             box-shadow: 0 12px 40px rgba(0,0,0,0.6);
             border: 1px solid rgba(255,255,255,0.06);
+            margin-bottom: 20px;
         }
 
         .section-header-title { font-size: 26px; font-weight: 800; margin-bottom: 6px; color: #ffffff; }
-        .section-header-sub { font-size: 14px; color: #726e8d; margin-bottom: 25px; }
+        .section-header-sub { font-size: 14px; color: #6a7696; margin-bottom: 25px; }
 
-        .form-group { margin-bottom: 18px; }
+        .form-group { margin-bottom: 22px; }
         .form-group label {
-            display: block; font-size: 12px; font-weight: 700; color: #a0a0a0; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px;
+            display: block; font-size: 11px; font-weight: 700; color: #a5b0cf; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px;
         }
 
         .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 14px 16px; background-color: #1c1830; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;
+            width: 100%; padding: 14px 16px; background-color: #171e36; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;
             color: #ffffff; font-size: 15px; box-sizing: border-box; transition: border-color 0.2s;
         }
 
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #ff416c; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #00b4d8; }
         .form-row { display: flex; gap: 15px; }
         
         .btn-primary {
-            width: 100%; padding: 16px; background: linear-gradient(135deg, #ff416c, #ff4b2b); color: white;
-            border: none; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(255, 65, 108, 0.4);
+            width: 100%; padding: 16px; background: linear-gradient(135deg, #00b4d8, #00f5d4); color: #080a10;
+            border: none; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 180, 216, 0.3);
         }
 
         .btn-danger {
-            width: 100%; padding: 14px; background: #2a1118; border: 1px solid #ff3b30; color: #ff3b30;
+            width: 100%; padding: 14px; background: #22141a; border: 1px solid #ff5a5f; color: #ff5a5f;
             border-radius: 14px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s;
         }
-        .btn-danger:hover { background: #ff3b30; color: #ffffff; }
+        .btn-danger:hover { background: #ff5a5f; color: #ffffff; }
+
+        /* --- PHOTO UPLOADER DESIGN --- */
+        .photo-uploader-tray {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .photo-slot {
+            aspect-ratio: 1 / 1;
+            background-color: #171e36;
+            border: 2px dashed rgba(255,255,255,0.1);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 11px;
+            color: #a5b0cf;
+            cursor: pointer;
+            text-align: center;
+            padding: 4px;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+        .photo-slot:hover { border-color: #00b4d8; background-color: rgba(0, 180, 216, 0.05); }
+        .photo-slot.occupied { border-style: solid; border-color: rgba(0, 180, 216, 0.4); }
+
+        /* --- E-COMMERCE STYLE DUAL SLIDERS (FLIPKART/MYNTRA PATTERN) --- */
+        .range-slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background-color: #171e36;
+            border-radius: 4px;
+            margin: 22px 0 12px 0;
+        }
+
+        .range-slider-track {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(90deg, #00b4d8, #00f5d4);
+            border-radius: 4px;
+        }
+
+        .range-slider-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+        }
+
+        .range-slider-container input[type="range"] {
+            position: absolute;
+            width: 100%;
+            height: 0;
+            top: -6px;
+            left: 0;
+            background: none;
+            pointer-events: none;
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        .range-slider-container input[type="range"]::-webkit-slider-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid #00b4d8;
+            cursor: pointer;
+            pointer-events: auto;
+            -webkit-appearance: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            transition: transform 0.1s;
+        }
+
+        .range-values-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #00b4d8;
+            margin-top: 5px;
+            background: rgba(23, 30, 54, 0.5);
+            padding: 6px 12px;
+            border-radius: 10px;
+        }
+        .range-values-display span { color: #6a7696; font-size: 10px; font-weight: 700; text-transform: uppercase; }
 
         /* --- MAIN SHELL SYSTEM --- */
         #main-app {
@@ -165,21 +259,21 @@
         }
 
         .app-header {
-            background-color: #131021; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;
+            background-color: #0f1424; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 100;
         }
 
-        .app-logo-text { font-size: 22px; font-weight: 800; color: #ffffff; text-shadow: 0 0 10px rgba(255, 65, 108, 0.6); }
+        .app-logo-text { font-size: 22px; font-weight: 800; color: #ffffff; text-shadow: 0 0 10px rgba(0, 180, 216, 0.6); }
 
-        .app-view { display: none; max-width: 480px; margin: 0 auto; padding: 20px 15px; }
+        .app-view { display: none; max-width: 480px; margin: 0 auto; padding: 15px 10px; }
         .app-view.active-view { display: block; }
 
-        /* --- HOME: FEED CARDS --- */
-        .card-stack { position: relative; height: 500px; width: 100%; margin-top: 5px; }
+        /* --- IMMERSIVE LARGE VIEWPORT FEED DECK CARDS --- */
+        .card-stack { position: relative; height: 580px; width: 100%; margin-top: 5px; }
         
         .profile-card {
-            position: absolute; width: 100%; height: 100%; background-color: #131021; border-radius: 28px; overflow: hidden;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.6); box-sizing: border-box; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+            position: absolute; width: 100%; height: 100%; background-color: #0f1424; border-radius: 28px; overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.7); box-sizing: border-box; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
             display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,0.05);
         }
 
@@ -187,61 +281,55 @@
         .card-swipe-right { transform: translateX(150%) rotate(15deg) !important; opacity: 0; }
 
         .profile-media-box {
-            width: 100%; flex-grow: 1; background: linear-gradient(135deg, #251f3b, #0b0914); display: flex; justify-content: center; align-items: center; position: relative;
+            width: 100%; height: 100%; background: linear-gradient(135deg, #1b233d, #080a10); display: flex; justify-content: center; align-items: center; position: relative;
         }
 
         .profile-blur-cover {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: repeating-linear-gradient(45deg, #131021, #1c1830 10px, #0b0914 20px);
+            background: repeating-linear-gradient(45deg, #0f1424, #171e36 12px, #080a10 24px);
             display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 5;
         }
 
         .match-compatibility-badge {
-            position: absolute; top: 20px; right: 20px; background: rgba(255, 65, 108, 0.95); padding: 6px 14px; border-radius: 20px;
-            font-size: 13px; font-weight: 800; letter-spacing: 0.5px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 10;
+            position: absolute; top: 22px; right: 22px; background: linear-gradient(135deg, #00f5d4, #00b4d8); color: #080a10; padding: 7px 15px; border-radius: 20px;
+            font-size: 14px; font-weight: 900; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 10; border: 1px solid #ffffff;
         }
 
         .profile-overlay {
-            position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 20px 20px 20px;
-            background: linear-gradient(to top, rgba(11,9,20,1) 40%, rgba(11,9,20,0.8) 70%, transparent); box-sizing: border-box; z-index: 6;
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 60px 22px 25px 22px;
+            background: linear-gradient(to top, rgba(8,10,16,1) 50%, rgba(8,10,16,0.8) 80%, transparent); box-sizing: border-box; z-index: 6;
         }
 
-        .prof-title { font-size: 24px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .prof-title { font-size: 26px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
         .blue-tick {
-            background-color: #007aff; color: white; border-radius: 50%; width: 18px; height: 18px;
+            background-color: #00b4d8; color: #080a10; border-radius: 50%; width: 18px; height: 18px;
             font-size: 11px; display: inline-flex; justify-content: center; align-items: center; font-weight: bold;
         }
 
-        .prof-bio-text { font-size: 14px; color: #d0d0d0; margin-top: 8px; font-style: italic; line-height: 1.4; }
-        .action-tray { display: flex; justify-content: center; gap: 25px; padding: 20px 0; }
+        .prof-bio-text { font-size: 14px; color: #d0d0d0; margin-top: 10px; font-style: italic; line-height: 1.4; opacity: 0.8; }
+        .action-tray { display: flex; justify-content: center; gap: 25px; padding: 15px 0; }
         .btn-round {
-            width: 62px; height: 62px; border-radius: 50%; border: none; display: flex; justify-content: center; align-items: center;
+            width: 64px; height: 64px; border-radius: 50%; border: none; display: flex; justify-content: center; align-items: center;
             cursor: pointer; box-shadow: 0 6px 15px rgba(0,0,0,0.4); font-size: 22px;
         }
 
-        .btn-dislike { background-color: #251f3b; color: #ffffff; }
-        .btn-like { background-color: #ff416c; color: #ffffff; }
-
-        /* --- PREMIUM SYSTEM --- */
-        .premium-paywall-box {
-            background: linear-gradient(135deg, #1c1830, #131021); border: 1px solid rgba(255, 65, 108, 0.3); border-radius: 20px; padding: 22px; text-align: center; margin-bottom: 25px;
-        }
-        .trial-badge { display: inline-block; background: #ff416c; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
+        .btn-dislike { background-color: #171e36; color: #ffffff; border: 1px solid rgba(255,255,255,0.05); }
+        .btn-like { background: linear-gradient(135deg, #00b4d8, #00f5d4); color: #080a10; }
 
         /* --- STYLING PATTERNS --- */
         .list-item {
-            background: #131021; padding: 16px; border-radius: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid rgba(255,255,255,0.03);
+            background: #0f1424; padding: 16px; border-radius: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid rgba(255,255,255,0.03);
         }
-        .avatar-placeholder { width: 52px; height: 52px; border-radius: 50%; background-color: #251f3b; display: flex; justify-content: center; align-items: center; font-size: 20px; }
+        .avatar-placeholder { width: 52px; height: 52px; border-radius: 50%; background-color: #171e36; display: flex; justify-content: center; align-items: center; font-size: 20px; }
         .item-details h4 { margin: 0 0 4px 0; color: #ffffff; display: flex; align-items: center; gap: 6px; }
-        .item-details p { margin: 0; font-size: 13px; color: #726e8d; }
+        .item-details p { margin: 0; font-size: 13px; color: #6a7696; }
 
         .bottom-nav {
-            position: fixed; bottom: 0; left: 0; width: 100%; background-color: #131021; display: flex; justify-content: space-around;
+            position: fixed; bottom: 0; left: 0; width: 100%; background-color: #0f1424; display: flex; justify-content: space-around;
             padding: 12px 0 16px 0; box-shadow: 0 -4px 20px rgba(0,0,0,0.5); z-index: 100; border-top: 1px solid rgba(255,255,255,0.03);
         }
-        .nav-item { display: flex; flex-direction: column; align-items: center; font-size: 11px; font-weight: 600; color: #726e8d; background: none; border: none; cursor: pointer; width: 20%; }
-        .nav-item.active-tab { color: #ffffff; filter: drop-shadow(0 0 5px #ff416c); }
+        .nav-item { display: flex; flex-direction: column; align-items: center; font-size: 11px; font-weight: 600; color: #6a7696; background: none; border: none; cursor: pointer; width: 20%; }
+        .nav-item.active-tab { color: #ffffff; filter: drop-shadow(0 0 5px #00b4d8); }
         .nav-icon { width: 22px; height: 22px; margin-bottom: 4px; fill: currentColor; }
 
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
@@ -252,11 +340,11 @@
     <div id="camera-firewall-overlay" class="system-modal-backdrop">
         <div class="camera-auth-frame">
             <h3 style="margin: 0 0 6px 0; font-size: 20px; font-weight: 800;">Biometric Verification</h3>
-            <p style="margin: 0; font-size: 13px; color: #726e8d;">Position your face inside the bounding profile scanner down below to verify match parameters against uploaded identification data matrices.</p>
+            <p style="margin: 0; font-size: 13px; color: #6a7696;">Position your face inside the bounding profile scanner down below to verify match parameters against uploaded identification data matrices.</p>
             
             <div class="live-video-viewport">
                 <div class="face-oval-guide"></div>
-                <span id="camera-log-text" style="font-size: 12px; color: #a0a0a0; z-index: 2; font-weight: 600;">Initializing Secure Camera Link...</span>
+                <span id="camera-log-text" style="font-size: 12px; color: #a5b0cf; z-index: 2; font-weight: 600;">Initializing Secure Camera Link...</span>
             </div>
 
             <div class="compliance-scrollbox">
@@ -280,7 +368,7 @@
     <div id="auth-portal-screen" class="window-shell">
         <div class="auth-card">
             <div class="section-header-title">Log In</div>
-            <div class="section-header-sub">Access your account using your secure password credentials</div>
+            <div class="section-header-sub">Access your account using secure password credentials</div>
             
             <form onsubmit="handlePortalLogin(event)">
                 <div class="form-group">
@@ -300,32 +388,33 @@
         
         <header class="app-header">
             <div class="app-logo-text">Love Forever</div>
-            <div style="font-size:12px; color:#ff416c; font-weight:700; border:1px solid #ff416c; padding:3px 8px; border-radius:8px;">SECURE</div>
+            <div style="font-size:12px; color:#00b4d8; font-weight:700; border:1px solid #00b4d8; padding:3px 8px; border-radius:8px;">SECURE</div>
         </header>
 
         <section id="view-profile" class="app-view active-view">
             <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">My Verification Panel</div>
             
-            <div id="identity-status-billboard" style="background: #1c1830; padding: 16px; border-radius: 20px; margin-bottom: 20px; border: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between;">
+            <div id="identity-status-billboard" style="background: #171e36; padding: 16px; border-radius: 20px; margin-bottom: 20px; border: 1px dashed rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between;">
                 <div>
-                    <h5 style="margin:0; font-size:14px; color:#a0a0a0;">Profile Credentials Status</h5>
-                    <p id="status-badge-label" style="margin:4px 0 0 0; font-size:13px; color:#ff416c; font-weight:700;">Unverified (Verification Pending)</p>
+                    <h5 style="margin:0; font-size:14px; color:#a5b0cf;">Profile Credentials Status</h5>
+                    <p id="status-badge-label" style="margin:4px 0 0 0; font-size:13px; color:#00b4d8; font-weight:700;">Unverified (Verification Pending)</p>
                 </div>
-                <button id="trigger-camera-btn" style="background:#ff416c; border:none; color:white; padding:8px 14px; font-weight:700; border-radius:10px; font-size:12px; cursor:pointer;" onclick="launchSecureCameraSystem()">Verify Face</button>
+                <button id="trigger-camera-btn" style="background:#00b4d8; border:none; color:#080a10; padding:8px 14px; font-weight:700; border-radius:10px; font-size:12px; cursor:pointer;" onclick="launchSecureCameraSystem()">Verify Face</button>
             </div>
 
             <div class="auth-card" style="padding: 20px; margin-bottom: 20px;">
-                <label style="display:block; font-size:12px; font-weight:700; color:#a0a0a0; margin-bottom:10px; text-transform:uppercase;">Manage Photos</label>
+                <label style="display:block; font-size:12px; font-weight:700; color:#a5b0cf; margin-bottom:10px; text-transform:uppercase;">Manage Photos (Max 5)</label>
+                
                 <div class="photo-uploader-tray">
-                    <div class="photo-slot" onclick="alert('Photo uploader initiated.')">
-                        <span>➕ Add Photo</span>
+                    <div class="photo-slot occupied" onclick="alert('Primary photo update active.')">
+                        <span style="color:#00b4d8; font-weight:700;">Photo 1</span>
+                        <span style="font-size:9px; opacity:0.6;">(Primary)</span>
                     </div>
-                    <div class="photo-slot" style="background:#251f3b;">
-                        <span style="color:#ff416c;">Profile.jpg</span>
-                    </div>
-                    <div class="photo-slot" style="border-style: solid; opacity: 0.3;">
-                        <span>Empty Slot</span>
-                    </div>
+                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
+                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
+                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
+                    <div class="photo-slot" onclick="alert('Upload channel opened.')"><span>➕ Add</span></div>
+                    <div class="photo-slot" style="opacity: 0.2; border-style: solid; cursor: not-allowed;"><span>🔒 Max</span></div>
                 </div>
 
                 <div class="form-group">
@@ -337,8 +426,8 @@
                 <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px;">
                 
                 <div style="text-align: left;">
-                    <h4 style="margin: 0 0 6px 0; font-size: 14px; color: #ff3b30;">Emergency Kill-Switch Zone</h4>
-                    <p style="margin: 0 0 15px 0; font-size: 12px; color: #726e8d;">If security vulnerabilities or concerns are detected, trigger immediate deletion. This instantly purges your digital profile record from active directories completely.</p>
+                    <h4 style="margin: 0 0 6px 0; font-size: 14px; color: #ff5a5f;">Emergency Kill-Switch Zone</h4>
+                    <p style="margin: 0 0 15px 0; font-size: 12px; color: #6a7696;">Trigger immediate deletion to purge your digital profile record from active directories.</p>
                     <button class="btn-danger" onclick="executeInstantProfilePurge()">Delete Profile Immediately</button>
                 </div>
             </div>
@@ -357,40 +446,199 @@
         </section>
 
         <section id="view-preferences" class="app-view">
-            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Partner Match Preferences</div>
-            <div class="auth-card" style="padding: 20px;">
-                <div class="form-row">
-                    <div class="form-group" style="width:50%;">
-                        <label>Min Age</label>
-                        <input type="number" id="pref-age-min" value="18">
-                    </div>
-                    <div class="form-group" style="width:50%;">
-                        <label>Max Age</label>
-                        <input type="number" id="pref-age-max" value="35">
-                    </div>
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 15px;">Partner Match Preferences</div>
+            
+            <div class="auth-card">
+                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #00b4d8; text-transform: uppercase; letter-spacing: 0.5px;">1. Location Profile</h4>
+                
+                <div class="form-group">
+                    <label>Country Target</label>
+                    <select id="pref-location-country" disabled>
+                        <option value="India" selected>India</option>
+                    </select>
                 </div>
+
                 <div class="form-row">
-                    <div class="form-group" style="width:50%;">
-                        <label>Language Preference</label>
-                        <select id="pref-language">
-                            <option value="Doesn't matter" selected>Doesn't matter</option>
-                            <option value="English">English</option>
-                            <option value="Hindi">Hindi</option>
-                            <option value="Marathi">Marathi</option>
+                    <div class="form-group" style="width: 50%;">
+                        <label>State Scope</label>
+                        <select id="pref-location-state" onchange="synchronizeRegionalDistrictsData()">
+                            <option value="All" selected>All States</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
                         </select>
                     </div>
-                    <div class="form-group" style="width:50%;">
-                        <label>Religion Preference</label>
-                        <select id="pref-religion">
-                            <option value="Doesn't matter" selected>Doesn't matter</option>
-                            <option value="Christian">Christian</option>
-                            <option value="Protestant">Protestant</option>
-                            <option value="Catholic">Catholic</option>
+                    <div class="form-group" style="width: 50%;">
+                        <label>District Scope</label>
+                        <select id="pref-location-district">
+                            <option value="All" selected>All Districts</option>
                         </select>
                     </div>
                 </div>
-                <button class="btn-primary" onclick="applyPreferencesAndRefresh()">Save & Re-Filter Feed</button>
             </div>
+
+            <div class="auth-card">
+                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #00b4d8; text-transform: uppercase; letter-spacing: 0.5px;">2. Community & Faith Matrix</h4>
+                
+                <div class="form-group">
+                    <label>Caste Baseline Religion</label>
+                    <select id="pref-religion-caste" disabled>
+                        <option value="Christian" selected>Christian</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Sub-Denomination Grouping</label>
+                    <select id="pref-religion-sub">
+                        <option value="Doesn't matter" selected>Doesn't matter</option>
+                        <option value="Protestant">Protestant</option>
+                        <option value="Catholic">Catholic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Language Mother Tongue</label>
+                    <select id="pref-mother-tongue">
+                        <option value="Doesn't matter" selected>Doesn't matter</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Marathi">Marathi</option>
+                        <option value="English">English</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Konkani">Konkani</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="auth-card">
+                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #00b4d8; text-transform: uppercase; letter-spacing: 0.5px;">3. Age & Height Buckets</h4>
+                
+                <div class="form-group">
+                    <label>Age Scope Filter</label>
+                    <div class="range-slider-wrapper">
+                        <div class="range-slider-track" id="age-slider-track"></div>
+                    </div>
+                    <div class="range-slider-container">
+                        <input type="range" id="age-min-slider" min="18" max="45" value="18" oninput="parseDualSliderMetrics('age')">
+                        <input type="range" id="age-max-slider" min="18" max="45" value="45" oninput="parseDualSliderMetrics('age')">
+                    </div>
+                    <div class="range-values-display">
+                        <span>Selected Age:</span>
+                        <div id="age-range-label">18 Yrs - 45 Yrs</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Height Scope Filter</label>
+                    <div class="range-slider-wrapper">
+                        <div class="range-slider-track" id="height-slider-track"></div>
+                    </div>
+                    <div class="range-slider-container">
+                        <input type="range" id="height-min-slider" min="140" max="210" value="150" oninput="parseDualSliderMetrics('height')">
+                        <input type="range" id="height-max-slider" min="140" max="210" value="190" oninput="parseDualSliderMetrics('height')">
+                    </div>
+                    <div class="range-values-display">
+                        <span>Selected Height:</span>
+                        <div id="height-range-label">150 cm - 190 cm</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-card">
+                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #00b4d8; text-transform: uppercase; letter-spacing: 0.5px;">4. Education Stream</h4>
+                <div class="form-group">
+                    <label>Qualification Category</label>
+                    <select id="pref-education-cat" onchange="toggleCustomEducationInputField()">
+                        <option value="All Fields" selected>Graduation (All Fields)</option>
+                        <option value="MBA">MBA (All Fields Included)</option>
+                        <option value="Others">Others (Custom Entry)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="custom-edu-wrapper" style="display: none;">
+                    <label>Specify Custom Qualification</label>
+                    <input type="text" id="pref-education-custom" placeholder="Type specific degree program details...">
+                </div>
+            </div>
+
+            <div class="auth-card">
+                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #00b4d8; text-transform: uppercase; letter-spacing: 0.5px;">5. Aesthetic Profiles</h4>
+                <div class="form-row">
+                    <div class="form-group" style="width: 50%;">
+                        <label>Body Structure</label>
+                        <select id="pref-body-structure">
+                            <option value="Doesn't matter" selected>Doesn't matter</option>
+                            <option value="Slim">Slim</option>
+                            <option value="Heavy">Heavy</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <label>Look Assessment</label>
+                        <select id="pref-look">
+                            <option value="Doesn't matter" selected>Doesn't matter</option>
+                            <option value="Good looking">Good looking</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Skin Tone Complexion</label>
+                    <select id="pref-skin">
+                        <option value="Doesn't matter" selected>Doesn't matter</option>
+                        <option value="Fair">Fair</option>
+                        <option value="Black">Black</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="auth-card">
+                <h4 style="margin: 0 0 15px 0; font-size: 13px; color: #00b4d8; text-transform: uppercase; letter-spacing: 0.5px;">6. Family Background</h4>
+                <div class="form-row">
+                    <div class="form-group" style="width: 50%;">
+                        <label>Father's Status</label>
+                        <select id="pref-family-father">
+                            <option value="Doesn't matter" selected>Doesn't matter</option>
+                            <option value="Working">Working</option>
+                            <option value="Retired">Retired</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <label>Mother's Status</label>
+                        <select id="pref-family-mother">
+                            <option value="Doesn't matter" selected>Doesn't matter</option>
+                            <option value="Working">Working</option>
+                            <option value="Homemaker">Homemaker</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="width: 50%;">
+                        <label>Sister Details</label>
+                        <input type="text" id="pref-family-sister" placeholder="Type text entry...">
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <label>Brother Details</label>
+                        <input type="text" id="pref-family-brother" placeholder="Type text entry...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Residential Status</label>
+                    <select id="pref-house">
+                        <option value="Doesn't matter" selected>Doesn't matter</option>
+                        <option value="Own">Own House</option>
+                        <option value="Rent">Rented Unit</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Annual Salary Framework</label>
+                    <select id="pref-salary">
+                        <option value="Doesn't matter" selected>Doesn't matter</option>
+                        <option value="1-2 Lakh">1 Lakh to 2 Lakh</option>
+                        <option value="2-5 Lakh">2 Lakh to 5 Lakh</option>
+                        <option value="5-10 Lakh">5 Lakh to 10 Lakh</option>
+                        <option value="Above 10 Lakh">Above 10 Lakh</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn-primary" style="margin-bottom: 40px;" onclick="applyPreferencesAndRefresh()">Apply Parameters & Re-Filter Feed</button>
         </section>
 
         <section id="view-matches" class="app-view">
@@ -435,11 +683,19 @@
     </div>
 
     <script>
+        // Seed database updated with verified Christian archetypes across India
         const databaseProfiles = [
-            { id: 1, name: "Pooja Hegde", age: 26, height: "5.4", weight: "54kg", body: "Slim", skin: "Fair", smoke: "No", drink: "No", house: "Own", marital: "Never married", language: "Marathi", religion: "Catholic", field: "BCA Graduate / IT Pro", location: "Mumbai, MH", bio: "Looking for an understanding life partner who values career and family balance.", verified: true },
-            { id: 2, name: "Rohan Deshmukh", age: 31, height: "5.9", weight: "74kg", body: "Slim", skin: "Fair", smoke: "No", drink: "Occasionally", house: "Own", marital: "Never married", language: "Hindi", religion: "Protestant", field: "B.Com / Accounts Manager", location: "Pune, MH", bio: "Simple, middle-class values. Enjoys travel.", verified: true },
-            { id: 3, name: "Meera Nair", age: 29, height: "5.2", weight: "62kg", body: "Heavy", skin: "Fair", smoke: "No", drink: "No", house: "Rent", marital: "Never married", language: "English", religion: "Christian", field: "M.Com / Teacher", location: "Bangalore, KA", bio: "Believes compatibility and conversation are everything.", verified: false }
+            { id: 1, name: "Michelle D'Souza", age: 24, height: 165, body: "Slim", look: "Good looking", skin: "Fair", house: "Own", salary: "5-10 Lakh", education: "MBA", score: "10/10", field: "MBA Marketing / Senior Analyst", location: "Mumbai", state: "Maharashtra", district: "Mumbai City", subDenom: "Catholic", motherTongue: "English", bio: "Tech professional looking for an individual focused on growth and compatibility.", verified: true },
+            { id: 2, name: "Sarah Williams", age: 28, height: 158, body: "Slim", look: "Good looking", skin: "Fair", house: "Own", salary: "2-5 Lakh", education: "All Fields", score: "9.8/10", field: "B.Tech Graduate / Software Engineer", location: "Bangalore", state: "Karnataka", district: "Bangalore Urban", subDenom: "Protestant", motherTongue: "Hindi", bio: "Enjoys balancing family principles with corporate professional life.", verified: true },
+            { id: 3, name: "Rachel Alvares", age: 32, height: 172, body: "Heavy", look: "Good looking", skin: "Fair", house: "Rent", salary: "Above 10 Lakh", education: "Others", score: "9.5/10", field: "M.Com / Financial Consultant", location: "Mangalore", state: "Karnataka", district: "Dakshina Kannada", subDenom: "Catholic", motherTongue: "Konkani", bio: "Independent professional looking for a conversational and meaningful partnership.", verified: false }
         ];
+
+        const districtMap = {
+            "All": ["All Districts"],
+            "Maharashtra": ["All Districts", "Mumbai City", "Pune", "Nagpur", "Thane"],
+            "Karnataka": ["All Districts", "Bangalore Urban", "Dakshina Kannada", "Belagavi", "Mysuru"],
+            "Tamil Nadu": ["All Districts", "Chennai", "Coimbatore", "Madurai", "Trichy"]
+        };
 
         let activeFeedProfiles = [];
         let profilePointer = 0;
@@ -454,7 +710,67 @@
                 authPortal.style.display = 'block';
                 setTimeout(() => { splash.remove(); }, 600);
             }, 1500);
+
+            parseDualSliderMetrics('age');
+            parseDualSliderMetrics('height');
+            synchronizeRegionalDistrictsData();
         });
+
+        function parseDualSliderMetrics(type) {
+            const minSlider = document.getElementById(`${type}-min-slider`);
+            const maxSlider = document.getElementById(`${type}-max-slider`);
+            const track = document.getElementById(`${type}-slider-track`);
+            const label = document.getElementById(`${type}-range-label`);
+
+            let minVal = parseInt(minSlider.value);
+            let maxVal = parseInt(maxSlider.value);
+
+            if (minVal >= maxVal) {
+                if (document.activeElement === minSlider) {
+                    minSlider.value = maxVal - 1;
+                    minVal = maxVal - 1;
+                } else {
+                    maxSlider.value = minVal + 1;
+                    maxVal = minVal + 1;
+                }
+            }
+
+            const minLimit = parseInt(minSlider.min);
+            const maxLimit = parseInt(minSlider.max);
+            
+            const percentLeft = ((minVal - minLimit) / (maxLimit - minLimit)) * 100;
+            const percentRight = ((maxVal - minLimit) / (maxLimit - minLimit)) * 100;
+
+            track.style.left = percentLeft + '%';
+            track.style.width = (percentRight - percentLeft) + '%';
+
+            if (type === 'age') {
+                label.innerText = `${minVal} Yrs - ${maxVal} Yrs`;
+            } else if (type === 'height') {
+                label.innerText = `${minVal} cm - ${maxVal} cm`;
+            }
+        }
+
+        function synchronizeRegionalDistrictsData() {
+            const selectedState = document.getElementById('pref-location-state').value;
+            const districtDropdown = document.getElementById('pref-location-district');
+            
+            districtDropdown.innerHTML = '';
+            const districts = districtMap[selectedState] || ["All Districts"];
+            
+            districts.forEach(dist => {
+                const opt = document.createElement('option');
+                opt.value = dist === "All Districts" ? "All" : dist;
+                opt.innerText = dist;
+                districtDropdown.appendChild(opt);
+            });
+        }
+
+        function toggleCustomEducationInputField() {
+            const selector = document.getElementById('pref-education-cat').value;
+            const customWrapper = document.getElementById('custom-edu-wrapper');
+            customWrapper.style.display = (selector === 'Others') ? 'block' : 'none';
+        }
 
         function handlePortalLogin(event) {
             event.preventDefault();
@@ -484,8 +800,6 @@
                     document.getElementById('live-webcam-stream').srcObject = stream;
                 })
                 .catch(err => {
-                    // Fallback mature presentation tracking if hardware prompt declines
-                    console.log("Hardware interface restricted:", err);
                     setTimeout(() => { logText.innerText = "📷 Secure Stream Established [Simulated Virtual Sandbox Channel Active]"; }, 1000);
                 });
         }
@@ -498,64 +812,75 @@
             shutterBtn.innerText = "Analyzing Facial Anchors...";
             logText.innerText = "Scanning facial matrix symmetry points...";
 
-            // Structural comparison parsing timeout simulation
             setTimeout(() => {
                 logText.innerText = "Comparing spatial matrices against profile metadata layers...";
                 
                 setTimeout(() => {
-                    // Close local system camera stream routes safely if active
                     const videoEl = document.getElementById('live-webcam-stream');
                     if(videoEl && videoEl.srcObject) {
                         videoEl.srcObject.getTracks().forEach(track => track.stop());
                     }
 
-                    // Complete match confirmation routine
                     isAccountVerifiedGlobally = true;
                     document.getElementById('camera-firewall-overlay').style.display = 'none';
                     
-                    // Rewrite status billboard UI
                     document.getElementById('status-badge-label').innerHTML = `Verified Active Profile <span class="blue-tick">✓</span>`;
-                    document.getElementById('status-badge-label').style.color = "#007aff";
+                    document.getElementById('status-badge-label').style.color = "#00b4d8";
                     document.getElementById('trigger-camera-btn').remove();
                     
-                    alert("Facial alignment verification successful. Identity confirmed. Verified blue tick asset has been attached permanently to your account node.");
+                    alert("Facial alignment verification successful. Identity verified.");
                 }, 1500);
 
             }, 1500);
         }
 
-        /* --- EMERGENCY IMMEDIATE ACCOUNT PURGE KILL-SWITCH --- */
         function executeInstantProfilePurge() {
-            const clearConfirmation = confirm("CRITICAL SECURITY COMMAND: Are you absolutely sure you want to delete this profile record? This action invokes an immediate database wipe, logging you out and purging active directory traces completely.");
+            const clearConfirmation = confirm("Are you completely sure you want to drop your tracking hashes and delete this profile directory?");
             if (clearConfirmation) {
                 document.getElementById('main-app').style.opacity = '0';
                 setTimeout(() => {
                     document.getElementById('main-app').style.display = 'none';
-                    // Flush dynamic run states completely
                     activeFeedProfiles = [];
                     isAccountVerifiedGlobally = false;
-                    
-                    // Reset application interface elements to baseline launch states
-                    const authPortal = document.getElementById('auth-portal-screen');
-                    document.getElementById('auth-identity').value = '';
-                    document.getElementById('auth-pass').value = '';
-                    authPortal.style.display = 'block';
-                    
-                    alert("Account directory record purged successfully. All tracking hashes dropped.");
+                    document.getElementById('auth-portal-screen').style.display = 'block';
+                    alert("Account records purged successfully.");
                 }, 400);
             }
         }
 
         function applyPreferencesAndRefresh() {
-            const minAge = parseInt(document.getElementById('pref-age-min').value) || 18;
-            const maxAge = parseInt(document.getElementById('pref-age-max').value) || 45;
-            const langPref = document.getElementById('pref-language').value;
-            const relPref = document.getElementById('pref-religion').value;
+            const minAge = parseInt(document.getElementById('age-min-slider').value);
+            const maxAge = parseInt(document.getElementById('age-max-slider').value);
+            const minHeight = parseInt(document.getElementById('height-min-slider').value);
+            const maxHeight = parseInt(document.getElementById('height-max-slider').value);
+            
+            const statePref = document.getElementById('pref-location-state').value;
+            const distPref = document.getElementById('pref-location-district').value;
+            const subDenomPref = document.getElementById('pref-religion-sub').value;
+            const tonguePref = document.getElementById('pref-mother-tongue').value;
+            
+            const eduCat = document.getElementById('pref-education-cat').value;
+            const bodyCat = document.getElementById('pref-body-structure').value;
+            const lookCat = document.getElementById('pref-look').value;
+            const skinCat = document.getElementById('pref-skin').value;
+            const houseCat = document.getElementById('pref-house').value;
+            const salaryCat = document.getElementById('pref-salary').value;
 
             activeFeedProfiles = databaseProfiles.filter(p => {
                 if (p.age < minAge || p.age > maxAge) return false;
-                if (langPref !== "Doesn't matter" && p.language !== langPref) return false;
-                if (relPref !== "Doesn't matter" && p.religion !== relPref) return false;
+                if (p.height < minHeight || p.height > maxHeight) return false;
+                
+                if (statePref !== "All" && p.state !== statePref) return false;
+                if (distPref !== "All" && p.district !== distPref) return false;
+                if (subDenomPref !== "Doesn't matter" && p.subDenom !== subDenomPref) return false;
+                if (tonguePref !== "Doesn't matter" && p.motherTongue !== tonguePref) return false;
+                
+                if (eduCat !== "All Fields" && p.education !== eduCat) return false;
+                if (bodyCat !== "Doesn't matter" && p.body !== bodyCat) return false;
+                if (lookCat !== "Doesn't matter" && p.look !== lookCat) return false;
+                if (skinCat !== "Doesn't matter" && p.skin !== skinCat) return false;
+                if (houseCat !== "Doesn't matter" && p.house !== houseCat) return false;
+                if (salaryCat !== "Doesn't matter" && p.salary !== salaryCat) return false;
                 return true;
             });
 
@@ -586,25 +911,26 @@
                 card.style.zIndex = activeFeedProfiles.length - i;
                 
                 if(i !== profilePointer) {
-                    card.style.transform = 'scale(0.96) translateY(12px)';
-                    card.style.opacity = '0.4';
+                    card.style.transform = 'scale(0.96) translateY(14px)';
+                    card.style.opacity = '0.3';
                 }
 
                 card.innerHTML = `
                     <div class="profile-media-box">
-                        <div class="match-compatibility-badge">COMPATIBLE MATCH</div>
+                        <div class="match-compatibility-badge">MATCH SCORE: ${data.score}</div>
                         <div class="profile-blur-cover">
-                            <span style="font-size:32px; margin-bottom:10px;">👤</span>
-                            <span style="font-size:12px; letter-spacing:1px; opacity:0.6; text-transform:uppercase;">Photo Protected</span>
+                            <span style="font-size:54px; margin-bottom:12px;">👤</span>
+                            <span style="font-size:11px; letter-spacing:2px; opacity:0.6; text-transform:uppercase; font-weight:700;">Immersive Large Photo Window</span>
                         </div>
                         <div class="profile-overlay">
                             <div class="prof-title">
                                 ${data.name}, ${data.age} 
                                 ${data.verified ? '<span class="blue-tick">✓</span>' : ''}
                             </div>
-                            <div class="prof-meta" style="font-size:13px; opacity:0.7; margin-top:2px;">
-                                ${data.religion} • ${data.language} Speaker<br>
-                                ${data.field} • ${data.location}
+                            <div class="prof-meta" style="font-size:13px; opacity:0.7; margin-top:4px; line-height:1.5;">
+                                ${data.subDenom} • Mother Tongue: ${data.motherTongue}<br>
+                                Location: ${data.district}, ${data.state} (India)<br>
+                                Height: ${data.height} cm • Package: Rs. ${data.salary} p.a.
                             </div>
                             <div class="prof-bio-text">"${data.bio}"</div>
                         </div>
@@ -634,10 +960,10 @@
             const matchRow = document.createElement('div');
             matchRow.className = 'list-item';
             matchRow.innerHTML = `
-                <div class="avatar-placeholder" style="background-color:#ff416c;">❤</div>
+                <div class="avatar-placeholder" style="background: linear-gradient(135deg, #00b4d8, #00f5d4); color:#080a10;">❤</div>
                 <div class="item-details">
                     <h4>${profile.name}, ${profile.age} <span class="blue-tick">✓</span></h4>
-                    <p>Secure Match Connection established. Connect via chat tab.</p>
+                    <p>Connection established (${profile.subDenom} / Match Score: ${profile.score}).</p>
                 </div>
             `;
             matchesList.insertBefore(matchRow, matchesList.firstChild);
