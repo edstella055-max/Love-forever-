@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Forever Matrimony</title>
     <style>
-        /* --- GLOBAL CONFIGURATION --- */
+        /* --- GLOBAL ROOT STYLES --- */
         body {
             margin: 0;
             padding: 0;
-            background-color: #0b0914; /* Sleek Dark Navy-Violet Base */
+            background-color: #0b0914; /* Sleek Dark Navy Base */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
@@ -17,7 +17,7 @@
             color: #ffffff;
         }
 
-        /* --- SPLASH SCREEN SYSTEM --- */
+        /* --- LAYER 1: SPLASH SCREEN --- */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -34,7 +34,7 @@
 
         .splash-container {
             text-align: center;
-            animation: zoomInOut 4s ease-in-out infinite; 
+            animation: zoomInOut 3s ease-in-out infinite; 
         }
 
         .brand-name {
@@ -58,161 +58,94 @@
             letter-spacing: 5px;
             text-transform: uppercase;
             margin-top: 5px;
-            text-shadow: 0 0 8px rgba(255, 65, 108, 0.4);
-        }
-
-        .symbol-svg {
-            width: 32px;
-            height: 32px;
-            display: inline-block;
-            vertical-align: middle;
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
-        }
-
-        .symbol-svg path {
-            fill: none;
-            stroke: #ffffff;
-            stroke-width: 2.5px;
-            stroke-linecap: round;
-            stroke-linejoin: round;
         }
 
         @keyframes zoomInOut {
-            0% { transform: scale(0.8); opacity: 0.6; }
-            50% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(0.8); opacity: 0.6; }
+            0%, 100% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
         }
 
-        /* --- REGISTRATION PROFILE CREATION SYSTEM --- */
-        #registration-screen {
+        /* --- UNIVERSAL CARD INTERFACES --- */
+        .window-shell {
             display: none;
-            max-width: 440px;
+            max-width: 460px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 25px 15px;
             box-sizing: border-box;
-            animation: fadeInView 0.4s ease;
+            animation: fadeIn 0.4s ease;
         }
 
-        .reg-card {
+        .auth-card {
             background-color: #131021;
-            border-radius: 24px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 28px;
+            padding: 30px 24px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
         }
 
-        .reg-title { font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #ffffff; }
-        .reg-subtitle { font-size: 14px; color: #726e8d; margin-bottom: 25px; }
+        .section-header-title { font-size: 26px; font-weight: 800; margin-bottom: 6px; color: #ffffff; }
+        .section-header-sub { font-size: 14px; color: #726e8d; margin-bottom: 25px; }
 
-        .form-group {
-            margin-bottom: 18px;
-        }
-
+        .form-group { margin-bottom: 18px; }
         .form-group label {
             display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: #b3b3b3;
+            font-size: 12px;
+            font-weight: 700;
+            color: #a0a0a0;
             margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
-        .form-group input, .form-group select {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 13px 15px;
+            padding: 14px 16px;
             background-color: #1c1830;
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
+            border-radius: 14px;
             color: #ffffff;
             font-size: 15px;
             box-sizing: border-box;
             transition: border-color 0.2s;
         }
 
-        .form-group input:focus, .form-group select:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
-            border-color: rgba(255, 65, 108, 0.6);
+            border-color: #ff416c;
         }
 
-        .form-row {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* Camera Box For Live Selfie */
-        .selfie-box {
-            width: 100%;
-            height: 180px;
-            background-color: #1c1830;
-            border: 2px dashed rgba(255,255,255,0.15);
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-
-        .selfie-box span { font-size: 13px; color: #726e8d; margin-top: 8px; }
-        .selfie-preview {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: none;
-        }
-
+        .form-row { display: flex; gap: 15px; }
+        
         .btn-primary {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #ba0c2f, #a00624);
+            padding: 16px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
             color: white;
             border: none;
             border-radius: 14px;
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(186, 12, 47, 0.4);
-            margin-top: 10px;
+            box-shadow: 0 6px 20px rgba(255, 65, 108, 0.4);
         }
 
-        /* Verification Info Notice */
-        .verif-badge-info {
-            background-color: rgba(0, 122, 255, 0.1);
-            border: 1px solid rgba(0, 122, 255, 0.3);
-            border-radius: 12px;
-            padding: 12px;
-            font-size: 12px;
-            color: #4da3ff;
-            line-height: 1.4;
-            margin-bottom: 15px;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        /* --- CORE APPLICATION SHELL --- */
+        /* --- MAIN SHELL SYSTEM --- */
         #main-app {
             display: none;
             opacity: 0;
             transition: opacity 0.4s ease-in;
-            padding-bottom: 90px;
-            background-color: #0b0914; 
+            padding-bottom: 100px;
             min-height: 100vh;
             box-sizing: border-box;
         }
 
         .app-header {
             background-color: #131021;
-            padding: 15px 20px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -225,38 +158,26 @@
             text-shadow: 0 0 10px rgba(255, 65, 108, 0.6);
         }
 
-        /* --- VIEW ROUTER (PAGES) --- */
         .app-view {
             display: none; 
             max-width: 480px;
             margin: 0 auto;
             padding: 20px 15px;
-            animation: fadeInView 0.3s ease-out forwards;
         }
 
         .app-view.active-view { display: block; }
 
-        @keyframes fadeInView {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- HOME VIEW: CARDS SYSTEM --- */
-        .card-stack {
-            position: relative;
-            height: 480px;
-            width: 100%;
-            margin-top: 10px;
-        }
-
+        /* --- HOME: FEED CARDS & MATCH SCORE --- */
+        .card-stack { position: relative; height: 500px; width: 100%; margin-top: 5px; }
+        
         .profile-card {
             position: absolute;
             width: 100%;
             height: 100%;
             background-color: #131021;
-            border-radius: 24px;
+            border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6);
             box-sizing: border-box;
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
             display: flex;
@@ -272,250 +193,200 @@
             flex-grow: 1;
             background: linear-gradient(135deg, #251f3b, #0b0914);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #ffffff;
             position: relative;
         }
 
-        .profile-media-box svg { width: 70px; height: 70px; opacity: 0.3; fill: currentColor; }
+        .profile-blur-cover {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: repeating-linear-gradient(45deg, #131021, #1c1830 10px, #0b0914 20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+
+        .match-compatibility-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 65, 108, 0.95);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
 
         .profile-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 30px 20px 20px 20px;
-            background: linear-gradient(to top, rgba(11,9,20,1) 30%, transparent);
+            bottom: 0; left: 0; width: 100%;
+            padding: 40px 20px 20px 20px;
+            background: linear-gradient(to top, rgba(11,9,20,1) 40%, rgba(11,9,20,0.8) 70%, transparent);
             box-sizing: border-box;
-            color: #ffffff;
+            z-index: 6;
         }
 
-        .prof-title { font-size: 24px; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
-        .prof-meta { font-size: 14px; opacity: 0.8; line-height: 1.5; }
-
-        /* Blue Verification Tick Mark */
+        .prof-title { font-size: 24px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
         .blue-tick {
-            display: inline-flex;
             background-color: #007aff;
-            color: #ffffff;
+            color: white;
             border-radius: 50%;
             width: 18px;
             height: 18px;
             font-size: 11px;
+            display: inline-flex;
             justify-content: center;
             align-items: center;
-            font-weight: bold;
+        }
+
+        .prof-bio-text {
+            font-size: 14px;
+            color: #d0d0d0;
+            margin-top: 8px;
+            font-style: italic;
+            line-height: 1.4;
         }
 
         .action-tray { display: flex; justify-content: center; gap: 25px; padding: 20px 0; }
-
         .btn-round {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            transition: transform 0.1s ease;
+            width: 62px; height: 62px; border-radius: 50%; border: none;
+            display: flex; justify-content: center; align-items: center;
+            cursor: pointer; box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            font-size: 22px;
         }
 
-        .btn-round:active { transform: scale(0.9); }
-        .btn-dislike { background-color: #251f3b; color: #ffffff; font-size: 20px; opacity: 0.8; }
-        .btn-like { background-color: #ba0c2f; color: #ffffff; font-size: 22px; }
+        .btn-dislike { background-color: #251f3b; color: #ffffff; }
+        .btn-like { background-color: #ff416c; color: #ffffff; }
 
-        .no-profiles-message { text-align: center; padding: 60px 20px; color: #b3b3b3; display: none; }
+        /* --- CHAT VIEW & PREMIUM PAYWALL --- */
+        .premium-paywall-box {
+            background: linear-gradient(135deg, #1c1830, #131021);
+            border: 1px solid rgba(255, 65, 108, 0.3);
+            border-radius: 20px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
 
-        /* --- SUB-PAGES SYSTEM --- */
-        .view-title { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 20px; }
+        .trial-badge {
+            display: inline-block;
+            background: #ff416c;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
 
-        .list-item {
-            background: #131021;
-            padding: 15px;
-            border-radius: 16px;
-            margin-bottom: 12px;
+        /* --- PROFILE VIEW MODIFICATIONS --- */
+        .photo-uploader-tray {
             display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .photo-slot {
+            flex: 1;
+            height: 100px;
+            background-color: #1c1830;
+            border: 2px dashed rgba(255,255,255,0.1);
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 11px;
+            color: #726e8d;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .delete-photo-btn {
+            position: absolute;
+            top: 4px; right: 4px;
+            background: rgba(0,0,0,0.7);
+            border: none; color: white;
+            border-radius: 50%; width: 18px; height: 18px;
+            font-size: 10px; cursor: pointer;
+        }
+
+        .privacy-toggle-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #131021;
+            padding: 16px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        /* --- CORE STYLING STRUCTURES --- */
+        .list-item {
+            background: #131021; padding: 16px; border-radius: 18px;
+            margin-bottom: 12px; display: flex; align-items: center; gap: 15px;
             border: 1px solid rgba(255,255,255,0.03);
         }
 
         .avatar-placeholder {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #251f3b;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+            width: 52px; height: 52px; border-radius: 50%;
+            background-color: #251f3b; display: flex;
+            justify-content: center; align-items: center; font-size: 20px;
         }
 
-        .item-details h4 { margin: 0 0 4px 0; color: #ffffff; display: flex; align-items: center; gap: 5px; }
-        .item-details p { margin: 0; font-size: 13px; color: #a0a0a0; }
+        .item-details h4 { margin: 0 0 4px 0; color: #ffffff; display: flex; align-items: center; gap: 6px; }
+        .item-details p { margin: 0; font-size: 13px; color: #726e8d; }
 
-        /* --- FIXED BOTTOM BAR NAVIGATION --- */
         .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #131021;
-            display: flex;
-            justify-content: space-around;
-            padding: 12px 0 16px 0;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
-            z-index: 100;
-            border-top: 1px solid rgba(255,255,255,0.03);
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background-color: #131021; display: flex; justify-content: space-around;
+            padding: 12px 0 16px 0; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+            z-index: 100; border-top: 1px solid rgba(255,255,255,0.03);
         }
 
         .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 11px;
-            font-weight: 600;
-            color: #726e8d;
-            text-decoration: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            width: 25%;
+            display: flex; flex-direction: column; align-items: center;
+            font-size: 11px; font-weight: 600; color: #726e8d;
+            background: none; border: none; cursor: pointer; width: 20%;
         }
 
-        .nav-item.active-tab {
-            color: #ffffff;
-            filter: drop-shadow(0 0 5px rgba(255, 65, 108, 0.6));
-        }
+        .nav-item.active-tab { color: #ffffff; filter: drop-shadow(0 0 5px #ff416c); }
+        .nav-icon { width: 22px; height: 22px; margin-bottom: 4px; fill: currentColor; }
 
-        .nav-icon { width: 24px; height: 24px; margin-bottom: 4px; fill: currentColor; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
     </style>
 </head>
 <body>
 
     <div id="splash-screen">
         <div class="splash-container">
-            <h1 class="brand-name">
-                Love Forever 
-                <svg class="symbol-svg" viewBox="0 0 24 24">
-                    <path d="M12 2v20M7 9h10"/>
-                </svg>
-                <svg class="symbol-svg" viewBox="0 0 24 24">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-            </h1>
+            <h1 class="brand-name">Love Forever</h1>
             <div class="tagline">Matrimony</div>
         </div>
     </div>
 
-    <div id="registration-screen">
-        <div class="reg-card">
-            <div class="reg-title">Create Profile</div>
-            <div class="reg-subtitle">Enter your matching credentials to continue</div>
+    <div id="auth-portal-screen" class="window-shell">
+        <div class="auth-card">
+            <div class="section-header-title">Log In</div>
+            <div class="section-header-sub">Access your account using your secure password credentials</div>
             
-            <form id="profileCreationForm" onsubmit="executeRegistration(event)">
+            <form onsubmit="handlePortalLogin(event)">
                 <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" required placeholder="Enter full name">
+                    <label>Email Address or Mobile Number</label>
+                    <input type="text" id="auth-identity" required placeholder="example@mail.com or +91...">
                 </div>
-
-                <div class="form-row">
-                    <div class="form-group" style="width: 35%;">
-                        <label>Age</label>
-                        <input type="number" min="18" max="70" required placeholder="Age">
-                    </div>
-                    <div class="form-group" style="width: 65%;">
-                        <label>Social Class</label>
-                        <select required>
-                            <option value="Middle Class" selected>Middle Class</option>
-                            <option value="Upper Middle Class">Upper Middle Class</option>
-                            <option value="Lower Middle Class">Lower Middle Class</option>
-                        </select>
-                    </div>
-                </div>
-
                 <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" required placeholder="name@domain.com">
+                    <label>Account Password</label>
+                    <input type="password" id="auth-pass" required placeholder="••••••••">
                 </div>
-
-                <div class="form-row">
-                    <div class="form-group" style="width: 50%;">
-                        <label>Country</label>
-                        <select disabled>
-                            <option value="India">India</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="width: 50%;">
-                        <label>State</label>
-                        <select id="reg-state-select" onchange="populateDistrictDropdown()" required>
-                            <option value="">Select State</option>
-                            <option value="Karnataka">Karnataka</option>
-                            <option value="Maharashtra">Maharashtra</option>
-                            <option value="Delhi">Delhi</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>District</label>
-                    <select id="reg-district-select" required>
-                        <option value="">Select State First</option>
-                    </select>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group" style="width: 50%;">
-                        <label>Education Degree</label>
-                        <select required>
-                            <option value="B.Com">B.Com</option>
-                            <option value="BCA">BCA</option>
-                            <option value="B.Tech / BE">B.Tech / BE</option>
-                            <option value="BSc">BSc</option>
-                            <option value="BA">BA</option>
-                            <option value="BBA">BBA</option>
-                            <option value="MBA">MBA</option>
-                            <option value="M.Tech">M.Tech</option>
-                            <option value="MCA">MCA</option>
-                            <option value="M.Com">M.Com</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="width: 50%;">
-                        <label>Professional Field</label>
-                        <select required>
-                            <option value="Commerce & Accounts">Commerce</option>
-                            <option value="IT / Software Development">IT / Tech</option>
-                            <option value="Lawyer / Legal Specialist">Lawyer</option>
-                            <option value="Doctor / Medical Practitioner">Doctor</option>
-                            <option value="Engineering Services">Engineer</option>
-                            <option value="Civil Services / Government">Government</option>
-                            <option value="Management & HR">Management</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Mandatory Live Verification</label>
-                    <div class="verif-badge-info">
-                        <span style="font-size:16px;">🛡</span>
-                        <div>Live photo required. Subject to manual admin approval before blue verification badge activation.</div>
-                    </div>
-                    <div class="selfie-box" onclick="triggerMockSelfieCapture()">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#726e8d" stroke-width="2">
-                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                            <circle cx="12" cy="13" r="4"/>
-                        </svg>
-                        <span id="selfie-status-text">Click to Capture Live Selfie</span>
-                        <div id="mock-camera-feed" class="selfie-preview" style="background: linear-gradient(to bottom, #ba0c2f, #1c1830); opacity: 0.3;"></div>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-primary">Submit Profile & Verify</button>
+                <button type="submit" class="btn-primary" style="margin-top: 10px;">Secure Account Access</button>
             </form>
         </div>
     </div>
@@ -524,17 +395,15 @@
         
         <header class="app-header">
             <div class="app-logo-text">Love Forever</div>
-            <div>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
-            </div>
+            <div style="font-size:12px; color:#ff416c; font-weight:700; border:1px solid #ff416c; padding:3px 8px; border-radius:8px;">INDIA</div>
         </header>
 
         <section id="view-home" class="app-view active-view">
             <div class="card-stack" id="card-stack-container">
                 </div>
             <div class="no-profiles-message" id="end-feed-msg">
-                <h3>No More Profiles Found</h3>
-                <p>Try adjusting your match settings to see more people nearby.</p>
+                <h3>No Match Criteria Found</h3>
+                <p>Try broadening your matching filter preferences inside your setup tab.</p>
             </div>
             <div class="action-tray" id="action-buttons-tray">
                 <button class="btn-round btn-dislike" onclick="handleSwipeAction('left')">✕</button>
@@ -542,42 +411,137 @@
             </div>
         </section>
 
-        <section id="view-matches" class="app-view">
-            <div class="view-title">Connected Matches</div>
-            <div id="matches-target-list">
-                <div class="list-item">
-                    <div class="avatar-placeholder" style="background-color:#ba0c2f;">❤</div>
-                    <div class="item-details">
-                        <h4>Preeti Desai, 26 <span class="blue-tick">✓</span></h4>
-                        <p>Matched 2 hours ago • Say hello!</p>
+        <section id="view-preferences" class="app-view">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Partner Match Preferences</div>
+            <div class="auth-card" style="padding: 20px;">
+                <div class="form-row">
+                    <div class="form-group" style="width:50%;">
+                        <label>Min Age (18-45)</label>
+                        <input type="number" id="pref-age-min" value="18">
+                    </div>
+                    <div class="form-group" style="width:50%;">
+                        <label>Max Age (18-45)</label>
+                        <input type="number" id="pref-age-max" value="35">
                     </div>
                 </div>
+                <div class="form-row">
+                    <div class="form-group" style="width:50%;">
+                        <label>Min Height (ft)</label>
+                        <select id="pref-height-min"><option value="4.5">4.5</option><option value="5.0">5.0</option></select>
+                    </div>
+                    <div class="form-group" style="width:50%;">
+                        <label>Max Height (ft)</label>
+                        <select id="pref-height-max"><option value="5.10" selected>5.10</option><option value="6.2">6.2</option></select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="width:50%;">
+                        <label>Language Preference</label>
+                        <select id="pref-language">
+                            <option value="Doesn't matter" selected>Doesn't matter</option>
+                            <option value="English">English</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Marathi">Marathi</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="width:50%;">
+                        <label>Religion Preference</label>
+                        <select id="pref-religion">
+                            <option value="Doesn't matter" selected>Doesn't matter</option>
+                            <option value="Christian">Christian</option>
+                            <option value="Protestant">Protestant</option>
+                            <option value="Catholic">Catholic</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="width:50%;">
+                        <label>Body Structure</label>
+                        <select id="pref-body"><option value="Slim">Slim</option><option value="Heavy">Heavy</option><option value="All" selected>Any Structure</option></select>
+                    </div>
+                    <div class="form-group" style="width:50%;">
+                        <label>Does Look Matter?</label>
+                        <select id="pref-looks"><option value="Yes">Yes</option><option value="No">No</option></select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="width:50%;">
+                        <label>Smoking Habit</label>
+                        <select id="pref-smoke"><option value="No" selected>No</option><option value="Yes">Yes</option></select>
+                    </div>
+                    <div class="form-group" style="width:50%;">
+                        <label>Drinking Habit</label>
+                        <select id="pref-drink"><option value="No">No</option><option value="Yes">Yes</option><option value="Occasionally" selected>Occasionally</option></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>House Status</label>
+                    <select id="pref-house"><option value="Own">Own House</option><option value="Rent">Rented</option><option value="Any" selected>Any</option></select>
+                </div>
+                <div class="form-group">
+                    <label>Marital Status Group</label>
+                    <select id="pref-marital"><option value="Never married" selected>Never Married</option><option value="Married">Married</option><option value="Widow">Widow</option></select>
+                </div>
+                <button class="btn-primary" onclick="applyPreferencesAndRefresh()">Save & Re-Filter Feed</button>
             </div>
         </section>
 
+        <section id="view-matches" class="app-view">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Connected Matches</div>
+            <div id="matches-target-list">
+                </div>
+        </section>
+
         <section id="view-chat" class="app-view">
-            <div class="view-title">Conversations</div>
-            <div class="list-item" style="cursor:pointer;">
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Conversations</div>
+            
+            <div class="premium-paywall-box">
+                <span class="trial-badge">7-Day Free Trial Available</span>
+                <h4 style="margin: 0 0 8px 0; color: #ffffff;">Unlock Direct Inter-User Chat</h4>
+                <p style="margin: 0 0 15px 0; font-size: 13px; color: #a0a0a0;">Upgrade now to engage seamlessly with compatible premium profiles.</p>
+                <button class="btn-primary" style="padding: 10px 20px; font-size: 13px; width: auto;" onclick="alert('Premium trial initialization successful!')">Activate Free Trial</button>
+            </div>
+
+            <div class="list-item">
                 <div class="avatar-placeholder">💬</div>
                 <div class="item-details">
-                    <h4>Support Verification Desk</h4>
-                    <p>Your snapshot is under verification review by administration...</p>
+                    <h4>Admin Support Team</h4>
+                    <p>Welcome! Setup your details and photo privacy locks anytime...</p>
                 </div>
             </div>
         </section>
 
         <section id="view-profile" class="app-view">
-            <div class="view-title">My Account Profile</div>
-            <div class="list-item">
-                <div class="avatar-placeholder" style="background-color:#251f3b;" id="user-avatar-initial">U</div>
-                <div class="item-details">
-                    <h4 id="user-profile-display-name">User Account</h4>
-                    <p id="user-profile-meta-sub">Middle Class Account Profile</p>
+            <div class="view-title" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">My Verification Panel</div>
+            
+            <div class="auth-card" style="padding: 20px; margin-bottom: 20px;">
+                <label style="display:block; font-size:12px; font-weight:700; color:#a0a0a0; margin-bottom:10px; text-transform:uppercase;">Manage Photos</label>
+                <div class="photo-uploader-tray">
+                    <div class="photo-slot" onclick="alert('Photo uploader initiated. Selected file is queued for your admin approval process.')">
+                        <span>➕ Add Photo</span>
+                    </div>
+                    <div class="photo-slot" style="background:#251f3b;">
+                        <span style="color:#ff416c;">Profile.jpg</span>
+                        <button class="delete-photo-btn" onclick="event.stopPropagation(); alert('Photo record removed safely.')">✕</button>
+                    </div>
+                    <div class="photo-slot" style="border-style: solid; opacity: 0.3;">
+                        <span>Empty Slot</span>
+                    </div>
                 </div>
-            </div>
-            <div style="margin-top: 30px; font-size: 13px; text-align: center; color: #726e8d;">
-                <p>App Version 1.0.0 (Production Build)</p>
-                <a href="#" style="color: #ffffff; text-decoration: none; opacity: 0.7;">Play Store Privacy Policy</a>
+
+                <div class="privacy-toggle-box">
+                    <div>
+                        <h4 style="margin:0; font-size:14px;">Hide Profile Photo</h4>
+                        <p style="margin:4px 0 0 0; font-size:12px; color:#726e8d;">Only show photo to confirmed matches</p>
+                    </div>
+                    <input type="checkbox" id="photo-privacy-toggle" style="width:24px; height:24px;" onchange="togglePhotoVisibilityState()">
+                </div>
+
+                <div class="form-group">
+                    <label>Profile Biography Summary</label>
+                    <textarea id="user-bio-input" rows="3" placeholder="Describe your background and expectations..."></textarea>
+                </div>
+                <button class="btn-primary" style="padding:12px;" onclick="alert('Profile changes logged and queued awaiting official admin verification.')">Submit Profile Verification Update</button>
             </div>
         </section>
 
@@ -585,6 +549,10 @@
             <button class="nav-item active-tab" onclick="switchActiveView('home', this)">
                 <svg class="nav-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
                 Home
+            </button>
+            <button class="nav-item" onclick="switchActiveView('preferences', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Preferences
             </button>
             <button class="nav-item" onclick="switchActiveView('matches', this)">
                 <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
@@ -603,134 +571,131 @@
     </div>
 
     <script>
-        // Tiered Regional Mapping Data
-        const regionalDistricts = {
-            "Karnataka": ["Bangalore Urban", "Bangalore Rural", "Belagavi", "Mysuru", "Dharwad", "Mangaluru"],
-            "Maharashtra": ["Mumbai City", "Mumbai Suburban", "Pune", "Nagpur", "Thane", "Nashik"],
-            "Delhi": ["New Delhi", "North Delhi", "South Delhi", "West Delhi", "Central Delhi"]
-        };
-
-        // Simulated Matches Feed Database
+        // Comprehensive Matching User Matrices Database with added religion/language
         const databaseProfiles = [
-            { id: 1, name: "Vikram Malhotra", age: 31, field: "Doctor (MD)", location: "Mumbai, MH", class: "Middle Class", detail: "Professional Consultant • Enjoys Trekking & Architecture", verified: true },
-            { id: 2, name: "Ananya Iyer", age: 28, field: "Lawyer (Corporate Law)", location: "Bangalore, KA", class: "Middle Class", detail: "B.A. LL.B Graduate • Passionate about Classical Arts & Design", verified: true },
-            { id: 3, name: "Kunal Deshmukh", age: 30, field: "Software Engineer (BCA/MCA)", location: "Pune, MH", class: "Middle Class", detail: "Tech Professional • Enjoys Weekend Fitness Coding & Road Trips", verified: false }
+            { id: 1, name: "Pooja Hegde", age: 26, height: "5.4", weight: "54kg", body: "Slim", skin: "Fair", looksMatter: "Yes", smoke: "No", drink: "No", house: "Own", marital: "Never married", language: "Marathi", religion: "Catholic", field: "BCA Graduate / IT Pro", location: "Mumbai, MH", bio: "Looking for an understanding life partner who values career and family balance.", verified: true },
+            { id: 2, name: "Rohan Deshmukh", age: 31, height: "5.9", weight: "74kg", body: "Slim", skin: "Fair", looksMatter: "Yes", smoke: "No", drink: "Occasionally", house: "Own", marital: "Never married", language: "Hindi", religion: "Protestant", field: "B.Com / Accounts Manager", location: "Pune, MH", bio: "Simple, middle-class values. Enjoys travel and weekend road trips.", verified: true },
+            { id: 3, name: "Meera Nair", age: 29, height: "5.2", weight: "62kg", body: "Heavy", skin: "Fair", looksMatter: "No", smoke: "No", drink: "No", house: "Rent", marital: "Never married", language: "English", religion: "Christian", field: "M.Com / Teacher", location: "Bangalore, KA", bio: "Believes compatibility and conversation are everything. Let's talk!", verified: false }
         ];
 
+        let activeFeedProfiles = [];
         let profilePointer = 0;
-        let isSelfieCaptured = false;
+        let adminPhotoPrivacyLock = false;
 
         window.addEventListener('DOMContentLoaded', () => {
-            renderDiscoveryDeck();
-
-            // Intercept and load views sequence after splash timeout loop
+            // Initiate App Engine Loop Lifecycle
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
-                const regScreen = document.getElementById('registration-screen');
+                const authPortal = document.getElementById('auth-portal-screen');
                 
                 splash.style.transform = 'translateY(-100%)';
                 splash.style.opacity = '0';
+                authPortal.style.display = 'block';
                 
-                regScreen.style.display = 'block';
                 setTimeout(() => { splash.remove(); }, 600);
-            }, 4000);
+            }, 3000);
         });
 
-        // Cascading Dependent State to District Dropdown Populator
-        function populateDistrictDropdown() {
-            const stateSelect = document.getElementById('reg-state-select');
-            const districtSelect = document.getElementById('reg-district-select');
-            const selectedState = stateSelect.value;
-
-            districtSelect.innerHTML = '<option value="">Select District</option>';
-
-            if (selectedState && regionalDistricts[selectedState]) {
-                regionalDistricts[selectedState].forEach(dist => {
-                    const opt = document.createElement('option');
-                    opt.value = dist;
-                    opt.textContent = dist;
-                    districtSelect.appendChild(opt);
-                });
-            } else {
-                districtSelect.innerHTML = '<option value="">Select State First</option>';
-            }
-        }
-
-        // Live Camera Capture Simulation Module
-        function triggerMockSelfieCapture() {
-            const preview = document.getElementById('mock-camera-feed');
-            const statusText = document.getElementById('selfie-status-text');
-            
-            statusText.textContent = "Connecting Secure Native Camera App Interface...";
-            
-            setTimeout(() => {
-                preview.style.display = 'block';
-                statusText.textContent = "✓ Snapshot Securely Captured Live";
-                statusText.style.color = "#4da3ff";
-                isSelfieCaptured = true;
-            }, 1200);
-        }
-
-        // Execution router to move from registration page into actual app cards view
-        function executeRegistration(event) {
+        // Direct Login Verification Handler
+        function handlePortalLogin(event) {
             event.preventDefault();
-
-            if (!isSelfieCaptured) {
-                alert("Mandatory Verification Alert: You must execute your live camera selfie before submitting profile metrics.");
-                return;
-            }
-
-            const inputs = event.target.querySelectorAll('input');
-            const selects = event.target.querySelectorAll('select');
-            const profileName = inputs[0].value;
-            const profileAge = inputs[1].value;
-            const classTier = selects[0].value;
-
-            // Dynamically assign variable context fields to inside profile panel
-            document.getElementById('user-profile-display-name').textContent = `${profileName}, ${profileAge}`;
-            document.getElementById('user-profile-meta-sub').textContent = `${classTier} Profile • Awaiting Verification`;
-            document.getElementById('user-avatar-initial').textContent = profileName.charAt(0).toUpperCase();
-
-            // Transition from wizard container to actual operational App base
-            document.getElementById('registration-screen').style.display = 'none';
-            const app = document.getElementById('main-app');
-            app.style.display = 'block';
-            setTimeout(() => { app.style.opacity = '1'; }, 50);
+            document.getElementById('auth-portal-screen').style.display = 'none';
+            
+            const appFrame = document.getElementById('main-app');
+            appFrame.style.display = 'block';
+            setTimeout(() => { appFrame.style.opacity = '1'; }, 50);
+            
+            applyPreferencesAndRefresh();
         }
 
-        // Active Deck Display Manager
+        // Feature Toggle: Photo Visibility Privacy Setting
+        function togglePhotoVisibilityState() {
+            adminPhotoPrivacyLock = document.getElementById('photo-privacy-toggle').checked;
+            alert(adminPhotoPrivacyLock ? "Privacy mode enabled. Your pictures will now show blurred out to users until you mutually like them back." : "Public mode enabled. Your approved profile photos are visible across discovery feeds.");
+        }
+
+        // Filtering Logic Engine based on Preference Metrics
+        function applyPreferencesAndRefresh() {
+            const minAge = parseInt(document.getElementById('pref-age-min').value) || 18;
+            const maxAge = parseInt(document.getElementById('pref-age-max').value) || 45;
+            const minHeight = parseFloat(document.getElementById('pref-height-min').value) || 4.5;
+            const maxHeight = parseFloat(document.getElementById('pref-height-max').value) || 5.10;
+            const bodyStyle = document.getElementById('pref-body').value;
+            const smokePref = document.getElementById('pref-smoke').value;
+            const drinkPref = document.getElementById('pref-drink').value;
+            const housePref = document.getElementById('pref-house').value;
+            const maritalPref = document.getElementById('pref-marital').value;
+            const langPref = document.getElementById('pref-language').value;
+            const relPref = document.getElementById('pref-religion').value;
+
+            // Filter structural database execution loop
+            activeFeedProfiles = databaseProfiles.filter(p => {
+                if (p.age < minAge || p.age > maxAge) return false;
+                const pHeight = parseFloat(p.height);
+                if (pHeight < minHeight || pHeight > maxHeight) return false;
+                if (bodyStyle !== "All" && p.body !== bodyStyle) return false;
+                if (p.smoke !== smokePref) return false;
+                if (drinkPref !== "Any" && p.drink !== drinkPref) return false;
+                if (housePref !== "Any" && p.house !== housePref) return false;
+                if (p.marital !== maritalPref) return false;
+                if (langPref !== "Doesn't matter" && p.language !== langPref) return false;
+                if (relPref !== "Doesn't matter" && p.religion !== relPref) return false;
+                return true;
+            });
+
+            profilePointer = 0;
+            renderDiscoveryDeck();
+            switchActiveView('home', document.querySelectorAll('.nav-item')[0]);
+        }
+
+        // Discovery Deck Rendering Engine
         function renderDiscoveryDeck() {
             const container = document.getElementById('card-stack-container');
             container.innerHTML = ''; 
 
-            if (profilePointer >= databaseProfiles.length) {
+            if (profilePointer >= activeFeedProfiles.length) {
                 document.getElementById('end-feed-msg').style.display = 'block';
-                document.getElementById('action-buttons-tray').style.opacity = '0.3';
+                document.getElementById('action-buttons-tray').style.opacity = '0.2';
                 document.getElementById('action-buttons-tray').style.pointerEvents = 'none';
                 return;
             }
 
-            for (let i = databaseProfiles.length - 1; i >= profilePointer; i--) {
-                const data = databaseProfiles[i];
+            document.getElementById('end-feed-msg').style.display = 'none';
+            document.getElementById('action-buttons-tray').style.opacity = '1';
+            document.getElementById('action-buttons-tray').style.pointerEvents = 'auto';
+
+            for (let i = activeFeedProfiles.length - 1; i >= profilePointer; i--) {
+                const data = activeFeedProfiles[i];
                 const card = document.createElement('div');
                 card.className = 'profile-card';
                 card.id = `prof-card-${data.id}`;
-                card.style.zIndex = databaseProfiles.length - i;
+                card.style.zIndex = activeFeedProfiles.length - i;
                 
                 if(i !== profilePointer) {
-                    card.style.transform = 'scale(0.95) translateY(10px)';
-                    card.style.opacity = '0.5';
+                    card.style.transform = 'scale(0.96) translateY(12px)';
+                    card.style.opacity = '0.4';
                 }
 
                 card.innerHTML = `
                     <div class="profile-media-box">
-                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <div class="match-compatibility-badge">10/10 MATCH</div>
+                        
+                        <div class="profile-blur-cover">
+                            <span style="font-size:32px; margin-bottom:10px;">👤</span>
+                            <span style="font-size:12px; letter-spacing:1px; opacity:0.6; text-transform:uppercase;">Photo Hidden by User</span>
+                        </div>
+
                         <div class="profile-overlay">
                             <div class="prof-title">
                                 ${data.name}, ${data.age} 
-                                ${data.verified ? '<span class="blue-tick" title="Admin Verified User">✓</span>' : ''}
+                                ${data.verified ? '<span class="blue-tick">✓</span>' : ''}
                             </div>
-                            <div class="prof-meta">${data.field} • ${data.class}<br>${data.location} • ${data.detail}</div>
+                            <div class="prof-meta" style="font-size:13px; opacity:0.7; margin-top:2px;">
+                                Ht: ${data.height} ft • Wt: ${data.weight} • ${data.body} Type<br>
+                                ${data.religion} • ${data.language} Speaker<br>
+                                ${data.field} • ${data.location}
+                            </div>
+                            <div class="prof-bio-text">"${data.bio}"</div>
                         </div>
                     </div>
                 `;
@@ -739,20 +704,20 @@
         }
 
         function handleSwipeAction(direction) {
-            if (profilePointer >= databaseProfiles.length) return;
+            if (profilePointer >= activeFeedProfiles.length) return;
 
-            const activeCard = document.getElementById(`prof-card-${databaseProfiles[profilePointer].id}`);
+            const activeCard = document.getElementById(`prof-card-${activeFeedProfiles[profilePointer].id}`);
             if (!activeCard) return;
 
             if (direction === 'left') {
                 activeCard.classList.add('card-swipe-left');
             } else {
                 activeCard.classList.add('card-swipe-right');
-                appendMatchedRecord(databaseProfiles[profilePointer]);
+                appendMatchedRecord(activeFeedProfiles[profilePointer]);
             }
 
             profilePointer++;
-            setTimeout(() => { renderDiscoveryDeck(); }, 300);
+            setTimeout(() => { renderDiscoveryDeck(); }, 320);
         }
 
         function appendMatchedRecord(profile) {
@@ -760,10 +725,10 @@
             const matchRow = document.createElement('div');
             matchRow.className = 'list-item';
             matchRow.innerHTML = `
-                <div class="avatar-placeholder" style="background-color:#ba0c2f;">❤</div>
+                <div class="avatar-placeholder" style="background-color:#ff416c;">❤</div>
                 <div class="item-details">
-                    <h4>${profile.name}, ${profile.age} ${profile.verified ? '<span class="blue-tick">✓</span>' : ''}</h4>
-                    <p>${profile.field} • Just connected! Tap to message.</p>
+                    <h4>${profile.name}, ${profile.age} <span class="blue-tick">✓</span></h4>
+                    <p>10/10 Match Alignment • Tap to begin conversation</p>
                 </div>
             `;
             matchesList.insertBefore(matchRow, matchesList.firstChild);
