@@ -3,164 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Profile Layout</title>
+    <title>Love Forever Matrimony</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #0b0914;
-            color: #ffffff;
+            background-color: #0b0914; /* Dark base backdrop */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-        }
-
-        .app-container {
-            width: 100%;
-            max-width: 420px;
-            background: linear-gradient(145deg, #131124, #1a1636);
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            box-sizing: border-box;
         }
 
-        /* Header Section with Symbols */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .app-title {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            background: linear-gradient(45deg, #ff758c, #ff7eb3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .symbols {
-            font-size: 18px;
-            color: #ffd700; /* Gold color for rings and cross */
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-        }
-
-        /* Profile Card with Sparkling Border Effect Placeholder */
-        .profile-card {
-            position: relative;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 4px; /* Space for the border effect */
-            margin-bottom: 20px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-        }
-
-        .sparkle-border-placeholder {
-            border-radius: 18px;
-            overflow: hidden;
-            background: #1e1b36;
-            border: 2px dashed #ff7eb3; /* Placeholder for the live sparkling border */
-            padding: 15px;
+        .splash-container {
             text-align: center;
+            /* Smooth Zoom In and Zoom Out Animation */
+            animation: zoomInOut 4s ease-in-out infinite; 
         }
 
-        .photo-placeholder {
-            width: 100%;
-            height: 280px;
-            background: #252142;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 14px;
-            margin-bottom: 15px;
-            border: 1px dashed rgba(255, 255, 255, 0.1);
-        }
-
-        .profile-info h2 {
-            margin: 10px 0 5px 0;
-            font-size: 24px;
-        }
-
-        .profile-info p {
+        /* Main Brand Name styling */
+        .brand-name {
+            font-size: 42px;
+            font-weight: 900; /* Extra Bold */
+            color: #ffffff;
+            letter-spacing: 1px;
             margin: 0;
-            color: #a09cb0;
-            font-size: 14px;
+            padding: 0;
+            /* Soft red glow effect (Love in the air vibe) */
+            text-shadow: 0 0 15px rgba(255, 65, 108, 0.8), 0 0 30px rgba(255, 65, 108, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
 
-        /* 7-Day Trial and Action Area Placeholder */
-        .trial-badge {
-            background: linear-gradient(135deg, rgba(255, 117, 140, 0.2), rgba(255, 126, 179, 0.2));
-            border: 1px solid #ff758c;
-            color: #ff7eb3;
-            padding: 10px;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .action-button {
-            width: 100%;
-            background: linear-gradient(45deg, #ff758c, #ff7eb3);
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 14px;
+        /* Small Matrimony text underneath */
+        .tagline {
             font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
-            transition: transform 0.2s;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            text-shadow: 0 0 8px rgba(255, 65, 108, 0.3);
         }
 
-        .action-button:active {
-            transform: scale(0.98);
+        /* SVG Outline Symbols container */
+        .symbol-svg {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            vertical-align: middle;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+        }
+
+        .symbol-svg path {
+            fill: none; /* No color inside */
+            stroke: #ffffff; /* Sharp white outline */
+            stroke-width: 2px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Zoom In and Zoom Out Keyframe Animation Rules */
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1); /* Zoom In */
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.8); /* Zoom Out */
+                opacity: 0.5;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="app-container">
-        <div class="header">
-            <div class="app-title">
-                App Name 
-                <span class="symbols">✝ 💍💍</span>
-            </div>
-            <div style="font-size: 20px; opacity: 0.7;">⚙️</div>
-        </div>
+    <div class="splash-container">
+        <h1 class="brand-name">
+            Love Forever 
+            
+            <svg class="symbol-svg" viewBox="0 0 24 24">
+                <path d="M12 2v20M7 9h10"/>
+            </svg>
 
-        <div class="trial-badge">
-            ✨ Premium Access: 7-Day Free Trial Included
-        </div>
-
-        <div class="profile-card">
-            <div class="sparkle-border-placeholder">
-                <div class="photo-placeholder">
-                    [ Photo Display Area ]
-                </div>
-                <div class="profile-info">
-                    <h2>User Profile, 28</h2>
-                    <p>📍 Location Placeholder</p>
-                </div>
-            </div>
-        </div>
-
-        <button class="action-button">Continue Setup</button>
+            <svg class="symbol-svg" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </h1>
+        
+        <div class="tagline">Matrimony</div>
     </div>
 
 </body>
