@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Forever - Christian Matrimony</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,800&family=Playball&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    
+    <title>Love Forever - App Front Screen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -16,240 +13,201 @@
         }
 
         body {
-            /* NEW BACKGROUND: High-gloss Deep Royal Emerald Velvet gradient */
-            /* This dark, rich background makes the white, rose gold, and sage gloss words instantly pop! */
-            background: radial-gradient(circle at 50% 35%, #0d2316 0%, #06120b 60%, #020704 100%);
+            /* 1. Instagram Teal-to-Purple Glossy Background */
             height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            font-family: 'Montserrat', sans-serif;
+            background: 
+                /* Subtle glass reflections */
+                linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%),
+                /* Base teal blue gradient */
+                radial-gradient(circle at 50% 30%, #00d2ff 0%, #3a7bd5 50%, #001f3f 100%),
+                /* Bottom right purple glow */
+                radial-gradient(circle at 100% 100%, #c0392b 0%, #8e44ad 100%);
             overflow: hidden;
-            padding: 60px 24px;
+            font-family: Arial, sans-serif; /* Fallback font */
         }
 
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
-            gap: 45px;
+        /* 2. Glass Shine Overlay */
+        .glass-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.05) 60%);
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Container for all content */
+        .app-container {
             width: 100%;
-        }
-
-        /* --- CSS ANIMATIONS --- */
-        
-        /* Smooth luxury pop-up zoom-in/out loop */
-        @keyframes luxuryZoom {
-            0% { transform: scale(0.92); filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.05)); }
-            50% { transform: scale(1.03); filter: drop-shadow(0 15px 30px rgba(140, 164, 147, 0.25)); }
-            100% { transform: scale(0.92); filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.05)); }
-        }
-
-        /* Gentle elegant heartbeat for the cross icon */
-        @keyframes elegantHeartbeat {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 5px rgba(255,255,255,0.05)); }
-            30% { transform: scale(1.06); filter: drop-shadow(0 8px 20px rgba(255,255,255,0.15)); }
-            60% { transform: scale(1.02); filter: drop-shadow(0 4px 10px rgba(255,255,255,0.08)); }
-        }
-
-        /* Moving high-gloss shine across text surfaces */
-        @keyframes glossReflection {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* --- BRANDING TITLES --- */
-
-        .title-group {
+            height: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            animation: luxuryZoom 5s ease-in-out infinite;
-            text-align: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
         }
 
-        /* Floating accent hearts stylized properly on the top left */
-        .hearts-accent {
-            color: #a3c2ae; /* Lighter mint-sage to stand out on dark background */
-            font-size: 1.5rem;
-            margin-bottom: -10px;
-            margin-left: -110px;
-            transform: rotate(-15deg);
-            opacity: 0.9;
-            text-shadow: 0 0 8px rgba(163, 194, 174, 0.5);
-        }
-
-        /* "Love" - Brilliant Mint-Sage Liquid Gloss */
-        .word-love {
-            font-family: 'Playball', cursive;
-            font-size: 5.2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #a4c7b1 0%, #ffffff 30%, #def2e6 60%, #83a690 100%);
+        /* Text Glossy Effect (Apply to all white text) */
+        .glossy-text {
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            /* Create a highly-reflective glossy effect on the text */
+            text-shadow: 
+                0 0 1px rgba(255,255,255,1), 
+                0 0 5px rgba(255,255,255,0.7), 
+                0 0 10px rgba(255,255,255,0.5), 
+                0 0 15px rgba(255,255,255,0.3), 
+                0 0 20px rgba(255,255,255,0.2);
+            /* Add a dynamic shine texture across the text */
+            background-image: linear-gradient(-45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: glossReflection 4s linear infinite;
-            padding-bottom: 5px;
-            filter: drop-shadow(0 2px 10px rgba(164, 199, 177, 0.2));
+            animation: shine 4s linear infinite;
         }
 
-        /* "Forever" - Premium Radiant Rose Gold Chrome */
-        .word-forever {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 4rem;
-            font-weight: 800;
+        /* Animation for text shine effect */
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Specific style for "Love Forever" in Great Vibes script */
+        .love-forever {
+            font-family: 'Great Vibes', cursive;
+            font-size: 6rem;
+            text-transform: none; /* Keep original script case */
+            letter-spacing: 0;
             line-height: 1;
-            margin-top: -5px;
-            background: linear-gradient(135deg, #e3aab7 0%, #fcdbe3 30%, #ffffff 50%, #cca3ad 70%, #e3aab7 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glossReflection 3.5s linear infinite;
-            filter: drop-shadow(0 2px 12px rgba(227, 170, 183, 0.25));
+            margin-bottom: 30px;
         }
 
-        /* --- HEART & CROSS VECTOR --- */
-        .icon-container {
+        /* Container for the heart icon (made from vector graphics) */
+        .heart-icon-container {
+            width: 150px;
+            height: 150px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: elegantHeartbeat 3.5s ease-in-out infinite;
-        }
-
-        .center-svg {
-            width: 95px;
-            height: 95px;
-        }
-
-        /* --- SUBTITLES --- */
-
-        .subtitle-group {
-            display: flex;
-            gap: 12px;
             justify-content: center;
             align-items: center;
+            margin-bottom: 30px;
         }
 
-        /* "CHRISTIAN" - Shimmering Platinum Sage Foil */
-        .word-christian {
-            font-size: 1rem;
-            font-weight: 800;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #9dbfa8 0%, #ffffff 40%, #cde0d4 70%, #9dbfa8 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glossReflection 4s linear infinite;
-            filter: drop-shadow(0 0 8px rgba(255,255,255,0.1));
+        /* CSS for the heart and cross icon from reference 2 */
+        .heart-with-cross {
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
 
-        /* "MATRIMONY" - Bright Liquid Blush Rose */
-        .word-matrimony {
-            font-size: 1rem;
-            font-weight: 800;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #e8b0bd 0%, #ffffff 40%, #f5d3da 70%, #e8b0bd 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glossReflection 4.5s linear infinite;
-            filter: drop-shadow(0 0 8px rgba(232, 176, 189, 0.15));
+        /* The Heart Shape (SVG or pure CSS) */
+        .heart-shape {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100px;
+            height: 90px;
+            /* Create heart shape with CSS */
+            background-color: transparent;
+            /* Thick glossy outline */
+            border: 5px solid #ffffff;
+            box-shadow: 0 0 5px #ffffff, 0 0 10px rgba(255,255,255,0.7);
+            /* Position and rotate the two sides */
+            transform: rotate(-45deg);
+            transform-origin: center;
         }
 
-        /* --- FOOTER --- */
-
-        .footer-group {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            align-items: center;
+        .heart-shape::before,
+        .heart-shape::after {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            border: 5px solid #ffffff;
+            box-shadow: 0 0 5px #ffffff, 0 0 10px rgba(255,255,255,0.7);
         }
 
-        .word-made {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #aaaaaa 0%, #ffffff 50%, #aaaaaa 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glossReflection 3s linear infinite;
-            opacity: 0.8;
+        .heart-shape::before {
+            top: -50px; left: 0;
+            width: 100px;
+            height: 50px;
+            border-bottom: none;
+            border-radius: 50px 50px 0 0;
         }
 
-        .word-in-small {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #f2b6c4 0%, #ffffff 50%, #f2b6c4 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glossReflection 2.8s linear infinite;
-            opacity: 0.85;
+        .heart-shape::after {
+            top: 0; left: 100px;
+            width: 50px;
+            height: 90px;
+            border-left: none;
+            border-radius: 0 50px 50px 0;
         }
 
-        .word-india-small {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #a1c9b0 0%, #ffffff 50%, #a1c9b0 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glossReflection 3.2s linear infinite;
-            opacity: 0.9;
+        /* The Cross Shape from reference 2 (made from CSS pseudo-elements) */
+        .cross-shape {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* Offset cross to match reference 2 placement */
+            top: 25px; left: 15px;
         }
+
+        /* Thick glossy cross lines */
+        .cross-shape::before {
+            content: "";
+            position: absolute;
+            background: #ffffff;
+            box-shadow: 0 0 5px #ffffff, 0 0 10px rgba(255,255,255,0.7);
+            /* Vertical line */
+            width: 8px;
+            height: 100px;
+            left: calc(50% - 4px);
+            top: 20px;
+        }
+
+        .cross-shape::after {
+            content: "";
+            position: absolute;
+            background: #ffffff;
+            box-shadow: 0 0 5px #ffffff, 0 0 10px rgba(255,255,255,0.7);
+            /* Horizontal line */
+            width: 70px;
+            height: 8px;
+            left: calc(50% - 35px);
+            top: 45px;
+        }
+
+        /* Christian Matrimony text */
+        .matrimony-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Made in India text */
+        .india-text {
+            font-size: 0.8rem;
+            margin-top: auto; /* Push to bottom of the container */
+            padding-bottom: 20px;
+        }
+
     </style>
 </head>
 <body>
-
-    <div class="main-content">
-        <div class="title-group">
-            <span class="hearts-accent">♥♥</span>
-            <span class="word-love">Love</span>
-            <span class="word-forever">Forever</span>
+    <div class="glass-overlay"></div>
+    <div class="app-container">
+        <h1 class="glossy-text love-forever">Love Forever</h1>
+        
+        <div class="heart-icon-container">
+            <div class="heart-with-cross">
+                <div class="heart-shape"></div>
+                <div class="cross-shape"></div>
+            </div>
         </div>
 
-        <div class="icon-container">
-            <svg class="center-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M 50,24 
-                             C 65,8 88,18 78,46
-                             C 70,65 54,79 50,83
-                             C 46,79 30,65 22,46
-                             C 12,18 35,8 50,24 Z" 
-                          stroke="#bfe3cc" 
-                          stroke-width="4.5" />
-                    
-                    <path d="M 50,36 L 50,76" stroke="#ffffff" stroke-width="5" />
-                    <path d="M 37,51 L 63,51" stroke="#ffffff" stroke-width="5" />
-                </g>
-            </svg>
-        </div>
-
-        <div class="subtitle-group">
-            <span class="word-christian">Christian</span>
-            <span class="word-matrimony">Matrimony</span>
-        </div>
+        <p class="glossy-text matrimony-text">Christian Matrimony</p>
+        <p class="glossy-text india-text">Made in India</p>
     </div>
-
-    <div class="footer-group">
-        <span class="word-made">Made</span>
-        <span class="word-in-small">In</span>
-        <span class="word-india-small">India</span>
-    </div>
-
 </body>
 </html>
