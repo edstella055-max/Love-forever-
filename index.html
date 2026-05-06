@@ -24,14 +24,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Premium Instagram-inspired romantic gradient background */
-            background: linear-gradient(135deg, #3a004c 0%, #bc1762 50%, #ff6b6b 100%);
+            /* Premium Soft Luxe Gradient: Deep royal plum to elegant dusty rose */
+            background: linear-gradient(135deg, #2b082c 0%, #7d1c4a 50%, #c97d93 100%);
             background-size: 400% 400%;
-            /* Smooth 'love in the air' moving background animation */
-            animation: gradientMove 8s ease infinite;
+            /* Calm 'love in the air' background shifting */
+            animation: gradientMove 10s ease infinite;
         }
 
-        /* Background Shimmer Animation */
+        /* Relaxed Background Shimmer Animation */
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -46,60 +46,59 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 0 20px; /* Ensures content never touches the extreme edges */
+            padding: 0 25px;
         }
 
-        /* App Name: Adjusted size to prevent clipping + Glossy Pink Outline & Zoom */
+        /* App Name: Scaled perfectly with an eye-friendly soft rose-gold glow */
         .app-name {
             font-family: 'Great Vibes', cursive;
-            font-size: 4.8rem; /* Adjusted down slightly from 6rem to fit perfectly on mobile screens */
+            font-size: clamp(2.5rem, 15vw, 3.6rem); 
             font-weight: normal;
             color: #ffffff;
-            margin-bottom: 10px;
-            white-space: nowrap; /* Keeps the title beautifully on one single line */
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+            white-space: nowrap;
             
-            /* Glossy pink neon text outline & glow */
+            /* Softer, warm luxury glow instead of harsh piercing neon */
             text-shadow: 
-                0 0 10px #fff, 
-                0 0 20px #ff007f, 
-                0 0 30px #ff007f, 
-                0 0 40px #ff007f;
+                0 0 8px rgba(255, 255, 255, 0.9), 
+                0 0 15px #ffb3d1, 
+                0 0 25px #ffb3d1;
             
             /* Smooth pop out zoom in/out animation */
-            animation: pulseZoom 3.5s ease-in-out infinite;
+            animation: pulseZoom 4s ease-in-out infinite;
         }
 
         /* Intertwined Faith-Heart-Cross Logo Container */
         .logo-container {
-            margin-bottom: 30px;
-            /* Syncs logo to exact same zoom animation as the text */
-            animation: pulseZoom 3.5s ease-in-out infinite;
+            margin-bottom: 35px;
+            animation: pulseZoom 4s ease-in-out infinite;
         }
 
-        /* Logo Stroke & Intense Gloss Glow Customization */
+        /* Logo Stroke & Calm Rose Glow Customization */
         .heart-cross-svg {
-            width: 130px;
-            height: 130px;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)) 
-                    drop-shadow(0 0 15px #ff007f) 
-                    drop-shadow(0 0 25px #ff007f);
+            width: 120px;
+            height: 120px;
+            /* Applied the same relaxed, eye-comforting glow to the vector icon */
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9)) 
+                    drop-shadow(0 0 12px #ffb3d1);
         }
 
-        /* Shared Continuous Pop Out Zoom Animation */
+        /* Shared Continuous Zoom Animation (Slightly slowed down for eye comfort) */
         @keyframes pulseZoom {
-            0%, 100% { transform: scale(0.95); }
-            50% { transform: scale(1.05); }
+            0%, 100% { transform: scale(0.96); }
+            50% { transform: scale(1.04); }
         }
 
-        /* Subtitles: Premium Champagne Gold Typography */
+        /* Subtitles: Matte Premium Champagne Gold Typography */
         .sub-title {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.1rem;
-            color: #ffe3ac; /* Elegant soft gold color */
+            font-size: 1rem;
+            color: #f7dca6; /* Beautiful matte gold */
             font-weight: 600;
             letter-spacing: 5px;
             text-transform: uppercase;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             margin-top: 5px;
         }
 
@@ -108,13 +107,13 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: absolute;
             bottom: 40px;
-            color: #ffe3ac; /* Matching elegant soft gold color */
-            font-size: 0.85rem;
+            color: #f7dca6;
+            font-size: 0.8rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            opacity: 0.9;
+            opacity: 0.85;
             font-weight: bold;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
     </style>
 </head>
