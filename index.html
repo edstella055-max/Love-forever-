@@ -709,5 +709,400 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
+        .firewall-shield-icon { <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Love Forever - User Login Access</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Identical deep magenta-berry canvas gradient for flawless brand matching */
+            background: radial-gradient(circle at 50% 35%, #de106b 0%, #a6004c 50%, #540026 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            padding: 24px 20px;
+            overflow-x: hidden;
+        }
+
+        .login-viewport {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 420px;
+            gap: 18px;
+            margin: auto 0;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes shieldPulse {
+            0%, 100% { filter: drop-shadow(0 0 4px rgba(0, 255, 200, 0.4)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 12px rgba(0, 255, 200, 0.7)); transform: scale(1.02); }
+        }
+
+        @keyframes goldGlitch {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- ANTI-SCAM FIREWALL SHIELD BANNER --- */
+        .firewall-container {
+            width: 100%;
+            background: rgba(0, 10, 5, 0.45);
+            border: 1.5px solid #00ffc8;
+            border-radius: 16px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
         .firewall-shield-icon {
+            font-size: 1.5rem;
+            animation: shieldPulse 3s ease-in-out infinite;
+            user-select: none;
+        }
+
+        .firewall-text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .firewall-title {
+            color: #00ffc8;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .firewall-bullet-points {
+            color: #e0f7f4;
+            font-size: 0.72rem;
+            font-weight: 500;
+            line-height: 1.4;
+            list-style-type: square;
+            padding-left: 14px;
+        }
+
+        /* --- CENTRAL LOGIN ACCESS CARD --- */
+        .secure-card-wrapper {
+            width: 100%;
+            padding: 24px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .header-brand-group {
+            text-align: center;
+        }
+
+        .header-brand-group h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 2px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .header-brand-group p {
+            font-size: 0.8rem;
+            color: #ffbccc;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- INPUT ROWS WITH INTEGRATED CONTROLS --- */
+        .form-input-row {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            position: relative;
+        }
+
+        .form-input-row label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding-left: 4px;
+        }
+
+        .secure-input-field {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .secure-input-field:focus {
+            border-color: #00ffc8;
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 0 12px rgba(0, 255, 200, 0.25);
+        }
+
+        .secure-input-field::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* --- PASSWORD VIEW TOGGLE BUTTON BUTTON --- */
+        .password-view-toggle {
+            position: absolute;
+            right: 14px;
+            top: 31px;
+            color: rgba(255, 255, 255, 0.55);
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 700;
+            user-select: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        .password-view-toggle:hover {
+            color: #00ffc8;
+        }
+
+        .forgot-password-link {
+            text-align: right;
+            font-size: 0.75rem;
+            color: #ffbccc;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: -6px;
+            transition: color 0.2s ease;
+        }
+
+        .forgot-password-link:hover {
+            color: #ffffff;
+        }
+
+        /* --- ACTION ENTRY BUTTON --- */
+        .submit-login-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #a6004c;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 5px;
+        }
+
+        .submit-login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-navigation-prompt {
+            text-align: center;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-navigation-prompt span {
+            color: #ffffff;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* --- BRAND FOOTER --- */
+        .gold-footer-branding {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-align: center;
+            background: linear-gradient(to right, #ddc185 0%, #ffffff 50%, #b89754 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldGlitch 3s linear infinite;
+            filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-viewport">
+        
+        <div class="firewall-container">
+            <div class="firewall-shield-icon">🛡️</div>
+            <div class="firewall-text-group">
+                <div class="firewall-title">Security Firewall Status: Active</div>
+                <ul class="firewall-bullet-points">
+                    <li>Sign in using the exact Email ID and password created during registration.</li>
+                    <li>Toggle the display icon if you need to view and correct character typos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="secure-card-wrapper">
+            <div class="header-brand-group">
+                <h2>Love Forever</h2>
+                <p>Secure User Login</p>
+            </div>
+
+            <form id="firebase-login-form">
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    
+                    <div class="form-input-row">
+                        <label for="login-email">User ID / Email ID</label>
+                        <input type="email" id="login-email" class="secure-input-field" placeholder="Enter registered email" required>
+                    </div>
+
+                    <div class="form-input-row">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" class="secure-input-field" placeholder="Enter your password" required>
+                        <span class="password-view-toggle" id="view-toggle-string" onclick="togglePasswordVisibility()">Show</span>
+                    </div>
+
+                    <a href="#reset" class="forgot-password-link" onclick="handlePasswordReset()">Forgot Password?</a>
+
+                    <button type="submit" class="submit-login-btn" id="login-button">Login Access</button>
+                </div>
+            </form>
+
+            <div class="footer-navigation-prompt">
+                Don't have an account? <span>Register Here</span>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="gold-footer-branding">
+        Made in India
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+        // Firebase Cloud configuration block credentials matching registration environment parameters
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY_HERE",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Connect framework initialization hooks
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Form Submission Authentication Event Processing Pipeline
+        document.getElementById('firebase-login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const loginBtn = document.getElementById('login-button');
+
+            loginBtn.textContent = "Verifying Credentials...";
+            loginBtn.disabled = true;
+
+            // Submit credentials to Firebase to check against the user's created password
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    alert("Access Granted! Welcome back to Love Forever.");
+                    window.location.href = "dashboard.html"; // Routes verified users to internal dashboard screen
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    // Provide helpful errors if they typo their own password or email ID
+                    if (errorCode === 'auth/invalid-credential' || errorCode === 'auth/wrong-password') {
+                        alert("Firewall Alert: Incorrect Email ID or Password. Please try again.");
+                    } else if (errorCode === 'auth/user-not-found') {
+                        alert("Firewall Alert: This Email ID is not registered on our system.");
+                    } else {
+                        alert("System Error: " + error.message);
+                    }
+                    loginBtn.textContent = "Login Access";
+                    loginBtn.disabled = false;
+                });
+        });
+
+        // Safe Reset Link Processing
+        window.handlePasswordReset = function() {
+            const email = document.getElementById('login-email').value;
+            if (!email) {
+                alert("Please fill in your User ID/Email ID field first to receive a password recovery link.");
+                return;
+            }
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    alert("A secure recovery email has been sent. Please open your inbox to safely reset your password.");
+                })
+                .catch((error) => {
+                    alert("Reset Failed: " + error.message);
+                });
+        }
+    </script>
+
+    <script>
+        // CODE TO VIEW PASSWORD: Adjusts structural element layer visibility types natively 
+        function togglePasswordVisibility() {
+            const targetPasswordInput = document.getElementById('login-password');
+            const toggleTextButton = document.getElementById('view-toggle-string');
+            
+            if (targetPasswordInput.type === 'password') {
+                targetPasswordInput.type = 'text'; // Instantly displays text characters
+                toggleTextButton.textContent = 'Hide';
+            } else {
+                targetPasswordInput.type = 'password'; // Safe privacy mask restoration
+                toggleTextButton.textContent = 'Show';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
             
