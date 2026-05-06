@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Forever - App Front Screen</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Love Forever - Premium Splash Screen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
     <style>
         * {
             box-sizing: border-box;
@@ -13,201 +16,169 @@
         }
 
         body {
-            /* 1. Instagram Teal-to-Purple Glossy Background */
+            /* The original rich Instagram-style deep magenta-berry canvas */
+            background: radial-gradient(circle at 50% 35%, #de106b 0%, #a6004c 50%, #540026 100%);
             height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            background: 
-                /* Subtle glass reflections */
-                linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%),
-                /* Base teal blue gradient */
-                radial-gradient(circle at 50% 30%, #00d2ff 0%, #3a7bd5 50%, #001f3f 100%),
-                /* Bottom right purple glow */
-                radial-gradient(circle at 100% 100%, #c0392b 0%, #8e44ad 100%);
+            font-family: 'Montserrat', sans-serif;
             overflow: hidden;
-            font-family: Arial, sans-serif; /* Fallback font */
+            padding: 40px 16px; /* Safe padding for absolute device margins */
         }
 
-        /* 2. Glass Shine Overlay */
-        .glass-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.05) 60%);
-            opacity: 0.6;
-            pointer-events: none;
-        }
-
-        /* Container for all content */
-        .app-container {
-            width: 100%;
-            height: 100%;
+        /* Core structure maximizing display flexibility without clipping */
+        .viewport-wrapper {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 20px;
-            position: relative;
+            justify-content: center;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 420px; /* Locks structure seamlessly within modern smartphone bounds */
+            gap: 30px;
         }
 
-        /* Text Glossy Effect (Apply to all white text) */
-        .glossy-text {
+        /* --- ANIMATIONS --- */
+
+        /* Controlled Pop-up Zoom that safely keeps words inside the glass viewport */
+        @keyframes safeNeonZoom {
+            0% { transform: scale(0.88); }
+            50% { transform: scale(1.02); } /* Kept tight so letters never overflow edges */
+            100% { transform: scale(0.88); }
+        }
+
+        /* Pulsing core heart heartbeat */
+        @keyframes heartPulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(255,255,255,0.7)); }
+            30% { transform: scale(1.08); filter: drop-shadow(0 0 18px rgba(255, 105, 180, 0.9)); }
+            60% { transform: scale(1.02); filter: drop-shadow(0 0 10px rgba(255,255,255,0.7)); }
+        }
+
+        /* Liquid metallic gold shimmer movement */
+        @keyframes metallicGoldShine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- STYLING COMPONENTS --- */
+
+        /* Main Heading Box configured to stay inside margins */
+        .neon-title-container {
+            width: 100%;
+            text-align: center;
+            animation: safeNeonZoom 4.5s ease-in-out infinite;
+            padding: 0 10px;
+        }
+
+        /* "Love Forever" - Vibrant White Neon Script with safety fluid scaling */
+        .brand-heading {
+            font-family: 'Great Vibes', cursive;
+            /* Fluid sizing: scales down elegantly on smaller devices like iPhone SE */
+            font-size: min(14vw, 4.4rem); 
             color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            /* Create a highly-reflective glossy effect on the text */
+            white-space: nowrap; /* Prevents awkward multi-line breakage */
+            line-height: 1.2;
             text-shadow: 
-                0 0 1px rgba(255,255,255,1), 
-                0 0 5px rgba(255,255,255,0.7), 
-                0 0 10px rgba(255,255,255,0.5), 
-                0 0 15px rgba(255,255,255,0.3), 
-                0 0 20px rgba(255,255,255,0.2);
-            /* Add a dynamic shine texture across the text */
-            background-image: linear-gradient(-45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
+                0 0 8px rgba(255, 255, 255, 0.9),
+                0 0 20px rgba(255, 20, 147, 0.8),
+                0 0 40px rgba(255, 20, 147, 0.5),
+                0 0 60px rgba(255, 20, 147, 0.3);
+        }
+
+        /* Icon Container */
+        .center-graphic-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: heartPulseGlow 3s ease-in-out infinite;
+        }
+
+        /* High-Definition SVG matching original branding geometry */
+        .neon-heart-cross {
+            width: min(30vw, 125px);
+            height: min(30vw, 125px);
+        }
+
+        /* --- THE NEW GLOSSY GOLD ELEMENTS --- */
+
+        /* "CHRISTIAN MATRIMONY" - Luxury 24K Liquid Gold Foil */
+        .glossy-gold-subtitle {
+            font-size: min(4vw, 1.05rem);
+            font-weight: 800;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+            
+            /* High-fidelity moving gold gradient */
+            background: linear-gradient(to right, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite;
+            animation: metallicGoldShine 4s linear infinite;
+            
+            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
         }
 
-        /* Animation for text shine effect */
-        @keyframes shine {
-            to {
-                background-position: 200% center;
-            }
+        /* "MADE IN INDIA" - Clean Satin Champagne Gold */
+        .glossy-gold-footer {
+            font-size: min(3.2vw, 0.78rem);
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: auto;
+            padding-bottom: 10px;
+            
+            background: linear-gradient(to right, #ddc185 0%, #ffffff 50%, #b89754 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: metallicGoldShine 3s linear infinite;
+            opacity: 0.95;
+            filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
         }
-
-        /* Specific style for "Love Forever" in Great Vibes script */
-        .love-forever {
-            font-family: 'Great Vibes', cursive;
-            font-size: 6rem;
-            text-transform: none; /* Keep original script case */
-            letter-spacing: 0;
-            line-height: 1;
-            margin-bottom: 30px;
-        }
-
-        /* Container for the heart icon (made from vector graphics) */
-        .heart-icon-container {
-            width: 150px;
-            height: 150px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        /* CSS for the heart and cross icon from reference 2 */
-        .heart-with-cross {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* The Heart Shape (SVG or pure CSS) */
-        .heart-shape {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100px;
-            height: 90px;
-            /* Create heart shape with CSS */
-            background-color: transparent;
-            /* Thick glossy outline */
-            border: 5px solid #ffffff;
-            box-shadow: 0 0 5px #ffffff, 0 0 10px rgba(255,255,255,0.7);
-            /* Position and rotate the two sides */
-            transform: rotate(-45deg);
-            transform-origin: center;
-        }
-
-        .heart-shape::before,
-        .heart-shape::after {
-            content: "";
-            position: absolute;
-            background-color: transparent;
-            border: 5px solid #ffffff;
-            box-shadow: 0 0 5px #ffffff, 0 0 10px rgba(255,255,255,0.7);
-        }
-
-        .heart-shape::before {
-            top: -50px; left: 0;
-            width: 100px;
-            height: 50px;
-            border-bottom: none;
-            border-radius: 50px 50px 0 0;
-        }
-
-        .heart-shape::after {
-            top: 0; left: 100px;
-            width: 50px;
-            height: 90px;
-            border-left: none;
-            border-radius: 0 50px 50px 0;
-        }
-
-        /* The Cross Shape from reference 2 (made from CSS pseudo-elements) */
-        .cross-shape {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            /* Offset cross to match reference 2 placement */
-            top: 25px; left: 15px;
-        }
-
-        /* Thick glossy cross lines */
-        .cross-shape::before {
-            content: "";
-            position: absolute;
-            background: #ffffff;
-            box-shadow: 0 0 5px #ffffff, 0 0 10px rgba(255,255,255,0.7);
-            /* Vertical line */
-            width: 8px;
-            height: 100px;
-            left: calc(50% - 4px);
-            top: 20px;
-        }
-
-        .cross-shape::after {
-            content: "";
-            position: absolute;
-            background: #ffffff;
-            box-shadow: 0 0 5px #ffffff, 0 0 10px rgba(255,255,255,0.7);
-            /* Horizontal line */
-            width: 70px;
-            height: 8px;
-            left: calc(50% - 35px);
-            top: 45px;
-        }
-
-        /* Christian Matrimony text */
-        .matrimony-text {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        /* Made in India text */
-        .india-text {
-            font-size: 0.8rem;
-            margin-top: auto; /* Push to bottom of the container */
-            padding-bottom: 20px;
-        }
-
     </style>
 </head>
 <body>
-    <div class="glass-overlay"></div>
-    <div class="app-container">
-        <h1 class="glossy-text love-forever">Love Forever</h1>
+
+    <div class="viewport-wrapper">
         
-        <div class="heart-icon-container">
-            <div class="heart-with-cross">
-                <div class="heart-shape"></div>
-                <div class="cross-shape"></div>
-            </div>
+        <div class="neon-title-container">
+            <h1 class="brand-heading">Love Forever</h1>
         </div>
 
-        <p class="glossy-text matrimony-text">Christian Matrimony</p>
-        <p class="glossy-text india-text">Made in India</p>
+        <div class="center-graphic-container">
+            <svg class="neon-heart-cross" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="neon-glow-filter" x="-25%" y="-25%" width="150%" height="150%">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                </defs>
+                <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" filter="url(#neon-glow-filter)">
+                    <path d="M 50,33 
+                             C 50,13 18,13 18,38 
+                             C 18,60 46,79 50,83 
+                             C 54,79 82,60 82,38 
+                             C 82,13 50,13 50,33 Z" 
+                          stroke-width="5" />
+                    <path d="M 23,52 Q 33,49 41,52 L 47,52 M 47,40 L 47,71 M 41,47 L 57,47 M 53,52 Q 62,55 77,49" 
+                          stroke-width="4.5" />
+                </g>
+            </svg>
+        </div>
+
+        <h2 class="glossy-gold-subtitle">Christian Matrimony</h2>
+        
     </div>
+
+    <div class="glossy-gold-footer">
+        Made in India
+    </div>
+
 </body>
 </html>
