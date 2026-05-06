@@ -3,606 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Forever - Premium Matrimony</title>
-    
+    <title>Love Forever - Christian Matrimony</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     
     <style>
-        /* ==========================================
-           1. CORE RESET & SHARED UX DESIGN SYSTEM
-           ========================================== */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            -webkit-tap-highlight-color: transparent;
         }
 
-        body, html {
+        body {
+            /* High-gloss Instagram-style deep berry gradient background */
+            background: radial-gradient(circle at 50% 30%, #e60067 0%, #9e0047 45%, #590024 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            padding: 50px 20px;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            gap: 35px;
             width: 100%;
-            height: 100%;
-            background: #2b082c; /* Safe fallback */
-            color: #ffffff;
-            overflow-x: hidden;
         }
 
-        /* Responsive Mobile Master Frame Config */
-        .app-view-container {
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-            min-height: 100vh;
-            position: relative;
-            /* Premium Soft Luxe Dynamic Background across all screens */
-            background: linear-gradient(135deg, #2b082c 0%, #7d1c4a 50%, #c97d93 100%);
-            background-size: 400% 400%;
-            background-attachment: fixed;
-            animation: globalGradientMove 12s ease infinite;
+        /* --- ANIMATIONS --- */
+        
+        /* Smooth pop-up zoom in and out loop */
+        @keyframes popZoomInOut {
+            0% { transform: scale(0.85); filter: brightness(1); }
+            50% { transform: scale(1.05); filter: brightness(1.2); }
+            100% { transform: scale(0.85); filter: brightness(1); }
         }
 
-        @keyframes globalGradientMove {
+        /* Heartbeat ripple effect */
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(255,255,255,0.6)); }
+            20% { transform: scale(1.12); filter: drop-shadow(0 0 18px rgba(255,255,255,0.9)); }
+            40% { transform: scale(1.03); filter: drop-shadow(0 0 10px rgba(255,255,255,0.7)); }
+            60% { transform: scale(1.15); filter: drop-shadow(0 0 22px rgba(255,255,255,1)); }
+        }
+
+        /* Shimmer moving shine animation for unique glossy words */
+        @keyframes textGlossShine {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Single Page Routing Layout Engine */
-        .app-page {
-            display: none; /* Controlled dynamically by JavaScript */
-            width: 100%;
-            animation: fadeInPage 0.4s ease-out forwards;
-        }
+        /* --- WORD STYLING (EACH HAS A UNIQUE GLOSSY COLOR) --- */
 
-        .app-page.active-view {
-            display: block;
-        }
-
-        @keyframes fadeInPage {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Shared Components: Glassmorphism Card base UI */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        /* Shared Gold Text Styles */
-        .gold-accent-text {
-            color: #f7dca6;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-        }
-
-        /* ==========================================
-           2. SCREEN 1: SPLASH VIEW STYLING
-           ========================================== */
-        #page-splash {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .splash-inner {
-            text-align: center;
+        .title-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 0 25px;
-            width: 100%;
+            animation: popZoomInOut 4.5s ease-in-out infinite;
         }
 
-        .app-name {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(2.5rem, 15vw, 3.6rem); 
-            font-weight: normal;
+        /* "Love" - Bold White Neon Glow with thick stroke simulation */
+        .word-love {
+            font-family: 'Alex Brush', cursive;
+            font-size: 5.5rem;
+            font-weight: 900;
             color: #ffffff;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-            white-space: nowrap;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px #ffb3d1, 0 0 25px #ffb3d1;
-            animation: pulseZoomEffect 4s ease-in-out infinite;
+            line-height: 0.9;
+            text-shadow: 
+                0 0 10px #fff,
+                0 0 25px rgba(255, 255, 255, 0.8),
+                0 0 45px #ff2a85,
+                0 0 70px #ff2a85;
         }
 
-        .logo-container {
-            margin-bottom: 35px;
-            margin-top: -5px;
-            animation: pulseZoomEffect 4s ease-in-out infinite;
+        /* "Forever" - Creamy Pink Pearl Gloss Chrome */
+        .word-forever {
+            font-family: 'Alex Brush', cursive;
+            font-size: 5.5rem;
+            font-weight: 900;
+            line-height: 0.9;
+            margin-top: -10px;
+            background: linear-gradient(135deg, #ffffff 0%, #ffe3f0 40%, #ff73b3 70%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlossShine 3s linear infinite;
+            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3));
         }
 
-        .heart-cross-svg {
+        /* Central Heart Vector Graphics */
+        .heart-graphic {
             width: 120px;
             height: 120px;
-            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 12px #ffb3d1);
+            animation: heartBeat 2.5s ease-in-out infinite;
         }
 
-        @keyframes pulseZoomEffect {
-            0%, 100% { transform: scale(0.96); }
-            50% { transform: scale(1.04); }
-        }
-
-        .sub-title {
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-top: 5px;
-        }
-
-        .footer-stamp {
-            position: absolute;
-            bottom: 40px;
-            left: 0;
+        .subtitle-container {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
             width: 100%;
-            text-align: center;
-            font-size: 0.8rem;
+        }
+
+        /* "CHRISTIAN" - Crisp Liquid Silver-White Gloss */
+        .word-christian {
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ffffff 0%, #d1f7ff 40%, #aae7f5 70%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlossShine 3.5s linear infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+        }
+
+        /* "MATRIMONY" - Vivid Electric Turquoise Blue Metallic Gloss */
+        .word-matrimony {
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #00ffff 0%, #40e0d0 30%, #ffffff 50%, #00bfff 70%, #00ffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlossShine 4s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6));
+        }
+
+        .footer-container {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        /* "Made" - Metallic Cyan-Blue Tinted Shimmer */
+        .word-made {
+            font-size: 0.85rem;
+            font-weight: 800;
             letter-spacing: 4px;
             text-transform: uppercase;
-            opacity: 0.85;
-            font-weight: bold;
+            background: linear-gradient(to right, #b3f0ff 0%, #00ced1 50%, #b3f0ff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlossShine 2.5s linear infinite;
         }
 
-        /* ==========================================
-           3. SCREEN 2: HOME FEED VIEW STYLING
-           ========================================== */
-        .home-scroll-area {
-            padding: 20px 20px 95px 20px;
-        }
-
-        .header-block {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            margin-top: 10px;
-        }
-
-        .profile-summary-box {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .avatar-circle-placeholder {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            border: 2px solid #f7dca6;
-            background: rgba(255, 255, 255, 0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .user-text-details {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .user-display-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .user-system-id {
+        /* "In" - Classic Bright Ice White Foil */
+        .word-in {
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .badge-trial-tag {
-            font-size: 0.75rem;
-            background: rgba(255, 227, 172, 0.2);
-            border: 1px solid rgba(247, 220, 166, 0.4);
-            padding: 2px 8px;
-            border-radius: 12px;
-            width: max-content;
-            margin-top: 4px;
-            font-weight: bold;
-        }
-
-        .bell-notify-trigger {
-            cursor: pointer;
-            padding: 5px;
-            position: relative;
-        }
-
-        .bell-vector-icon {
-            width: 26px;
-            height: 26px;
-            fill: #ffffff;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-        }
-
-        .bell-dot-indicator {
-            position: absolute;
-            top: 4px;
-            right: 6px;
-            width: 8px;
-            height: 8px;
-            background: #ff3366;
-            border-radius: 50%;
-        }
-
-        .action-grid-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .interactive-btn {
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-style-outline {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-        }
-
-        .btn-style-outline:active {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-style-solid-gold {
-            background: linear-gradient(135deg, #f7dca6 0%, #e0b86e 100%);
-            border: none;
-            color: #2b082c;
-        }
-
-        .btn-style-solid-gold:active {
-            transform: scale(0.98);
-        }
-
-        .feed-heading {
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-weight: 800;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            background: linear-gradient(to right, #ffffff 0%, #e6e6e6 50%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlossShine 2s linear infinite;
         }
 
-        .feed-heading::before {
-            content: '';
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            background: #f7dca6;
-            transform: rotate(45deg);
-        }
-
-        .cards-vertical-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .profile-feed-card {
-            padding: 15px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .profile-card-photo-box {
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .feed-card-text-group {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .card-title-line {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .card-sub-line {
+        /* "India" - Rich Deep Turquoise Gemstone Gloss */
+        .word-india {
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Fixed Bottom Navigation Menu Bar styling */
-        .app-bottom-navbar {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 480px;
-            height: 70px;
-            background: rgba(43, 8, 44, 0.94);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            align-items: center;
-            text-align: center;
-            z-index: 1000;
-            box-shadow: 0 -5px 25px rgba(0,0,0,0.3);
-        }
-
-        .nav-tab-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.75rem;
-            font-weight: 500;
-            cursor: pointer;
-            height: 100%;
-            transition: color 0.2s ease;
-        }
-
-        .nav-tab-item.tab-selected {
-            color: #f7dca6;
-            font-weight: 700;
-        }
-
-        .tab-vector-icon {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
-
-        /* ==========================================
-           4. SCREEN 3: EDIT PROFILE VIEW STYLING
-           ========================================== */
-        .edit-form-scroll-area {
-            padding: 20px 20px 100px 20px;
-        }
-
-        .form-title-banner {
-            text-align: center;
-            margin-bottom: 25px;
-            margin-top: 10px;
-        }
-
-        .form-title-banner h2 {
-            font-size: 1.4rem;
-            letter-spacing: 2px;
+            font-weight: 800;
+            letter-spacing: 4px;
             text-transform: uppercase;
-        }
-
-        .form-title-banner p {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .form-glass-card {
-            padding: 20px;
-            border-radius: 20px;
-        }
-
-        .form-input-block {
-            margin-bottom: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .form-input-block label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .ui-input, .ui-select, .ui-textarea {
-            width: 100%;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            color: #ffffff;
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .ui-input:focus, .ui-select:focus, .ui-textarea:focus {
-            border-color: #f7dca6;
-        }
-
-        .ui-select option {
-            background-color: #2b082c;
-            color: #ffffff;
-        }
-
-        .ui-textarea {
-            resize: none;
-            height: 75px;
-        }
-
-        .form-columns-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .input-choice-row {
-            display: flex;
-            gap: 20px;
-            padding: 8px 5px;
-        }
-
-        .choice-option-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .choice-option-label input {
-            accent-color: #f7dca6;
-            transform: scale(1.1);
-        }
-
-        .form-submit-block {
-            margin-top: 25px;
+            background: linear-gradient(to right, #00ffff 0%, #008b8b 50%, #ffffff 80%, #00ffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlossShine 3s linear infinite;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
         }
     </style>
 </head>
 <body>
 
-    <div class="app-view-container">
+    <div class="main-content">
+        <div class="title-container">
+            <span class="word-love">Love</span>
+            <span class="word-forever">Forever</span>
+        </div>
 
-        <section id="page-splash" class="app-page active-view" onclick="navigateTo('page-home')">
-            <div class="splash-inner">
-                <h1 class="app-name">Love Forever</h1>
-                
-                <div class="logo-container">
-                    <svg class="heart-cross-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M60,40 C42,15 12,27 18,57 C22,75 42,92 60,105 C78,92 98,75 102,57 C108,27 78,15 60,40 Z" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M32,65 C37,65 40,53 43,53 C45,53 43,65 47,65 C52,65 52,58 55,54 C58,50 56,65 61,65 C66,65 66,58 70,58 M40,58 L46,58 M70,45 L70,85 M62,55 L78,55 M76,65 C82,65 85,58 90,62" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
+        <svg class="heart-graphic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="3.5" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+            </defs>
+            <path d="M 50,35 
+                     C 50,12 18,12 18,38 
+                     C 18,61 46,80 50,84 
+                     C 54,80 82,61 82,38 
+                     C 82,12 50,12 50,35 Z" 
+                  fill="none" 
+                  stroke="#ffffff" 
+                  stroke-width="5" 
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  filter="url(#neon-glow)" />
+            <path d="M 25,52 Q 34,49 41,52 L 47,52 M 47,41 L 47,70 M 42,47 L 58,47 M 53,52 Q 62,55 75,50" 
+                  fill="none" 
+                  stroke="#ffffff" 
+                  stroke-width="4.5" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"
+                  filter="url(#neon-glow)"/>
+        </svg>
 
-                <div class="sub-title gold-accent-text">Christian Matrimony</div>
-            </div>
-            <div class="footer-stamp gold-accent-text">Made in India</div>
-        </section>
+        <div class="subtitle-container">
+            <span class="word-christian">Christian</span>
+            <span class="word-matrimony">Matrimony</span>
+        </div>
+    </div>
 
+    <div class="footer-container">
+        <span class="word-made">Made</span>
+        <span class="word-in">In</span>
+        <span class="word-india">India</span>
+    </div>
 
-        <section id="page-home" class="app-page">
-            <div class="home-scroll-area">
-                
-                <header class="header-block">
-                    <div class="profile-summary-box">
-                        <div class="avatar-circle-placeholder gold-accent-text">PHOTO</div>
-                        <div class="user-text-details">
-                            <h2 class="user-display-name">User Profile</h2>
-                            <span class="user-system-id">ID: LF-Pending</span>
-                            <span class="badge-trial-tag gold-accent-text">7 Day Free Trial</span>
-                        </div>
-                    </div>
-                    
-                    <div class="bell-notify-trigger" onclick="alert('No new notifications at this moment.')">
-                        <svg class="bell-vector-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
-                        </svg>
-                        <div class="bell-dot-indicator"></div>
-                    </div>
-                </header>
-
-                <section class="action-grid-buttons">
-                    <div class="interactive-btn btn-style-outline" onclick="navigateTo('page-edit')">Edit Profile</div>
-                    <div class="interactive-btn btn-style-solid-gold" onclick="alert('Upgrade feature coming soon!')">&#9733; Upgrade</div>
-                </section>
-
-                <main>
-                    <h3 class="feed-heading">Premium Matches</h3>
-                    
-                    <div class="cards-vertical-stack">
-                        <div class="profile-feed-card glass-panel">
-                            <div class="profile-card-photo-box">PHOTO</div>
-                            <div class="feed-card-text-group">
-                                <div class="card-title-line">Sample Profile, Age</div>
-                                <div class="card-sub-line">Profession &bull; City Location</div>
-                                <div class="card-sub-line">Christian Denomination Info</div>
-                            </div>
-                        </div>
-
-                        <div class="profile-feed-card glass-panel">
-                            <div class="profile-card-photo-box">PHOTO</div>
-                            <div class="feed-card-text-group">
-                                <div class="card-title-line">Sample Profile, Age</div>
-                                <div class="card-sub-line">Profession &bull; City Location</div>
-                                <div class="card-sub-line">Christian Denomination Info</div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-
-            </div>
-        </section>
-
-
-        <section id="page-edit" class="app-page">
-            <div class="edit-form-scroll-area">
-                
-                <header class="form-title-banner">
-                    <h2 class="gold-accent-text">Edit Profile</h2>
-                    <p>Marriage Personal Information</p>
-                </header>
-
-                <div class="form-glass-card glass-panel">
-                    <form onsubmit="event.preventDefault();">
-
-                        <div class="form-input-block">
-                            <label class="gold-accent-text">1. Full Name</label>
-                            <input type="text" class="ui-input" placeholder="Enter full name">
-                        </div>
-
-                        <div class="form-input-block">
-                            <label class="gold-accent-text">2. Date of Birth</label>
-                            <input type="date" class="ui-input">
-                        </div>
-
-                        <div class="form-input-block">
-                            <label class="gold-accent-text">3. Year of Baptism</label>
-                            <input type="number" class="ui-input" placeholder="YYYY" min="1950" max="2026">
-                        </div>
-
-                        <div class="form-input-block">
-                            <label class="gold-accent-text">4. Name & Address of Church</label>
-                            <textarea class="ui-textarea" placeholder="Enter church name and location details"></textarea>
-                        </div>
-
-                        <div class="form-input-block">
-                            <label class="gold-accent-text">5. Denomination / Sect</label>
-                            <select class="ui-select">
-                                <option value="" disabled selected>Select option</option>
-                                <option value="protestant">Protestant</option>
-                                <option value="catholic">Roman Catholic</option>
-                                <option value="orthodox">Orthodox</option>
-                                <option value="pentecostal">Pentecostal</option>
-                                <option value="other">Other / Independent</option>
-                            </select>
-                        </div>
-
-                        <div class="form-input-block">
-                            <label class="gold-accent-text">6. Hei
-  
+</body>
+</html>
