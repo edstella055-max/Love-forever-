@@ -6,7 +6,7 @@
     <title>Love Forever - Christian Matrimony</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -16,8 +16,8 @@
         }
 
         body {
-            /* High-gloss Instagram-style deep berry gradient background */
-            background: radial-gradient(circle at 50% 30%, #e60067 0%, #9e0047 45%, #590024 100%);
+            /* Premium Glossy White & Blush Pink backdrop inspired by the 3rd image color scheme */
+            background: radial-gradient(circle at 50% 35%, #ffffff 0%, #fff0f5 45%, #f3d5df 100%);
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -25,7 +25,7 @@
             align-items: center;
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
-            padding: 50px 20px;
+            padding: 55px 20px;
         }
 
         .main-content {
@@ -34,113 +34,124 @@
             align-items: center;
             justify-content: center;
             flex-grow: 1;
-            gap: 35px;
+            gap: 30px;
             width: 100%;
         }
 
         /* --- ANIMATIONS --- */
         
-        /* Smooth pop-up zoom in and out loop */
-        @keyframes popZoomInOut {
-            0% { transform: scale(0.85); filter: brightness(1); }
-            50% { transform: scale(1.05); filter: brightness(1.2); }
-            100% { transform: scale(0.85); filter: brightness(1); }
+        /* Smooth pop-up zoom in and out loop for the main title */
+        @keyframes dynamicZoom {
+            0% { transform: scale(0.88); filter: drop-shadow(0 4px 10px rgba(117, 76, 90, 0.15)); }
+            50% { transform: scale(1.04); filter: drop-shadow(0 15px 25px rgba(117, 76, 90, 0.3)); }
+            100% { transform: scale(0.88); filter: drop-shadow(0 4px 10px rgba(117, 76, 90, 0.15)); }
         }
 
-        /* Heartbeat ripple effect */
-        @keyframes heartBeat {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(255,255,255,0.6)); }
-            20% { transform: scale(1.12); filter: drop-shadow(0 0 18px rgba(255,255,255,0.9)); }
-            40% { transform: scale(1.03); filter: drop-shadow(0 0 10px rgba(255,255,255,0.7)); }
-            60% { transform: scale(1.15); filter: drop-shadow(0 0 22px rgba(255,255,255,1)); }
+        /* Elegant heartbeat pulse for the cross heart icon */
+        @keyframes elegantPulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1)); }
+            30% { transform: scale(1.08); filter: drop-shadow(0 8px 20px rgba(92, 110, 96, 0.25)); }
+            60% { transform: scale(1.02); filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12)); }
         }
 
-        /* Shimmer moving shine animation for unique glossy words */
-        @keyframes textGlossShine {
+        /* Continuous shimmering gloss effect over the words */
+        @keyframes liquidGlossShine {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* --- WORD STYLING (EACH HAS A UNIQUE GLOSSY COLOR) --- */
+        /* --- TITLES (Image 1 Style) --- */
 
         .title-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            animation: popZoomInOut 4.5s ease-in-out infinite;
+            position: relative;
+            animation: dynamicZoom 4.8s ease-in-out infinite;
         }
 
-        /* "Love" - Bold White Neon Glow with thick stroke simulation */
+        /* Little decorative floating hearts over the 'L' */
+        .title-container::before {
+            content: '♥♥';
+            position: absolute;
+            left: 20px;
+            top: -5px;
+            font-size: 1.4rem;
+            color: #4a5c50; /* Deep Sage Green */
+            letter-spacing: -2px;
+            transform: rotate(-15deg);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        /* "Love" - Strong Deep Sage Green with structural gloss */
         .word-love {
-            font-family: 'Alex Brush', cursive;
-            font-size: 5.5rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 6rem;
             font-weight: 900;
-            color: #ffffff;
-            line-height: 0.9;
-            text-shadow: 
-                0 0 10px #fff,
-                0 0 25px rgba(255, 255, 255, 0.8),
-                0 0 45px #ff2a85,
-                0 0 70px #ff2a85;
+            color: #38463e;
+            line-height: 0.85;
+            text-shadow: 2px 2px 0px #ffffff, 4px 4px 12px rgba(56, 70, 62, 0.2);
         }
 
-        /* "Forever" - Creamy Pink Pearl Gloss Chrome */
+        /* "Forever" - Premium Dusty Rose Chrome Gloss */
         .word-forever {
-            font-family: 'Alex Brush', cursive;
-            font-size: 5.5rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 6rem;
             font-weight: 900;
-            line-height: 0.9;
-            margin-top: -10px;
-            background: linear-gradient(135deg, #ffffff 0%, #ffe3f0 40%, #ff73b3 70%, #ffffff 100%);
+            line-height: 0.85;
+            margin-top: -5px;
+            background: linear-gradient(135deg, #a87381 0%, #c99ba6 35%, #ffffff 50%, #945d6b 70%, #a87381 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textGlossShine 3s linear infinite;
-            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3));
+            animation: liquidGlossShine 3.5s linear infinite;
         }
 
-        /* Central Heart Vector Graphics */
-        .heart-graphic {
-            width: 120px;
-            height: 120px;
-            animation: heartBeat 2.5s ease-in-out infinite;
+        /* --- HEART & CROSS VECTOR (Image 2 Style) --- */
+        .heart-cross-graphic {
+            width: 130px;
+            height: 130px;
+            animation: elegantPulse 3s ease-in-out infinite;
         }
+
+        /* --- SUBTITLES --- */
 
         .subtitle-container {
             display: flex;
             gap: 12px;
             justify-content: center;
             width: 100%;
+            margin-top: 10px;
         }
 
-        /* "CHRISTIAN" - Crisp Liquid Silver-White Gloss */
+        /* "CHRISTIAN" - Medium Olive-Sage Gloss */
         .word-christian {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            background: linear-gradient(to right, #ffffff 0%, #d1f7ff 40%, #aae7f5 70%, #ffffff 100%);
+            background: linear-gradient(to right, #6b7f72 0%, #9bb0a2 40%, #ffffff 60%, #54665a 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textGlossShine 3.5s linear infinite;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+            animation: liquidGlossShine 4s linear infinite;
         }
 
-        /* "MATRIMONY" - Vivid Electric Turquoise Blue Metallic Gloss */
+        /* "MATRIMONY" - Soft Pastel Blush Metallic Pink Gloss */
         .word-matrimony {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            background: linear-gradient(to right, #00ffff 0%, #40e0d0 30%, #ffffff 50%, #00bfff 70%, #00ffff 100%);
+            background: linear-gradient(to right, #d4a5b2 0%, #f7d5de 30%, #ffffff 50%, #b88391 80%, #d4a5b2 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textGlossShine 4s linear infinite;
-            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6));
+            animation: liquidGlossShine 4.5s linear infinite;
         }
+
+        /* --- FOOTER --- */
 
         .footer-container {
             display: flex;
@@ -148,44 +159,43 @@
             justify-content: center;
         }
 
-        /* "Made" - Metallic Cyan-Blue Tinted Shimmer */
+        /* "Made" - Metallic Soft Silver Foil */
         .word-made {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 800;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            background: linear-gradient(to right, #b3f0ff 0%, #00ced1 50%, #b3f0ff 100%);
+            background: linear-gradient(to right, #999999 0%, #e0e0e0 50%, #777777 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textGlossShine 2.5s linear infinite;
+            animation: liquidGlossShine 3s linear infinite;
         }
 
-        /* "In" - Classic Bright Ice White Foil */
+        /* "In" - Earthy Clay Rose Shade */
         .word-in {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 800;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            background: linear-gradient(to right, #ffffff 0%, #e6e6e6 50%, #ffffff 100%);
+            background: linear-gradient(to right, #b5838d 0%, #e5989b 50%, #6d4c51 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textGlossShine 2s linear infinite;
+            animation: liquidGlossShine 2.8s linear infinite;
         }
 
-        /* "India" - Rich Deep Turquoise Gemstone Gloss */
+        /* "India" - Rich Deep Velvet Forest Green */
         .word-india {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 800;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            background: linear-gradient(to right, #00ffff 0%, #008b8b 50%, #ffffff 80%, #00ffff 100%);
+            background: linear-gradient(to right, #2f3e35 0%, #4a5c50 40%, #ffffff 60%, #1e2923 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textGlossShine 3s linear infinite;
-            filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+            animation: liquidGlossShine 3.2s linear infinite;
         }
     </style>
 </head>
@@ -197,31 +207,19 @@
             <span class="word-forever">Forever</span>
         </div>
 
-        <svg class="heart-graphic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
-                    <feGaussianBlur stdDeviation="3.5" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-            </defs>
-            <path d="M 50,35 
-                     C 50,12 18,12 18,38 
-                     C 18,61 46,80 50,84 
-                     C 54,80 82,61 82,38 
-                     C 82,12 50,12 50,35 Z" 
-                  fill="none" 
-                  stroke="#ffffff" 
-                  stroke-width="5" 
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  filter="url(#neon-glow)" />
-            <path d="M 25,52 Q 34,49 41,52 L 47,52 M 47,41 L 47,70 M 42,47 L 58,47 M 53,52 Q 62,55 75,50" 
-                  fill="none" 
-                  stroke="#ffffff" 
-                  stroke-width="4.5" 
-                  stroke-linecap="round" 
-                  stroke-linejoin="round"
-                  filter="url(#neon-glow)"/>
+        <svg class="heart-cross-graphic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 52,20 
+                         C 68,5 92,18 80,48
+                         C 72,68 53,82 46,86
+                         C 32,74 15,55 18,34
+                         C 21,14 43,12 52,28" 
+                      stroke="#38463e" 
+                      stroke-width="4.5" />
+                
+                <path d="M 52,32 L 52,86" stroke="#1e2923" stroke-width="5" />
+                <path d="M 38,54 L 68,54" stroke="#1e2923" stroke-width="5" />
+            </g>
         </svg>
 
         <div class="subtitle-container">
